@@ -1,0 +1,22 @@
+{
+  "printWidth": 160,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "semi": true,
+  "overrides": [
+    {
+      "files": [
+        "*.json",
+        "*.jsonc",
+        ".babelrc",
+        ".prettierrc",
+        ".stylelintrc",
+        ".eslintrc"
+      ],
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}

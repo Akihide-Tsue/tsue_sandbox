@@ -1,3 +1,58 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "unused-imports"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "next",
+    "next/core-web-vitals",
+    "prettier"
+  ],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "@next/next/no-html-link-for-pages": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "unused-imports/no-unused-imports-ts": "warn",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", ["parent", "sibling"], "object", "type", "index"],
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "pathGroups": [
+          { "pattern": "react", "group": "builtin", "position": "before" },
+          { "pattern": "next/**", "group": "builtin", "position": "after" },
+          { "pattern": "next", "group": "builtin", "position": "after" },
+          { "pattern": "@mui/**", "group": "external", "position": "before" },
+          { "pattern": "react-hook-form", "group": "external", "position": "before" },
+          { "pattern": "@react-icons/**", "group": "external", "position": "before" },
+          { "pattern": "@constants_common/**", "group": "internal", "position": "before" },
+          { "pattern": "@contexts_iqloud/**", "group": "internal", "position": "before" },
+          { "pattern": "@contexts_iqfu/**", "group": "internal", "position": "before" },
+          { "pattern": "@hooks_iqloud/**", "group": "internal", "position": "before" },
+          { "pattern": "@hooks_iqfu/**", "group": "internal", "position": "before" },
+          { "pattern": "@utils_iqloud/**", "group": "internal", "position": "before" },
+          { "pattern": "@utils_iqfu/**", "group": "internal", "position": "before" },
+          { "pattern": "@components_iqloud/**", "group": "internal", "position": "before" },
+          { "pattern": "@components_iqfu/**", "group": "internal", "position": "before" },
+          { "pattern": "@recoil_iqfu/**", "group": "internal", "position": "before" },
+          { "pattern": "@constants_iqloud", "group": "internal", "position": "before" },
+          { "pattern": "@constants_iqfu/**", "group": "internal", "position": "before" },
+          { "pattern": "@type-def_common/**", "group": "internal", "position": "before" },
+          { "pattern": "@type-def_iqloud/**", "group": "internal", "position": "before" },
+          { "pattern": "@type-def_iqfu/**", "group": "internal", "position": "before" },
+          { "pattern": "@styles_iqloud/***", "group": "internal", "position": "after" },
+          { "pattern": "@styles_iqfu/***", "group": "internal", "position": "after" },
+          { "pattern": "**.scss", "group": "internal", "position": "after" }
+        ]
+      }
+    ]
+  }
 }
