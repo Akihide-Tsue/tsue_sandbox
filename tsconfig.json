@@ -17,6 +17,7 @@
     "incremental": true,
     "paths": {
       "@hooks/*": ["src/hooks/*"],
+      "@components/*": ["src/components/*"],
       "@variables": ["src/styles/variables.scss"],
       "@styles/*": ["src/styles/pages/*"],
       "@images/*": ["public/images/*"]
