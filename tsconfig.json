@@ -17,7 +17,8 @@
     "incremental": true,
     "paths": {
       "@hooks/*": ["src/hooks/*"],
-      "@variables": ["src/styles/variables.scss"]
+      "@variables": ["src/styles/variables.scss"],
+      "@images/*": ["public/images/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

@@ -11,7 +11,7 @@ Sentry.init({
   dsn: SENTRY_DSN,
   // Adjust this value in production, or use tracesSampler for greater control
   //サンプリングする割合
-  tracesSampleRate: process.env.NEXT_PUBLIC_APP_ENV === 'production_server' ? 1.0 : 1.0,
+  tracesSampleRate: process.env.NEXT_PUBLIC_APP_ENV === 'production' ? 1.0 : 1.0,
   // ...
   // Note: if you want to override the automatic release value, do not set a
   // `release` value here - use the environment variable `SENTRY_RELEASE`, so
