@@ -4,11 +4,12 @@
 
 import * as Sentry from '@sentry/nextjs';
 
-//.env.production.localの環境変数
-const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN;
+const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
+const SENTRY_ENVIRONMENT = process.env.VERCEL_ENV || process.env.NEXT_PUBLIC_VERCEL_ENV || 'development';
 
 Sentry.init({
   dsn: SENTRY_DSN,
+  environment: SENTRY_ENVIRONMENT,
   // Adjust this value in production, or use tracesSampler for greater control
   //サンプリングする割合
   tracesSampleRate: process.env.NEXT_PUBLIC_APP_ENV === 'production' ? 1.0 : 1.0,

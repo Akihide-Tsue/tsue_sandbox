@@ -6,12 +6,6 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 /** @type {import('next').NextConfig} */
 const moduleExports = {
-  //target: 'serverless',
-  //amplifyのapi routesで使う環境変数はここでて定義する必要がある
-  //https://github.com/aws-amplify/amplify-hosting/issues/1987
-  env: {
-    LINE_CLIENT_SECRET: process.env.LINE_CLIENT_SECRET,
-  },
   reactStrictMode: true,
   sassOptions: {
     prependData: `
