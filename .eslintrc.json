@@ -35,6 +35,7 @@
           { "pattern": "@react-icons/**", "group": "external", "position": "before" },
           { "pattern": "@constants_common/**", "group": "internal", "position": "before" },
           { "pattern": "@type-def_common/**", "group": "internal", "position": "before" },
+          { "pattern": "@styles/***", "group": "internal", "position": "after" },
           { "pattern": "**.scss", "group": "internal", "position": "after" }
         ]
       }

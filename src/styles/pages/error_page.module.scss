@@ -1,14 +1,10 @@
 @use '@variables' as *;
 
-.logo {
-  display: block;
-  width: 270px;
-  margin: 88px auto 64px;
-
-  @include media(sm) {
-    max-width: 60%;
-    margin: 40px auto 20px;
-  }
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .title {
@@ -37,13 +33,7 @@
 }
 
 .text_wrapper {
-  display: flex;
-  margin: 0 auto;
-  margin-bottom: 120px;
-
-  @include media(sm) {
-    margin-bottom: 100px;
-  }
+  text-align: center;
 }
 
 .error_text {

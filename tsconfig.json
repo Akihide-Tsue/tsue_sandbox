@@ -18,6 +18,7 @@
     "paths": {
       "@hooks/*": ["src/hooks/*"],
       "@variables": ["src/styles/variables.scss"],
+      "@styles/*": ["src/styles/pages/*"],
       "@images/*": ["public/images/*"]
     }
   },
