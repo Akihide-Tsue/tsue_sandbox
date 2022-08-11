@@ -16,7 +16,7 @@
     "baseUrl": "./",
     "incremental": true,
     "paths": {
-      "@/*": ["src/*"],
+      "@hooks/*": ["src/hooks/*"],
       "@variables": ["src/styles/variables.scss"]
     }
   },

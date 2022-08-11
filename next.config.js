@@ -27,7 +27,7 @@ const moduleExports = {
       new TerserPlugin({
         terserOptions: {
           compress: {
-            drop_console: process.env.NEXT_PUBLIC_APP_ENV === 'production_server',
+            drop_console: process.env.NEXT_PUBLIC_APP_ENV === 'production',
           },
         },
         extractComments: 'all',
@@ -41,7 +41,7 @@ const sentryWebpackPluginOptions = {
   silent: true, // Suppresses all logs
   authToken: process.env.SENTRY_AUTH_TOKEN,
 };
-if (process.env.NEXT_PUBLIC_APP_ENV === 'production_server' || process.env.NEXT_PUBLIC_APP_ENV === 'development_server') {
+if (process.env.NEXT_PUBLIC_APP_ENV === 'production' || process.env.NEXT_PUBLIC_APP_ENV === 'development') {
   module.exports = withSentryConfig(moduleExports, sentryWebpackPluginOptions);
 } else {
   module.exports = moduleExports;
