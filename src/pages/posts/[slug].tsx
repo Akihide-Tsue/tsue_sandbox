@@ -47,9 +47,9 @@ const Article: FC<Props> = ({ frontMatter, content }) => {
   }
 
   return (
-    <div>
-      <div>
-        <Image src={`/${frontMatter.image}`} width={1200} height={700} alt={frontMatter.title} />
+    <div className={styles.container}>
+      <div className={styles.top_image}>
+        <Image src={`/${frontMatter.image}`} layout="fill" objectFit="contain" alt={frontMatter.title} />
       </div>
       <h1>{frontMatter.title}</h1>
       <span>{frontMatter.date}</span>

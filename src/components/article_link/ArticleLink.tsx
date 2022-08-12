@@ -12,8 +12,8 @@ const ArticleLink: FC<Props> = ({ post }) => {
   return (
     <Link href={`/posts/${post.slug}`}>
       <a>
-        <div className={styles.container}>
-          <Image src={`/${post.frontMatter.image}`} width={1200} height={700} alt={post.frontMatter.title} />
+        <div className={styles.image_container}>
+          <Image src={`/${post.frontMatter.image}`} layout="fill" objectFit="contain" alt={post.frontMatter.title} />
         </div>
         <div>
           <h1>{post.frontMatter.title}</h1>

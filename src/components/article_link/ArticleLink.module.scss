@@ -5,3 +5,10 @@
   border: 1px solid $border_color;
   border-radius: 8px;
 }
+
+.image_container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: #fff;
+}
