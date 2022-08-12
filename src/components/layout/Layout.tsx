@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import PageFooter from '@components/page_footer/PageFooter';
 import PageHeader from '@components/page_header/PageHeader';
 
 import styles from './Layout.module.scss';
@@ -10,10 +11,11 @@ type Props = {
 
 const Layout: FC<Props> = ({ children }) => {
   return (
-    <div className={styles.page_container}>
+    <>
       <PageHeader />
       <div className={styles.container_inner}>{children}</div>
-    </div>
+      <PageFooter />
+    </>
   );
 };
 

@@ -1,10 +1,17 @@
 @use '@variables' as *;
 
-.content {
-  h2 {
-    font-size: 2rem;
-    // background: orange;
-  }
+.post_title {
+  padding: 8px 0;
+  font-size: 3.6rem;
+  font-weight: bold;
+}
+
+.post_date {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: $gray;
 }
 
 .top_image {
