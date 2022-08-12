@@ -14,7 +14,14 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": "./",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@hooks/*": ["src/hooks/*"],
+      "@components/*": ["src/components/*"],
+      "@variables": ["src/styles/variables.scss"],
+      "@styles/*": ["src/styles/pages/*"],
+      "@images/*": ["public/images/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

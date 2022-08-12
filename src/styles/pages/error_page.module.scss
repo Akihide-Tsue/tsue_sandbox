@@ -1,0 +1,52 @@
+@use '@variables' as *;
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  margin-bottom: 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 14rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #555;
+  text-align: center;
+
+  @include media(sm) {
+    font-size: 9rem;
+  }
+}
+
+.title_sub {
+  margin-bottom: 24px;
+  font-family: Roboto, sans-serif;
+  font-size: 3.4rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #999;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.text_wrapper {
+  text-align: center;
+}
+
+.error_text {
+  margin: auto 0;
+  margin-right: auto;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 29px;
+  color: #555;
+
+  @include media(sm) {
+    margin: auto;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+}

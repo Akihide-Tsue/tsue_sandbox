@@ -1,0 +1,27 @@
+@use '@variables' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  height: 40px;
+  padding: 0 24px;
+  margin: 0 auto;
+  background: rgb(255 255 255 / 0.5);
+  background-color: hsl(0deg 0% 100% / 0.7);
+  border-bottom: 1px solid $border_color;
+  backdrop-filter: saturate(180%) blur(10px);
+
+  @include media(lg) {
+    padding: 0 16px;
+  }
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+}
