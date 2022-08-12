@@ -19,6 +19,7 @@
     "react-hooks/exhaustive-deps": "off",
     "unused-imports/no-unused-imports-ts": "warn",
     "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
     "import/order": [
       "error",
       {

@@ -12,3 +12,27 @@ Next.js を使って Markdown のブログサイトの構築を一から行な�
 ### プロジェクトの作成
 
 npx create-next-app コマンドを利用して Next.js プロジェクトの作成を行います。
+
+```js:index.js
+import { FC } from 'react';
+
+import Link from 'next/link';
+
+import styles from './PageHeader.module.scss';
+
+const PageHeader: FC = ({}) => {
+  return (
+    <div className={styles.header}>
+      <Link href={`/`} passHref>
+        <a>
+          <h1 className={styles.logo}>津江のブログ（仮）</h1>
+        </a>
+      </Link>
+    </div>
+  );
+};
+
+export default PageHeader;
+
+
+```

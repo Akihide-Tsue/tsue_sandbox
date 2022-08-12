@@ -8,6 +8,9 @@ import { useRouter } from 'next/router';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 
+import CodeBlock from '@components/codeblock/CodeBlock';
+
+import stylesMarkdown from '@styles/markdown.module.scss';
 import styles from '@styles/posts.module.scss';
 
 export const getStaticProps: ({
@@ -51,9 +54,17 @@ const Article: FC<Props> = ({ frontMatter, content }) => {
       <div className={styles.top_image}>
         <Image src={`/${frontMatter.image}`} layout="fill" objectFit="contain" alt={frontMatter.title} />
       </div>
-      <h1>{frontMatter.title}</h1>
-      <span>{frontMatter.date}</span>
-      <ReactMarkdown className={styles.content}>{content}</ReactMarkdown>
+      <h1 className={styles.post_title}>{frontMatter.title}</h1>
+      <span className={styles.post_date}>{frontMatter.date}</span>
+      <ReactMarkdown
+        components={{
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          code: CodeBlock,
+        }}
+        className={stylesMarkdown.content}
+      >
+        {content}
+      </ReactMarkdown>
     </div>
   );
 };
