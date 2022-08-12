@@ -1,9 +1,15 @@
 import { FC } from 'react';
 
-import styles from '@styles/article.module.scss';
+import { useRouter } from 'next/router';
 
-const PageContainer: FC = ({}) => {
-  return <div className={styles.page_container}>1です</div>;
+const Article: FC = ({}) => {
+  const router = useRouter();
+  let { article_id } = router.query;
+  if (article_id instanceof Array) {
+    article_id = article_id.join(',');
+  }
+
+  return <div>{article_id}です </div>;
 };
 
-export default PageContainer;
+export default Article;

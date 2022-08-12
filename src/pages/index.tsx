@@ -1,17 +1,14 @@
 import type { NextPage } from 'next';
 
 import ArticleLink from '@components/article_link/ArticleLink';
-import PageContainer from '@components/page_container/PageConatainer';
 
 import styles from '@styles/index.module.scss';
 
 const Home: NextPage = () => {
   return (
-    <PageContainer>
-      <div className={styles.container}>
-        <ArticleLink title="てすと" articleId={1} />
-      </div>
-    </PageContainer>
+    <div className={styles.container}>
+      <ArticleLink articleId={1} title="てすと" date="2022-08-12" />
+    </div>
   );
 };
 
