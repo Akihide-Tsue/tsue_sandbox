@@ -1,0 +1,20 @@
+@use '@variables' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  padding: 0 24px;
+  background-color: hsl(0deg 0% 100% / 0.5);
+  border-bottom: 1px solid #ccc;
+
+  @include media(lg) {
+    padding: 0 16px;
+  }
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+}
