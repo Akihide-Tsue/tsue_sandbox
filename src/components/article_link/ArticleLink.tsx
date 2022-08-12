@@ -1,18 +1,23 @@
 import { FC } from 'react';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from './ArticleLink.module.scss';
 
-type Props = { title: string; articleId: number; date: string };
+type Props = { post: { slug: string; frontMatter: { title: string; date: string; image: string } } };
 
-const ArticleLink: FC<Props> = ({ title, articleId, date }) => {
+const ArticleLink: FC<Props> = ({ post }) => {
+  console.log('post', post);
   return (
-    <Link href={`/article/${articleId}`} passHref>
+    <Link href={`/posts/${post.slug}`}>
       <a>
         <div className={styles.container}>
-          <div className={styles.title}>{title}</div>
-          <div className={styles.date}>{date}</div>
+          <Image src={`/${post.frontMatter.image}`} width={1200} height={700} alt={post.frontMatter.title} />
+        </div>
+        <div>
+          <h1>{post.frontMatter.title}</h1>
+          <span>{post.frontMatter.date}</span>
         </div>
       </a>
     </Link>

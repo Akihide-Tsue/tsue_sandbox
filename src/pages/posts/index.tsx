@@ -6,8 +6,6 @@ import matter from 'gray-matter';
 
 import ArticleLink from '@components/article_link/ArticleLink';
 
-import styles from '@styles/index.module.scss';
-
 export const getStaticProps = () => {
   const files = fs.readdirSync('src/posts');
   const posts = files.map((fileName) => {
@@ -20,11 +18,9 @@ export const getStaticProps = () => {
     };
   });
 
-  const sortedPosts = posts.sort((postA, postB) => (new Date(postA.frontMatter.date as Date) > new Date(postB.frontMatter.date as Date) ? -1 : 1));
-
   return {
     props: {
-      posts: sortedPosts,
+      posts,
     },
   };
 };
@@ -42,17 +38,15 @@ type Props = {
   posts: post[];
 };
 
-const Home: NextPage<Props> = ({ posts }) => {
+const Posts: NextPage<Props> = ({ posts }) => {
   console.log(posts);
   return (
     <div>
-      <div className={styles.grid}>
-        {posts.map((post: post) => (
-          <ArticleLink key={post.slug} post={post} />
-        ))}
-      </div>
+      {posts.map((post: post) => (
+        <ArticleLink key={post.slug} post={post} />
+      ))}
     </div>
   );
 };
 
-export default Home;
+export default Posts;
