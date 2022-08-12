@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import styles from './PageHeader.module.scss';
 
-const PageContainer: FC = ({}) => {
+const PageHeader: FC = ({}) => {
   return (
     <div className={styles.header}>
       <Link href={`/`} passHref>
@@ -16,4 +16,4 @@ const PageContainer: FC = ({}) => {
   );
 };
 
-export default PageContainer;
+export default PageHeader;
