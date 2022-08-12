@@ -21,6 +21,7 @@ const moduleExports = {
       new TerserPlugin({
         terserOptions: {
           compress: {
+            //本番環境でconsole.logを非表示
             drop_console: process.env.NEXT_PUBLIC_APP_ENV === 'production',
           },
         },
