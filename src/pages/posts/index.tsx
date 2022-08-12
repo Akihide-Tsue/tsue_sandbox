@@ -6,6 +6,8 @@ import matter from 'gray-matter';
 
 import ArticleLink from '@components/article_link/ArticleLink';
 
+import styles from '@styles/posts.module.scss';
+
 export const getStaticProps = () => {
   const files = fs.readdirSync('src/posts');
   const posts = files.map((fileName) => {
@@ -39,9 +41,8 @@ type Props = {
 };
 
 const Posts: NextPage<Props> = ({ posts }) => {
-  console.log(posts);
   return (
-    <div>
+    <div className={styles.index_container}>
       {posts.map((post: post) => (
         <ArticleLink key={post.slug} post={post} />
       ))}

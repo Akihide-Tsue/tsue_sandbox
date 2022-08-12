@@ -2,8 +2,8 @@ import { ReactNode } from 'react';
 
 // @ts-ignore
 import { CodeComponent } from 'react-markdown/src/ast-to-react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import vscDarkPlus from 'react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus';
 
 import styles from './CodeBlock.module.scss';
 

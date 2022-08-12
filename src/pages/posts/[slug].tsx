@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 import CodeBlock from '@components/codeblock/CodeBlock';
 
@@ -61,6 +62,7 @@ const Article: FC<Props> = ({ frontMatter, content }) => {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           code: CodeBlock,
         }}
+        remarkPlugins={[remarkGfm]}
         className={stylesMarkdown.content}
       >
         {content}
