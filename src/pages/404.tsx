@@ -1,12 +1,12 @@
 import type { NextPage } from 'next';
 
-import PageContainer from 'src/components/page_container/PageConatainer';
+import Layout from '@components/layout/Layout';
 
 import styles from '@styles/error_page.module.scss';
 
 const error404page: NextPage = () => {
   return (
-    <PageContainer>
+    <Layout>
       <div className={styles.container}>
         <p className={styles.title}>404</p>
         <p className={styles.title_sub}>Not Found</p>
@@ -20,7 +20,7 @@ const error404page: NextPage = () => {
           </p>
         </div>
       </div>
-    </PageContainer>
+    </Layout>
   );
 };
 

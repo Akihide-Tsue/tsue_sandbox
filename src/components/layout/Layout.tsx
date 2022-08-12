@@ -2,13 +2,13 @@ import { FC } from 'react';
 
 import PageHeader from '@components/page_header/PageHeader';
 
-import styles from './PageContainer.module.scss';
+import styles from './Layout.module.scss';
 
 type Props = {
   children?: React.ReactNode;
 };
 
-const PageContainer: FC<Props> = ({ children }) => {
+const Layout: FC<Props> = ({ children }) => {
   return (
     <div className={styles.page_container}>
       <PageHeader />
@@ -17,4 +17,4 @@ const PageContainer: FC<Props> = ({ children }) => {
   );
 };
 
-export default PageContainer;
+export default Layout;

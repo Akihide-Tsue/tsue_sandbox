@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 
 import CommonHead from '@components/common_head/CommonHead';
 import { usePageView, GoogleAnalytics } from '@components/gtag/gtag';
-import PageContainer from '@components/page_container/PageConatainer';
+import Layout from '@components/layout/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   usePageView();
@@ -12,9 +12,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <CommonHead />
       <GoogleAnalytics />
-      <PageContainer>
+      <Layout>
         <Component {...pageProps} />
-      </PageContainer>
+      </Layout>
     </>
   );
 }
