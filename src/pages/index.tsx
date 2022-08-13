@@ -43,7 +43,6 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ posts }) => {
-  console.log(posts);
   return (
     <div>
       <div className={styles.grid_container}>
