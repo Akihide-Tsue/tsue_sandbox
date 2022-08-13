@@ -5,6 +5,7 @@ import type { NextPage } from 'next';
 import matter from 'gray-matter';
 
 import ArticleLink from '@components/article_link/ArticleLink';
+import { PostType } from 'src/type-def/postsType';
 
 import styles from '@styles/index.module.scss';
 
@@ -29,25 +30,15 @@ export const getStaticProps = () => {
   };
 };
 
-type post = {
-  slug: string;
-  frontMatter: {
-    title: string;
-    date: string;
-    image: string;
-    tag: string[];
-  };
-};
-
 type Props = {
-  posts: post[];
+  posts: PostType[];
 };
 
 const Home: NextPage<Props> = ({ posts }) => {
   return (
     <div>
       <div className={styles.grid_container}>
-        {posts.map((post: post) => (
+        {posts.map((post: PostType) => (
           <ArticleLink key={post.slug} post={post} />
         ))}
       </div>

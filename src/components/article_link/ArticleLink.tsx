@@ -3,9 +3,11 @@ import { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { PostType } from 'src/type-def/postsType';
+
 import styles from './ArticleLink.module.scss';
 
-type Props = { post: { slug: string; frontMatter: { title: string; date: string; image: string; tag: string[] } } };
+type Props = { post: PostType };
 
 const ArticleLink: FC<Props> = ({ post }) => {
   const tags = post.frontMatter.tag.map((tag, i) => {

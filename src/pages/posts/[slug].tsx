@@ -10,6 +10,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 import CodeBlock from '@components/codeblock/CodeBlock';
+import { FrontMatterType } from 'src/type-def/postsType';
 
 import stylesMarkdown from '@styles/markdown.module.scss';
 import styles from '@styles/posts.module.scss';
@@ -40,7 +41,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-type Props = { frontMatter: { title: string; date: string; image: string }; content: string };
+type Props = { frontMatter: FrontMatterType; content: string };
 
 const Article: FC<Props> = ({ frontMatter, content }) => {
   const router = useRouter();
