@@ -1,5 +1,5 @@
 ---
-title: '採用技術一覧とTODO'
+title: 'このブログの採用技術一覧とTODO'
 date: '2022-08-12'
 description: 'このmarkdownブログでの採用技術と実装予定を書いています。'
 image: images/nextjs_logo.webp
@@ -18,9 +18,6 @@ genre: Tech
 - Prettier
 - ESLint
 - 動的 OGP 生成
--
-
-## Package.json
 
 ```json:package.json
   "dependencies": {
@@ -69,14 +66,14 @@ genre: Tech
 
 ## TODO
 
-- ダークモード
+- ダークモード(Recoil)
 - 記事にタグ付け・分類
-- いいね・コメント機能
+- いいね・コメント機能（NestJs & MongoDB）
 - UI コンポーネントは使わない方針
 - AMP 対応
 - PWA 対応
 - ブログカード
 - テスト
 - storybook
-- デザイン改善
--
+- デザイン改善（記事のカードとリスト切り替え）
+- github, twitter アイコン

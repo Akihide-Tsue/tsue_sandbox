@@ -46,7 +46,7 @@ const Home: NextPage<Props> = ({ posts }) => {
   console.log(posts);
   return (
     <div>
-      <div className={styles.grid}>
+      <div className={styles.grid_container}>
         {posts.map((post: post) => (
           <ArticleLink key={post.slug} post={post} />
         ))}

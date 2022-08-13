@@ -1,5 +1,11 @@
 @use '@variables' as *;
 
-.grid {
-  width: 30%;
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 80px 56px;
+
+  @include media(sm) {
+    gap: 32px;
+  }
 }
