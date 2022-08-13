@@ -16,7 +16,7 @@
 
 .post_date {
   display: inline-block;
-  margin-bottom: 16px;
+  margin-right: 16px;
   font-size: 1.8rem;
   font-weight: bold;
   color: $gray;
@@ -27,4 +27,22 @@
   width: 100%;
   height: 200px;
   background: #fff;
+}
+
+.flex {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.tags_wrapper {
+  display: flex;
+  gap: 0 8px;
+}
+
+.tag {
+  padding: 3px 4px;
+  font-size: 1.4rem;
+  color: #fff;
+  background: $black;
+  border-radius: 4px;
 }

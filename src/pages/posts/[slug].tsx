@@ -3,7 +3,6 @@ import { FC } from 'react';
 import fs from 'fs';
 
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
@@ -44,11 +43,13 @@ export const getStaticPaths = async () => {
 type Props = { frontMatter: FrontMatterType; content: string };
 
 const Article: FC<Props> = ({ frontMatter, content }) => {
-  const router = useRouter();
-  let { article_id } = router.query;
-  if (article_id instanceof Array) {
-    article_id = article_id.join(',');
-  }
+  const tags = frontMatter.tag.map((tag, i) => {
+    return (
+      <span key={i} className={styles.tag}>
+        {tag}
+      </span>
+    );
+  });
 
   return (
     <div className={styles.container}>
@@ -56,7 +57,10 @@ const Article: FC<Props> = ({ frontMatter, content }) => {
         <Image src={`/${frontMatter.image}`} layout="fill" objectFit="contain" alt={frontMatter.title} />
       </div>
       <h1 className={styles.post_title}>{frontMatter.title}</h1>
-      <span className={styles.post_date}>{frontMatter.date}</span>
+      <div className={styles.flex}>
+        <span className={styles.post_date}>{frontMatter.date}</span>
+        <span className={styles.tags_wrapper}>{tags}</span>
+      </div>
       <ReactMarkdown
         components={{
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
