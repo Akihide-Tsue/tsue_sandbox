@@ -34,7 +34,6 @@ export const getStaticPaths = async () => {
       slug: fileName.replace(/\.md$/, ''),
     },
   }));
-  console.log('paths:', paths);
   return {
     paths,
     fallback: false,
