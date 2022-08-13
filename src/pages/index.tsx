@@ -35,6 +35,7 @@ type post = {
     title: string;
     date: string;
     image: string;
+    tag: string[];
   };
 };
 

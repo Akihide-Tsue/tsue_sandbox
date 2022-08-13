@@ -4,6 +4,7 @@ date: '2022-08-13'
 description: '動的OGPを導入しましたので、その過程です。'
 image: images/seo_image.webp
 genre: Tech
+tag: [SEO]
 ---
 
 ## DONE
