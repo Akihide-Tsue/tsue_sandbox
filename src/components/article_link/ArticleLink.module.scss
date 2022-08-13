@@ -1,9 +1,10 @@
 @use '@variables' as *;
 
-.container {
+.link_container {
   padding: 16px;
-  border: 1px solid $border_color;
   border-radius: 8px;
+
+  @include button_shadow;
 }
 
 .image_container {
@@ -13,7 +14,12 @@
   background: #fff;
 }
 
+.text_wrapper {
+  margin: 8px 0;
+}
+
 .title {
+  margin-bottom: 4px;
   font-size: 2rem;
 }
 

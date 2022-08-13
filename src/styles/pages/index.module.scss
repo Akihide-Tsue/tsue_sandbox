@@ -3,9 +3,9 @@
 .grid_container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 80px 56px;
+  gap: 80px 40px;
 
   @include media(sm) {
-    gap: 32px;
+    gap: 40px;
   }
 }
