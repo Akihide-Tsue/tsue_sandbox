@@ -16,8 +16,8 @@ const ArticleLink: FC<Props> = ({ post }) => {
           <Image src={`/${post.frontMatter.image}`} layout="fill" objectFit="contain" alt={post.frontMatter.title} />
         </div>
         <div>
-          <h1>{post.frontMatter.title}</h1>
-          <span>{post.frontMatter.date}</span>
+          <h2 className={styles.title}>{post.frontMatter.title}</h2>
+          <span className={styles.date}>{post.frontMatter.date}</span>
         </div>
       </a>
     </Link>
