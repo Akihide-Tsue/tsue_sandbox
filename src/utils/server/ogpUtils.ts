@@ -64,11 +64,9 @@ const createOgp = async (slug: string): Promise<void> => {
   context.drawImage(backgroundImage, DX, DY, WIDTH, HEIGHT);
 
   registerFont('src/assets/fonts/Roboto-Regular.ttf', { family: 'roboto' });
-  context.font = 'bold 68px roboto';
-  context.fillStyle = '#fff';
+
   context.textAlign = 'center';
   context.textBaseline = 'middle';
-  context.fillText(data.title, 600, 300);
 
   context.font = '40px roboto';
   context.fillText(data.date.replace(/-/g, '/'), 1040, 580);
@@ -80,10 +78,13 @@ const createOgp = async (slug: string): Promise<void> => {
   context.font = '32px roboto';
   context.fillText("- Tsue's sandbox -", 600, 220);
 
-  const lines = createTextLines(canvas, title);
+  context.font = 'bold 68px roboto';
+  context.fillStyle = '#fff';
+  //titleが長い場合に折り返す
+  const lines = createTextLines(canvas, data.title);
   lines.forEach((line, index) => {
     const y = 314 + 80 * (index - (lines.length - 1) / 2);
-    ctx.fillText(line, 600, y);
+    context.fillText(line, 600, y);
   });
 
   const buffer = canvas.toBuffer();
