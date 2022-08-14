@@ -1,5 +1,6 @@
 /* eslint-disable */
 // @ts-nocheck
+//ローカル用：http://localhost:3000/api/posts/dinamic-ogp
 import { NextApiRequest, NextApiResponse } from 'next';
 import { createCanvas, registerFont, loadImage } from 'canvas';
 
