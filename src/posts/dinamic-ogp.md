@@ -30,3 +30,6 @@ https://stackoverflow.com/questions/33886917/how-to-install-wget-in-macos
 https://crieit.net/posts/Vercel-Zeit-Now-Next-js-API-Routes-node-canvas
 https://zenn.dev/tiwu_dev/articles/68d58d4ab710af
 https://teratail.com/questions/bh4qqnjksxelyd
+
+Vercel のビルドで gyp のエラーが出る
+Settings => General => Node.js Version
