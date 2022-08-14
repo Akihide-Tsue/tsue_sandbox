@@ -18,6 +18,7 @@ const CommonHead: FC = ({}) => {
       <title key="title">{metaTitle}</title>
       <meta name="description" content={metaDescription} />
       <link rel="icon" href="/favicon.ico" />
+      <meta name="google-site-verification" content="ShekIcJOv2C2czZH_jQNHWjYM2QWdJUAC4SXJihXkjI" />
       <meta name="viewport" content={windowWidth < 375 && windowWidth > 0 ? 'width=374' : 'width=device-width,initial-scale=1'} />
 
       <meta property="og:title" content={metaTitle} key={'og_title'} />
