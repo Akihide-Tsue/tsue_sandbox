@@ -18,10 +18,10 @@ const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout }) => {
     <div className={styles.layout_selector}>
       <span className={styles.layout_selector_text}>表示</span>
       <button className={styles.layout_selector_button} onClick={() => setLayout('card')}>
-        <CardIcon width={20} fill={layout === 'card' ? activeColor : inActiveColor} />
+        <CardIcon width={20} height={20} fill={layout === 'card' ? activeColor : inActiveColor} />
       </button>
       <button className={styles.layout_selector_button} onClick={() => setLayout('list')}>
-        <ListIcon width={20} fill={layout === 'list' ? activeColor : inActiveColor} />
+        <ListIcon width={20} height={20} fill={layout === 'list' ? activeColor : inActiveColor} />
       </button>
     </div>
   );

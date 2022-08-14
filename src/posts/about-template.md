@@ -2,7 +2,7 @@
 title: 'このブログの採用技術一覧とTODO'
 date: '2022-08-12'
 description: 'このmarkdownブログでの採用技術と実装予定を書いています。'
-image: images/nextjs_logo.webp
+image: images/articles/nextjs_logo.webp
 categories: Tech
 tag: [Next.js, blog]
 ---

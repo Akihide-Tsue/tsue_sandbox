@@ -44,6 +44,13 @@
 
   /* ////////////////////////////////////////////// */
 
+  a {
+    max-width: 100%;
+    color: $link_text;
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+  }
+
   hr {
     height: 1px;
     margin: 20px 0;
@@ -68,7 +75,7 @@
     margin: 8px 0;
     font-family: Consolas, 'Courier New', monospace;
     color: $white;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
     background-color: $black;
     border-radius: 4px;
   }

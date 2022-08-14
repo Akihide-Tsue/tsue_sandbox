@@ -13,7 +13,7 @@
   @include button_shadow;
 
   @include media(md) {
-    width: 88px;
+    width: 96px;
     padding: 8px;
     margin-bottom: 16px;
     font-size: 1.4rem;
@@ -31,11 +31,13 @@
 }
 
 .layout_selector_button {
-  transition: 0.3s;
+  height: 20px;
+  margin-top: -8px;
+  transition: 0.25s;
 
   @media (hover: hover) {
     &:hover {
-      filter: brightness(94%);
+      filter: brightness(90%);
     }
   }
 }
