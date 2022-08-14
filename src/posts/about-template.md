@@ -4,7 +4,7 @@ date: '2022-08-12'
 description: 'このmarkdownブログでの採用技術と実装予定を書いています。'
 image: images/articles/nextjs_logo.webp
 categories: Tech
-tag: ['#Next.js', '#blog']
+tag: ['#Next.js', '#Blog']
 ---
 
 ## DONE
@@ -54,7 +54,7 @@ tag: ['#Next.js', '#blog']
 
 - ダークモード(Recoil)
 - いいね・コメント機能（NestJs & MongoDB）
-- 記事のタグ付け・分類（フロント → バックエンドに管理移行）
+- 記事のタグ付け・分類・個数表示・絞り込み（フロント → バックエンドに管理移行）
 - AMP 対応
 - PWA 対応
 - ブログカード導入

@@ -73,7 +73,7 @@ const Article: FC<Props> = ({ frontMatter, content }) => {
 
       <div className={styles.container}>
         <div className={styles.top_image}>
-          <Image src={`/${frontMatter.image}`} layout="fill" objectFit="contain" alt={frontMatter.title} />
+          <Image src={`/${frontMatter.image}`} priority={true} layout="fill" objectFit="contain" alt={frontMatter.title} />
         </div>
         <h1 className={styles.post_title}>{frontMatter.title}</h1>
         <div className={styles.flex}>
