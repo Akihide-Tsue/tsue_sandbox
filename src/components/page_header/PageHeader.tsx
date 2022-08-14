@@ -10,7 +10,7 @@ const PageHeader: FC = ({}) => {
       <div className={styles.header_inner}>
         <Link href={`/`} passHref>
           <a>
-            <h1 className={styles.logo}>津江のブログ（仮）</h1>
+            <h1 className={styles.logo}>{"津江's sandbox"}</h1>
           </a>
         </Link>
       </div>
