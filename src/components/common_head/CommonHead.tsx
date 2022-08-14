@@ -33,8 +33,8 @@ const CommonHead: FC = ({}) => {
       <meta property="twitter:description" content={metaDescription} />
 
       {process.env.NEXT_PUBLIC_APP_ENV !== 'production' && <meta name="robots" content="noindex" />}
-      <link rel="icon" href="https://drive.google.com/file/d/1NZyy3KC0kLiLsd2nM9HElkanl_WfyH0D/view?usp=sharing" />
-      <link rel="apple-touch-icon" sizes="180x180" href="https://drive.google.com/file/d/1bgZHiy2FtRqe4T-selrZZt1qiOY_Lgxn/view?usp=sharing" />
+      <link rel="icon" href="public/images/apple-touch-icon.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="public/images/apple-touch-icon.png" />
     </Head>
   );
 };

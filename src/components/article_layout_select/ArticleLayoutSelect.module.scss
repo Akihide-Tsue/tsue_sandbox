@@ -28,11 +28,12 @@
 
   @include media(lg) {
     font-size: 1.2rem;
+    line-height: 1.2;
   }
 }
 
 .layout_selector_button {
-  margin-top: -8px;
+  margin-top: -6px;
   transition: 0.25s;
 
   @media (hover: hover) {
