@@ -41,14 +41,14 @@ const Home: NextPage<Props> = ({ posts }) => {
   const [layout, setLayout] = useState<'card' | 'list'>('card');
 
   return (
-    <div>
+    <>
       <ArticleLayoutSelect layout={layout} setLayout={setLayout} />
-      <div className={styles.grid_container}>
+      <div className={`${layout === 'card' && styles.grid_container}`}>
         {posts.map((post: PostType) => (
           <ArticleLink key={post.slug} post={post} layout={layout} />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

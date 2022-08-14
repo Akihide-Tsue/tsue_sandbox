@@ -22,7 +22,7 @@ const ArticleLink: FC<Props> = ({ post, layout }) => {
     <>
       {layout === 'card' ? (
         <Link href={`/posts/${post.slug}`}>
-          <a className={styles.link_container}>
+          <a className={styles.cards}>
             <div className={styles.image_container}>
               <Image src={`/${post.frontMatter.image}`} layout="fill" objectFit="contain" alt={post.frontMatter.title} />
             </div>
@@ -37,7 +37,17 @@ const ArticleLink: FC<Props> = ({ post, layout }) => {
           </a>
         </Link>
       ) : (
-        '準備中'
+        <Link href={`/posts/${post.slug}`}>
+          <a className={styles.lists}>
+            <div className={styles.text_wrapper}>
+              <h2 className={styles.title}>{post.frontMatter.title}</h2>
+              <div className={styles.lists_flex}>
+                <span className={styles.date}>{post.frontMatter.date}</span>
+                <span className={styles.tags_wrapper}>{tags}</span>
+              </div>
+            </div>
+          </a>
+        </Link>
       )}
     </>
   );

@@ -20,6 +20,7 @@
     "unused-imports/no-unused-imports-ts": "warn",
     "@typescript-eslint/no-unsafe-call": "off",
     "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
     "import/order": [
       "error",
       {

@@ -1,10 +1,24 @@
 @use '@variables' as *;
 
-.link_container {
+.cards {
   padding: 16px;
   border-radius: 8px;
 
   @include button_shadow;
+}
+
+.lists {
+  display: block;
+  padding: 16px 0;
+  border-bottom: 1px solid $border_color;
+
+  @media (hover: hover) {
+    &:hover {
+      background: rgb(249 249 249);
+      background: radial-gradient(circle, rgb(249 249 249 / 1) 0%, rgb(255 255 255 / 1) 100%);
+      transition: 0.25s;
+    }
+  }
 }
 
 .image_container {
@@ -30,6 +44,11 @@
 
 .flex {
   display: flex;
+}
+
+.lists_flex {
+  display: flex;
+  margin-top: 8px;
 }
 
 .tags_wrapper {
