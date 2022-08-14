@@ -16,20 +16,21 @@ const CommonHead: FC = ({}) => {
     <Head>
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <title key="title">{metaTitle}</title>
-      <meta name="description" content={metaDescription} key="description" />
+      <meta name="description" content={metaDescription} />
       <link rel="icon" href="/favicon.ico" />
       <meta name="viewport" content={windowWidth < 375 && windowWidth > 0 ? 'width=374' : 'width=device-width,initial-scale=1'} />
 
       <meta property="og:title" content={metaTitle} key={'og_title'} />
       <meta property="og:description" content={metaDescription} key={'og_description'} />
       <meta property="og:url" content="https://tsue-sandbox.vercel.app/" key={'og_url'} />
-      <meta property="og:image" key="ogImage" content={`${baseUrl}/ogp/default-ogp.png`} />
+      <meta property="og:image" content={`${baseUrl}/ogp/default-ogp.png`} />
       <meta property="og:type" content="article" />
 
-      <meta name="twitter:card" key="twitterCard" content="summary_large_image" />
-      <meta name="twitter:title" key="twitter_title" content={metaTitle} />
-      <meta name="twitter:description" key="twitter_description" content={metaDescription} />
-      <meta name="twitter:image" key="twitterImage" content={`${baseUrl}/ogp/default-ogp.png`} />
+      <meta property="twitter:image" content={`${baseUrl}/ogp/default-ogp.png`} />
+      <meta name="twitter:domain" content="tsue-sandbox.vercel.app" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:title" content={metaTitle} />
+      <meta property="twitter:description" content={metaDescription} />
 
       {process.env.NEXT_PUBLIC_APP_ENV !== 'production' && <meta name="robots" content="noindex" />}
       <link rel="icon" href="https://drive.google.com/file/d/1NZyy3KC0kLiLsd2nM9HElkanl_WfyH0D/view?usp=sharing" />

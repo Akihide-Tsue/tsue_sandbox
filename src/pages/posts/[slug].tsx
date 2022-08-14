@@ -64,11 +64,11 @@ const Article: FC<Props> = ({ frontMatter, content }) => {
     <>
       <Head>
         <title>{frontMatter.title}</title>
-        <meta property="og:image" key="ogImage" content={`${baseUrl}/ogp/${slug}.png`} />
-        <meta name="twitter:image" key="twitterImage" content={`${baseUrl}/ogp/${slug}.png`} />
-        <meta name="twitter:card" key="twitterCard" content="summary_large_image" />
-        <meta name="twitter:title" key="twitter_title" content={frontMatter.title} />
-        <meta name="twitter:description" key="twitter_description" content={frontMatter.description} />
+        <meta property="og:image" content={`${baseUrl}/ogp/${slug}.png`} />
+        <meta property="twitter:image" content={`${baseUrl}/ogp/${slug}.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content={frontMatter.title} />
+        <meta property="twitter:description" content={frontMatter.description} />
       </Head>
 
       <div className={styles.container}>
