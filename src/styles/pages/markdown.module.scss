@@ -62,13 +62,13 @@
   p code,
   li code,
   td code {
-    padding: 0 5px;
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 4px 0;
     font-family: Consolas, 'Courier New', monospace;
-    font-size: 90%;
-    font-style: normal;
-    color: #1b1b1b;
-    background-color: #d0d8d7;
-    border-radius: 3px;
+    color: $white;
+    background-color: $black;
+    border-radius: 2px;
   }
   pre {
     background-color: $black !important;

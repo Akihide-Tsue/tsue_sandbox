@@ -16,11 +16,11 @@
     "baseUrl": "./",
     "incremental": true,
     "paths": {
+      "@images/*": ["public/images/*"],
       "@hooks/*": ["src/hooks/*"],
       "@components/*": ["src/components/*"],
       "@variables": ["src/styles/variables.scss"],
-      "@styles/*": ["src/styles/pages/*"],
-      "@images/*": ["public/images/*"]
+      "@styles/*": ["src/styles/pages/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
