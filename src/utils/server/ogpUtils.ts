@@ -63,22 +63,22 @@ const createOgp = async (slug: string): Promise<void> => {
   const backgroundImage = await loadImage('public/images/ogp_background.png');
   context.drawImage(backgroundImage, DX, DY, WIDTH, HEIGHT);
 
-  registerFont('src/assets/fonts/Roboto-Regular.ttf', { family: 'roboto' });
+  registerFont('src/assets/fonts/NotoSansJP-Regular.otf', { family: 'NotoSans' });
 
   context.textAlign = 'center';
   context.textBaseline = 'middle';
 
-  context.font = '40px roboto';
+  context.font = '40px NotoSans';
   context.fillText(data.date.replace(/-/g, '/'), 1040, 580);
 
   context.fillStyle = '#aaa';
-  context.font = '40px roboto';
+  context.font = '40px NotoSans';
   context.fillText(data.date.replace(/-/g, '/'), 1040, 580);
 
-  context.font = '32px roboto';
+  context.font = '32px NotoSans';
   context.fillText("- Tsue's sandbox -", 600, 220);
 
-  context.font = 'bold 68px roboto';
+  context.font = 'bold 68px NotoSans';
   context.fillStyle = '#fff';
   //titleが長い場合に折り返す
   const lines = createTextLines(canvas, data.title);
