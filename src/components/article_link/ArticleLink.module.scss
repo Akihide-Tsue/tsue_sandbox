@@ -33,12 +33,19 @@
 }
 
 .title {
-  margin-bottom: 4px;
+  min-height: 64px;
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+.lists_title {
+  margin-bottom: 8px;
   font-size: 2rem;
 }
 
 .date {
-  margin-right: 8px;
+  margin-right: 12px;
+  line-height: 1.8;
   color: $text_gray;
 }
 
@@ -53,13 +60,15 @@
 
 .tags_wrapper {
   display: flex;
-  gap: 0 4px;
+  gap: 0 8px;
 }
 
 .tag {
-  padding: 2px 4px;
+  padding: 2px 8px;
   font-size: 1.4rem;
   color: #fff;
-  background: $black;
+  color: $black;
+  background: $gray;
+  background: #ddd;
   border-radius: 4px;
 }

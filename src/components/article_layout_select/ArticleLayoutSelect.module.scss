@@ -23,6 +23,7 @@
 .layout_selector_text {
   flex-shrink: 0;
   font-size: 1.4rem;
+  line-height: 1.4;
   color: $gray;
 
   @include media(lg) {

@@ -40,9 +40,11 @@
 }
 
 .tag {
-  padding: 3px 4px;
+  padding: 2px 8px;
   font-size: 1.4rem;
   color: #fff;
-  background: $black;
+  color: $black;
+  background: $gray;
+  background: #ddd;
   border-radius: 4px;
 }
