@@ -12,7 +12,7 @@
   }
   h2 {
     padding: 8px 16px;
-    margin: 24px 0;
+    margin: 32px 0 24px;
     font-size: 2.2rem;
     font-weight: bold;
     color: #fff;
@@ -63,12 +63,14 @@
   li code,
   td code {
     display: inline-block;
+    max-width: 100%;
     padding: 4px 8px;
-    margin: 4px 0;
+    margin: 8px 0;
     font-family: Consolas, 'Courier New', monospace;
     color: $white;
+    overflow-wrap: break-word;
     background-color: $black;
-    border-radius: 2px;
+    border-radius: 4px;
   }
   pre {
     background-color: $black !important;
@@ -151,7 +153,7 @@
   table {
     width: 100%;
     margin: 10px 0;
-    line-height: 1.5;
+    line-height: 1.6;
     border-collapse: collapse;
     border: 1px solid #b7bdbc !important;
   }
