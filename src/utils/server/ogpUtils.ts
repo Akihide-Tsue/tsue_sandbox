@@ -60,7 +60,7 @@ const createOgp = async (slug: string): Promise<void> => {
   context.fillStyle = '#fff';
   context.fillRect(DX, DY, WIDTH, HEIGHT);
 
-  const backgroundImage = await loadImage('public/images/ogp_background.jpg');
+  const backgroundImage = await loadImage('public/images/ogp_background.png');
   context.drawImage(backgroundImage, DX, DY, WIDTH, HEIGHT);
 
   registerFont('src/assets/fonts/Roboto-Regular.ttf', { family: 'roboto' });

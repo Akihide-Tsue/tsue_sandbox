@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "now-build": "cp canvas_lib64/*so.1 node_modules/canvas/build/Release/ && yarn build",
-    "start": "next start",
+    "now-build": "yum install libuuid-devel libmount-devel --skip-broken && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build",
     "lint": "next lint --dir src",
     "lint:fix": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
     "lint:style": "stylelint './**/*.{css,scss,sass}'",
@@ -30,7 +29,7 @@
     "autoprefixer": "^10.4.7",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-plugin-module-resolver": "^4.1.0",
-    "canvas": "^2.9.3",
+    "canvas": "2.6.1",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "gray-matter": "^4.0.3",
