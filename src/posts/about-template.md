@@ -64,3 +64,4 @@ tag: ['#Next.js', '#Blog']
 - github, twitter アイコン
 - コードの copy ボタン
 - Ngrock
+- RSS リーダー対応
