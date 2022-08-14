@@ -76,5 +76,5 @@ tag: [Next.js, blog]
 - ブログカード
 - テスト
 - storybook
-- デザイン改善（記事のカードとリスト切り替え）
+- デザイン改善（記事のカードとリスト切り替えを'recoil-persist'化）
 - github, twitter アイコン

@@ -1,9 +1,12 @@
+import { useState } from 'react';
+
 import fs from 'fs';
 
 import type { NextPage } from 'next';
 
 import matter from 'gray-matter';
 
+import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
 import ArticleLink from '@components/article_link/ArticleLink';
 import { PostType } from 'src/type-def/postsType';
 
@@ -35,11 +38,14 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ posts }) => {
+  const [layout, setLayout] = useState<'card' | 'list'>('card');
+
   return (
     <div>
+      <ArticleLayoutSelect layout={layout} setLayout={setLayout} />
       <div className={styles.grid_container}>
         {posts.map((post: PostType) => (
-          <ArticleLink key={post.slug} post={post} />
+          <ArticleLink key={post.slug} post={post} layout={layout} />
         ))}
       </div>
     </div>
