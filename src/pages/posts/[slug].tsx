@@ -67,8 +67,8 @@ const Article: FC<Props> = ({ frontMatter, content }) => {
         <meta property="og:image" key="ogImage" content={`${baseUrl}/ogp/${slug}.png`} />
         <meta name="twitter:image" key="twitterImage" content={`${baseUrl}/ogp/${slug}.png`} />
         <meta name="twitter:card" key="twitterCard" content="summary_large_image" />
-        <meta name="twitter:title" content={frontMatter.title} />
-        <meta name="twitter:description" content={frontMatter.description} />
+        <meta name="twitter:title" key="twitter_title" content={frontMatter.title} />
+        <meta name="twitter:description" key="twitter_description" content={frontMatter.description} />
       </Head>
 
       <div className={styles.container}>

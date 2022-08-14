@@ -33,3 +33,5 @@ https://teratail.com/questions/bh4qqnjksxelyd
 
 Vercel のビルドで gyp のエラーが出る
 Settings => General => Node.js Version
+
+日本語対応していない font だと文字化けする
