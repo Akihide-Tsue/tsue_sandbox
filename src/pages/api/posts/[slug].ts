@@ -32,8 +32,12 @@ const createOgp = async (req: NextApiRequest, res: NextApiResponse): Promise<voi
   context.textBaseline = 'middle';
   context.fillText(data.title, 600, 300);
 
+  context.fillStyle = '#aaa';
   context.font = '40px roboto';
   context.fillText(data.date.replace(/-/g, '/'), 1040, 580);
+
+  context.font = '32px roboto';
+  context.fillText("- Tsue's sandbox -", 600, 220);
 
   const buffer = canvas.toBuffer();
 

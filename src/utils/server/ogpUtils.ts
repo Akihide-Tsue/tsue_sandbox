@@ -1,6 +1,5 @@
 /* eslint-disable */
 // @ts-nocheck
-import { NextApiRequest, NextApiResponse } from 'next';
 import { createCanvas, registerFont, loadImage } from 'canvas';
 
 import * as path from 'path';
@@ -74,7 +73,12 @@ const createOgp = async (slug: string): Promise<void> => {
   context.font = '40px roboto';
   context.fillText(data.date.replace(/-/g, '/'), 1040, 580);
 
-  const buffer = canvas.toBuffer();
+  context.fillStyle = '#aaa';
+  context.font = '40px roboto';
+  context.fillText(data.date.replace(/-/g, '/'), 1040, 580);
+
+  context.font = '32px roboto';
+  context.fillText("- Tsue's sandbox -", 600, 220);
 
   const lines = createTextLines(canvas, title);
   lines.forEach((line, index) => {

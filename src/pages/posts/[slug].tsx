@@ -26,6 +26,7 @@ export const getStaticProps: ({
   const file = fs.readFileSync(`src/posts/${params.slug}.md`, 'utf-8');
   const { data, content } = matter(file);
 
+  //OGPローカル確認:http://localhost:3000/api/posts/dinamic-ogp
   void createOgp(params.slug);
   return { props: { frontMatter: data, content } };
 };
