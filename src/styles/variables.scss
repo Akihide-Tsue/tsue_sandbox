@@ -58,13 +58,6 @@ $breakpoints: (
 
 @mixin button_shadow {
   box-shadow: 0 7px 30px -10px rgb(150 170 180 / 0.5);
-
-  // @include hoverable {
-  //   &:hover {
-  //     transition: 0.2s ease-in-out;
-  //     box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.7);
-  //   }
-  // }
 }
 
 @mixin hover_color($hover_color) {
