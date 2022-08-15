@@ -61,10 +61,9 @@
     font-style: normal;
     background: linear-gradient(transparent 80%, $main_yellow 80%);
   }
+  //**文字**
   strong {
-    padding: 0 5px;
-    background: linear-gradient(transparent 0%, $main_yellow 0%);
-    border-radius: 5px;
+    color: $main_red;
   }
   p code,
   li code,
@@ -91,7 +90,7 @@
 
   ul,
   ol {
-    padding: 0 0 0.5em 1.5em;
+    padding: 0.5em 0 0.5em 1.5em;
   }
   ul > li,
   ol > li {
