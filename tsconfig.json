@@ -16,7 +16,6 @@
     "baseUrl": "./",
     "incremental": true,
     "paths": {
-      "@images/*": ["public/images/*"],
       "@hooks/*": ["src/hooks/*"],
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],

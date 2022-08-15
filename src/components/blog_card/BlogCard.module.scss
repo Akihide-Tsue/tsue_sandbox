@@ -1,8 +1,8 @@
 @use '@variables' as *;
 
 .container {
-  display: table;
   display: flex;
+  justify-content: space-between;
   width: 100%;
   margin: 16px 0;
   color: $black !important;
@@ -11,11 +11,12 @@
   border-radius: 4px;
 }
 
-.text_wrapper_small {
+.text_wrapper {
+  display: block;
   padding: 16px !important;
   padding-right: 32px;
 
-  @include media(sm) {
+  @include media(lg) {
     max-width: 60vw;
     padding: 12px !important;
   }
@@ -23,14 +24,13 @@
 
 .title {
   display: box;
+  display: box;
   max-width: 85vw;
   margin-bottom: 8px;
   overflow: hidden;
   font-size: 1.8rem;
   font-weight: 700;
   color: $black;
-  text-overflow: ellipsis;
-  word-break: break-all;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 
@@ -47,7 +47,6 @@
   overflow: hidden;
   font-size: 1.4rem;
   color: $text_gray;
-  text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 
@@ -65,9 +64,8 @@
 }
 
 .image_wrapper {
-  display: table-cell;
+  display: block;
   max-width: 300px;
-  vertical-align: middle;
 
   @include media(md) {
     max-width: 240px;
@@ -80,7 +78,17 @@
 
 .image {
   width: 100%;
+  max-width: 300px;
   height: 100%;
-  max-height: 180px;
+  max-height: 172px;
   object-fit: cover;
+
+  @include media(md) {
+    max-width: 240px;
+  }
+
+  @include media(sm) {
+    width: 140px;
+    height: auto;
+  }
 }
