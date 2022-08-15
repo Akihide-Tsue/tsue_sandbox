@@ -31,6 +31,8 @@
   font-size: 1.8rem;
   font-weight: 700;
   color: $black;
+  text-overflow: ellipsis;
+  word-break: break-all;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 
@@ -42,11 +44,14 @@
 
 .description {
   display: box;
+  display: box;
   max-width: 85vw;
   margin-bottom: 4px;
   overflow: hidden;
   font-size: 1.4rem;
   color: $text_gray;
+  text-overflow: ellipsis;
+  word-break: break-all;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 
