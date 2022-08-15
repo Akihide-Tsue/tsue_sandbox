@@ -4,7 +4,7 @@ date: '2022-08-13'
 description: '動的OGPを導入しましたので、その過程です。canvasとvercelとnodeのヴァージョン互換性に一癖ありました。'
 image: images/articles/seo_image.webp
 categories: Tech
-tag: ['#SEO']
+tag: [SEO]
 ---
 
 ## 準備

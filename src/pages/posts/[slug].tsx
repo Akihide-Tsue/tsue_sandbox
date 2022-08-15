@@ -55,7 +55,7 @@ const Article: FC<Props> = ({ frontMatter, content }) => {
   const tags = frontMatter.tag.map((tag, i) => {
     return (
       <span key={i} className={styles.tag}>
-        {tag}
+        #{tag}
       </span>
     );
   });

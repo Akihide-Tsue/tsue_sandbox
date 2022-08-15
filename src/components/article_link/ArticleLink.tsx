@@ -13,7 +13,7 @@ const ArticleLink: FC<Props> = ({ post, layout }) => {
   const tags = post.frontMatter.tag.map((tag, i) => {
     return (
       <span key={i} className={styles.tag}>
-        {tag}
+        #{tag}
       </span>
     );
   });
