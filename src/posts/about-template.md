@@ -12,14 +12,13 @@ tag: [Next.js, Blog]
 
 - Next.js(SSG)
 - TypeScript
-- husky
 - Google Analytics
 - Hotjar
 - Sentry
 - マークダウン、コードブロック表示 → MDX に変更予定
-- ESLint
-- 動的 OGP 生成
-- ブログカード(Recoil)
+- husky・ESLint・stylelint・prettier
+- 動的 OGP 自動生成
+- ブログカード生成(Recoil)
 
 ```json:package.json（一部抜粋）
     "dependencies": {
@@ -41,6 +40,7 @@ tag: [Next.js, Blog]
     "react-syntax-highlighter": "^15.5.0",
     "sass": "^1.53.0",
     "sass-loader": "^13.0.2",
+    "recoil": "^0.7.5",
     "terser-webpack-plugin": "^5.3.3"
   },
   "devDependencies": {
@@ -48,6 +48,7 @@ tag: [Next.js, Blog]
     "@types/react": "18.0.15",
     "eslint": "8.20.0",
     "stylelint": "^14.9.1",
+    "typescript": "4.7.4",
   }
 ```
 
