@@ -4,6 +4,7 @@ export type FrontMatterType = {
   description: string;
   image: string;
   categories: string;
+  draft: boolean;
   tag: string[];
 };
 

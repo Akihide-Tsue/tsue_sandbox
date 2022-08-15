@@ -4,6 +4,7 @@ date: '2022-08-12'
 description: 'このmarkdownブログでの採用技術と実装予定を書いています。'
 image: images/articles/nextjs_logo.webp
 categories: Tech
+draft: false
 tag: [Next.js, Blog]
 ---
 
@@ -61,7 +62,7 @@ tag: [Next.js, Blog]
 - テスト
 - storybook
 - デザイン改善（記事のカードとリスト切り替えを'recoil-persist'化）
-- github, twitter アイコン
+- github, twitter 共有アイコン
 - コードの copy ボタン
 - Ngrock
 - RSS リーダー対応
