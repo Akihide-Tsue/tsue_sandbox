@@ -1,7 +1,7 @@
 import { Dispatch, FC, SetStateAction } from 'react';
 
-import CardIcon from 'public/images/card_icon.svg';
-import ListIcon from 'public/images/list_icon.svg';
+import CardIcon from 'public/images/icons/card_icon.svg';
+import ListIcon from 'public/images/icons/list_icon.svg';
 
 import styles from './ArticleLayoutSelect.module.scss';
 

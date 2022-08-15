@@ -23,7 +23,7 @@ const createOgp = async (req: NextApiRequest, res: NextApiResponse): Promise<voi
   context.fillStyle = '#fff';
   context.fillRect(DX, DY, WIDTH, HEIGHT);
 
-  const backgroundImage = await loadImage('public/images/ogp_background.png');
+  const backgroundImage = await loadImage('public/images/ogp/ogp_background.png');
   context.drawImage(backgroundImage, DX, DY, WIDTH, HEIGHT);
 
   registerFont('src/assets/fonts/NotoSansJP-Regular.otf.ttf', { family: 'NotoSans' });
