@@ -28,6 +28,10 @@
   background: #fff;
 }
 
+.image {
+  object-fit: cover !important;
+}
+
 .text_wrapper {
   margin: 8px 0;
 }

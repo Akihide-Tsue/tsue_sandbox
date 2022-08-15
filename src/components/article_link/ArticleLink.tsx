@@ -24,7 +24,14 @@ const ArticleLink: FC<Props> = ({ post, layout }) => {
         <Link href={`/posts/${post.slug}`}>
           <a className={styles.cards}>
             <div className={styles.image_container}>
-              <Image src={`/${post.frontMatter.image}`} priority={true} layout="fill" objectFit="contain" alt={post.frontMatter.title} />
+              <Image
+                src={`/${post.frontMatter.image}`}
+                className={styles.image}
+                priority={true}
+                layout="fill"
+                objectFit="contain"
+                alt={post.frontMatter.title}
+              />
             </div>
 
             <div className={styles.text_wrapper}>
