@@ -25,7 +25,7 @@ const BlogCard: CodeComponent = ({ href, children }: Props) => {
 
   const convertNoImage = () => {
     if (href.startsWith('https://github.com')) {
-      return '/images/icons/github_icon.svg';
+      return '/images/posts/github_link.webp';
     } else {
       return '/images/posts/no_image.webp';
     }

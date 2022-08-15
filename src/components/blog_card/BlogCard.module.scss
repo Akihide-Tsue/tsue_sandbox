@@ -14,7 +14,6 @@
 .text_wrapper {
   display: block;
   padding: 16px !important;
-  padding-right: 32px;
 
   @include media(lg) {
     max-width: 60vw;
@@ -82,7 +81,13 @@
   background: $white;
 
   &.no_image {
-    object-fit: none;
+    object-fit: contain;
+    z-index: 2;
+
+    @include media(sm) {
+      width: 132px;
+      height: auto;
+    }
   }
 
   @include media(md) {
