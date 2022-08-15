@@ -10,15 +10,121 @@ tag: [Blog]
 
 ## ブログカードとは
 
-ブログでよく表示されている、カード型のリンクです。  
-下記に React の Document のリンクを貼りましたが、このような表示になります。  
-https://beta.reactjs.org/
-テキストリンクよりおしゃれですよね。  
-WordPress なんかだとプラグインがあるようですが、Next.js だと中々たいへんでした。  
-という訳で実装してみましょう！
+ブログでよく使われている、カード型のリンクです。  
+このブログはMarkdownで書いているのですが、  
+URLを貼ると、自動で変換されます。  
 
-## 準備
+テキストのリンクよりおしゃれですよね。  
+例えば↓こんなやつです。
+https://beta.reactjs.org/
+　
+
+WordPress なんかだとプラグインがあるようですが、Next.js だと中々たいへんでした。
+
+## 実装
+
+リンク先のmetaを読み込み、title・description・imageを表示します。  
+ビルド時にブログカード表示用の情報を取得する必要があり、  
+getStaticPropsで処理を行います。
+
+#### ブログカードの情報を取得
+
+```js:[slug].tsx
+import ReactMarkdown from 'react-markdown';
+import BlogCard from '@components/blog_card/BlogCard';
+import CodeBlock from '@components/codeblock/CodeBlock';
+import matter from 'gray-matter';
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
+
+export const getStaticProps: ({ params, }:{ params: { slug: string }; }) => = async ({ params }) => {
+  const file = fs.readFileSync(`src/posts/${params.slug}.md`, 'utf-8');
+  const { data, content } = matter(file);
+
+  const lines = content.split('\n');
+  const links: string[] | never = [];
+  // URLの取得
+  lines.map((line) => {
+    if (line.indexOf('http://') === 0) links.push(line);
+    if (line.indexOf('https://') === 0) links.push(line);
+  });
+  let cardData = [];
+
+  const temps = await Promise.all(
+    links.map(async (link) => {
+      const metas = await fetch(link)
+        .then((res) => res.text())
+        .then((text) => {
+          const metaData = {
+            url: link,
+            title: '',
+            description: '',
+            image: '',
+          };
+          const doms = new JSDOM(text);
+          const metas: any = doms.window.document.getElementsByTagName('meta');
+
+          // title, description, imageを配列にする
+          for (let i = 0; i < metas.length; i++) {
+            let pro = metas[i].getAttribute('property');
+            if (typeof pro == 'string') {
+              if (pro.match('title')) metaData.title = metas[i].getAttribute('content');
+              if (pro.match('description')) metaData.description = metas[i].getAttribute('content');
+              if (pro.match('image')) metaData.image = metas[i].getAttribute('content');
+            }
+            pro = metas[i].getAttribute('name');
+            if (typeof pro == 'string') {
+              if (pro.match('title')) metaData.title = metas[i].getAttribute('content');
+              if (pro.match('description')) metaData.description = metas[i].getAttribute('content');
+              if (pro.match('image')) metaData.image = metas[i].getAttribute('content');
+            }
+          }
+          return metaData;
+        })
+        .catch((e) => {
+          console.error('error', e);
+        });
+      return metas;
+    }),
+  );
+  cardData = temps.filter((temp) => temp !== undefined);
+
+  return { props: { frontMatter: data, content, cardData } };
+};
+
+
+const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
+  return (
+  <ReactMarkdown
+    components={{ code: CodeBlock, a: BlogCard }}//ここでBlogCardを呼んでいます！
+    className={stylesMarkdown.content}
+  />
+  )
+};
+```
 
 #### BlogCard コンポーネントを作成
 
+childrenとしてPropsを渡せないので、Recoilでstateを渡しています。  
+詳細のコードは下記をご参照下さい。  
 https://github.com/Akihide-Tsue/tsue_sandbox/blob/main/src/components/blog_card/BlogCard.tsx
+
+## おまけ
+
+BlogCardに表示するmeta情報のスタイルについて、  
+2行以上だと...でtextを省略するcssは下記の通りなのですが、  
+stylelintが自動で`display: -webkit-box; → display: box;`  
+と訂正しており、解決に時間を取られました。  
+困る。
+
+```css:BlogCard.module.scss
+.meta_title {
+  /* stylelint-disable-next-line */
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}
+```

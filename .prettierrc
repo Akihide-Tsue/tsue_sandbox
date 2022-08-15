@@ -17,6 +17,25 @@
       "options": {
         "parser": "json"
       }
+    },
+    {
+      "files": [
+        "*.md",
+        "README"
+      ],
+      "options": {
+        "parser": "markdown-nocjsp",
+        "plugins": "./.config/yarn/global/node_modules/prettier-plugin-md-nocjsp"
+      }
+    },
+    {
+      "files": [
+        "*.mdx"
+      ],
+      "options": {
+        "parser": "mdx-nocjsp",
+        "plugins": "./.config/yarn/global/node_modules/prettier-plugin-md-nocjsp"
+      }
     }
   ]
 }
