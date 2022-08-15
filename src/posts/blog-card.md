@@ -10,22 +10,23 @@ tag: [Blog]
 
 ## ブログカードとは
 
-ブログでよく使われている、カード型のリンクです。  
-このブログはMarkdownで書いているのですが、  
-URLを貼ると、自動で変換されます。  
+ブログでよく見かける、カード型のリンクです。  
+このブログは Markdown で書いているのですが、  
+URL を貼ると、自動で変換されます。
+
+　
 
 テキストのリンクよりおしゃれですよね。  
-例えば↓こんなやつです。
+例えば ↓ こんなやつです。
 https://beta.reactjs.org/
-　
 
 WordPress なんかだとプラグインがあるようですが、Next.js だと中々たいへんでした。
 
 ## 実装
 
-リンク先のmetaを読み込み、title・description・imageを表示します。  
+リンク先の meta を読み込み、title・description・image を表示します。  
 ビルド時にブログカード表示用の情報を取得する必要があり、  
-getStaticPropsで処理を行います。
+getStaticProps で処理を行います。
 
 #### ブログカードの情報を取得
 
@@ -105,15 +106,15 @@ const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
 
 #### BlogCard コンポーネントを作成
 
-childrenとしてPropsを渡せないので、Recoilでstateを渡しています。  
+children として Props を渡せないので、Recoil で state を渡しています。  
 詳細のコードは下記をご参照下さい。  
 https://github.com/Akihide-Tsue/tsue_sandbox/blob/main/src/components/blog_card/BlogCard.tsx
 
 ## おまけ
 
-BlogCardに表示するmeta情報のスタイルについて、  
-2行以上だと...でtextを省略するcssは下記の通りなのですが、  
-stylelintが自動で`display: -webkit-box; → display: box;`  
+BlogCard に表示する meta 情報のスタイルについて、  
+2 行以上だと...で text を省略する css は下記の通りなのですが、  
+stylelint が自動で`display: -webkit-box; → display: box;`  
 と訂正しており、解決に時間を取られました。  
 困る。
 
