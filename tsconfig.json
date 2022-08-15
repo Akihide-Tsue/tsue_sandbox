@@ -19,6 +19,7 @@
       "@images/*": ["public/images/*"],
       "@hooks/*": ["src/hooks/*"],
       "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
       "@variables": ["src/styles/variables.scss"],
       "@styles/*": ["src/styles/pages/*"]
     }

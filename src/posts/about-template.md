@@ -64,5 +64,4 @@ tag: [Next.js, Blog]
 - デザイン改善（記事のカードとリスト切り替えを'recoil-persist'化）
 - github, twitter 共有アイコン
 - コードの copy ボタン
-- Ngrock
 - RSS リーダー対応
