@@ -13,13 +13,13 @@ tag: [Next.js, Blog]
 - Next.js(SSG)
 - TypeScript
 - husky
-- google analytics
+- Google Analytics
 - Hotjar
 - Sentry
 - マークダウン、コードブロック表示 → MDX に変更予定
-- Prettier
 - ESLint
 - 動的 OGP 生成
+- ブログカード(Recoil)
 
 ```json:package.json（一部抜粋）
     "dependencies": {
@@ -58,7 +58,6 @@ tag: [Next.js, Blog]
 - 記事のタグ付け・分類・個数表示・絞り込み（フロント → バックエンドに管理移行）
 - AMP 対応
 - PWA 対応
-- ブログカード導入
 - テスト
 - storybook
 - デザイン改善（記事のカードとリスト切り替えを'recoil-persist'化）
