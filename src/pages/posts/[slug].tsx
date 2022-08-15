@@ -105,7 +105,6 @@ export const getStaticPaths = async () => {
 type Props = { frontMatter: FrontMatterType; content: string; cardData: any };
 
 const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
-  console.log('cardData', cardData);
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? '';
   const router = useRouter();
   const { slug } = router.query;

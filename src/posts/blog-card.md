@@ -114,8 +114,8 @@ https://github.com/Akihide-Tsue/tsue_sandbox/blob/main/src/components/blog_card/
 
 BlogCard に表示する meta 情報のスタイルについて、  
 2 行以上だと...で text を省略する css は下記の通りなのですが、  
-stylelint が自動で`display: -webkit-box; → display: box;`  
-と訂正しており、解決に時間を取られました。  
+stylelint が自動で  `display: -webkit-box; → display: box;`  
+と書き換えており、解決に時間を取られました。  
 困る。
 
 ```css:BlogCard.module.scss
