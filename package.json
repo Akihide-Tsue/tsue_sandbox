@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "now-build": "yum install libuuid-devel libmount-devel --skip-broken && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build && next export && next-sitemap --config sitemap.config.js",
-    "postbuild": "next-sitemap",
+    "now-build": "yum install libuuid-devel libmount-devel --skip-broken && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build",
     "lint": "next lint --dir src",
     "lint:fix": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
     "lint:style": "stylelint './**/*.{css,scss,sass}'",
@@ -57,7 +56,6 @@
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.2",
     "eslint-config-prettier": "8.5.0",
-    "next-sitemap": "^3.1.17",
     "postcss": "8",
     "prettier": "2.7.1",
     "stylelint": "^14.9.1",
