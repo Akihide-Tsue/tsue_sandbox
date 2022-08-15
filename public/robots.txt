@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://tsue-sandbox.vercel.app
+
+# Sitemaps
+Sitemap: https://tsue-sandbox.vercel.app/sitemap.xml

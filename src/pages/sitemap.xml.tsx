@@ -16,7 +16,7 @@ export async function getServerSideProps({ res }: GetServerSidePropsContext): Pr
       {
         loc: 'https://google.com/',
         lastMod: new Date(1651530657000),
-        freq: 'hourly',
+        freq: 'daily',
         priority: 0.5,
       },
     ];
