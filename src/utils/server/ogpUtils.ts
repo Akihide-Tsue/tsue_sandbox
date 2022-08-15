@@ -60,7 +60,7 @@ const createOgp = async (slug: string): Promise<void> => {
   context.fillStyle = '#fff';
   context.fillRect(DX, DY, WIDTH, HEIGHT);
 
-  const backgroundImage = await loadImage('public/images/ogp/ogp_background.png');
+  const backgroundImage = await loadImage('public/ogp/ogp_background.png');
   context.drawImage(backgroundImage, DX, DY, WIDTH, HEIGHT);
 
   registerFont('src/assets/fonts/NotoSansJP-Regular.otf', { family: 'NotoSans' });
