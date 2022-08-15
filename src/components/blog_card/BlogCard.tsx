@@ -23,6 +23,14 @@ const BlogCard: CodeComponent = ({ href, children }: Props) => {
   // eslint-disable-next-line
   const target = state.find((meta: any) => meta.url == href);
 
+  const convertNoImage = () => {
+    if (href.startsWith('https://github.com')) {
+      return '/images/icons/github_icon.svg';
+    } else {
+      return '/images/posts/no_image.webp';
+    }
+  };
+
   if (target) {
     return (
       <Link href={href} passHref>
@@ -35,11 +43,11 @@ const BlogCard: CodeComponent = ({ href, children }: Props) => {
           {target.image || disabled ? (
             <img
               src={target.image}
-              className={`${disabled ? styles.image : styles.image}`}
+              className={`${styles.image} ${disabled && styles.no_image}`}
               onError={({ currentTarget }) => {
                 currentTarget.onerror = null;
                 setDisabled(true);
-                currentTarget.src = '/images/icons/no_image.webp';
+                currentTarget.src = convertNoImage();
               }}
               alt=""
             />
