@@ -69,3 +69,12 @@ $breakpoints: (
     }
   }
 }
+
+@mixin text_hidden($lines) {
+  display: box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}
