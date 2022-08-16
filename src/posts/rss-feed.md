@@ -15,11 +15,7 @@ tag: [Blog]
 技術ブログを読む側としてはRSSに対応していないと萎えるので、早速対応しました。  
 フォローよろしくお願いします。
 
-　
-
 ![feedlyでの表示例](/images/posts/feedly_sample.webp)
-
-　
 
 それと、markdownをhtmlに変換するライブラリを調べていた所、
 [zenn-markdown-html](https://github.com/zenn-dev/zenn-editor#readme)というのがありまして、  
@@ -134,11 +130,12 @@ export const getStaticProps = () => {
 };
 ```
 
-そうすると、下記の3つのファイルが生成されるので完成です。
+そうすると、build時に下記の3つのファイルが生成されるので完成です。
 - [/rss/feed.xml](https://tsue-sandbox.vercel.app/rss/feed.xml)
 - [/rss/atom.xml](https://tsue-sandbox.vercel.app/rss/atom.xml)
 - [/rss/feed.json](https://tsue-sandbox.vercel.app/rss/feed.json)
 
+　
 
 コンフリクトするのでgitignoreを忘れずに。
 ```json:.gitignore
