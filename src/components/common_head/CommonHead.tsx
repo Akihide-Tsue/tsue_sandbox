@@ -34,8 +34,8 @@ const CommonHead: FC = ({}) => {
       <meta property="twitter:description" content={metaDescription} />
 
       {process.env.NEXT_PUBLIC_APP_ENV !== 'production' && <meta name="robots" content="noindex" />}
-      <link rel="icon" href="public/images/icons/apple-touch-icon.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="public/images/icons/apple-touch-icon.png" />
+      <link rel="icon" href="/images/icons/apple-touch-icon.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png" />
     </Head>
   );
 };

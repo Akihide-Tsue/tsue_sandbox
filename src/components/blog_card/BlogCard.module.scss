@@ -85,7 +85,12 @@
     z-index: 2;
 
     @include media(sm) {
-      width: 132px;
+      width: 140px;
+      height: auto;
+    }
+
+    @include media(ssm) {
+      width: 112px;
       height: auto;
     }
   }
