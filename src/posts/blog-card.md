@@ -5,7 +5,7 @@ description: 'ブログカードの生成って意外と大変。ブログカー
 image: images/articles/blog_card.webp
 categories: Tech
 draft: false
-tag: [Blog]
+tag: [FrontEnd]
 ---
 
 ## ブログカードとは
