@@ -1,5 +1,5 @@
 ---
-title: 'RSS feedを導入した件'
+title: 'RSS feedを導入しました'
 date: '2022-08-16'
 description: 'Next.jsで簡単RSS導入'
 image: images/articles/rss_feed.webp
@@ -139,6 +139,14 @@ export const getStaticProps = () => {
 - [/rss/atom.xml](https://tsue-sandbox.vercel.app/rss/atom.xml)
 - [/rss/feed.json](https://tsue-sandbox.vercel.app/rss/feed.json)
 
+
+コンフリクトするのでgitignoreを忘れずに。
+```json:.gitignore
+# rss feed
+/public/rss/atom.xml
+/public/rss/feed.json
+/public/rss/feed.xml
+```
 
 
 ---
