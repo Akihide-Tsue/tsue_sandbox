@@ -17,8 +17,10 @@ tag: [Next.js, Blog]
 - Sentry
 - マークダウン、コードブロック表示 → MDX に変更予定
 - husky・ESLint・stylelint・prettier
-- 動的 OGP 自動生成
+- 動的OGP自動生成
 - ブログカード生成(Recoil)
+- RSSリーダー対応
+
 
 ```json:package.json（一部抜粋）
     "dependencies": {
@@ -52,6 +54,9 @@ tag: [Next.js, Blog]
   }
 ```
 
+コードは全てGitHubに公開しています。
+https://github.com/Akihide-Tsue/tsue_sandbox#readme
+
 ## TODO
 
 - ダークモード(Recoil)
@@ -64,4 +69,3 @@ tag: [Next.js, Blog]
 - デザイン改善（記事のカードとリスト切り替えを'recoil-persist'化）
 - github, twitter 共有アイコン
 - コードの copy ボタン
-- RSS リーダー対応
