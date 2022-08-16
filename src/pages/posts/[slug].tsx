@@ -33,7 +33,7 @@ export const getStaticProps: ({
   const file = fs.readFileSync(`src/posts/${params.slug}.md`, 'utf-8');
   const { data, content } = matter(file);
 
-  //OGPローカル確認:http://localhost:3000/api/posts/dinamic-ogp
+  //OGPローカル確認:http://localhost:3000/api/posts/dynamic-ogp
   void createOgp(params.slug);
 
   //ブログカード生成

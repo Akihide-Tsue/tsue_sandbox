@@ -1,6 +1,6 @@
 /* eslint-disable */
 // @ts-nocheck
-//ローカル用：http://localhost:3000/api/posts/dinamic-ogp
+//ローカル用：http://localhost:3000/api/posts/dynamic-ogp
 import { NextApiRequest, NextApiResponse } from 'next';
 import { createCanvas, registerFont, loadImage } from 'canvas';
 
@@ -33,12 +33,12 @@ const createOgp = async (req: NextApiRequest, res: NextApiResponse): Promise<voi
   context.textBaseline = 'middle';
   context.fillText(data.title, 600, 300);
 
-  context.fillStyle = '#aaa';
+  context.fillStyle = '#bbb';
   context.font = '40px NotoSans';
   context.fillText(data.date.replace(/-/g, '/'), 1040, 580);
 
-  context.font = '32px NotoSans';
-  context.fillText("- Tsue's sandbox -", 600, 220);
+  context.font = '36px NotoSans';
+  context.fillText("- Tsue's sandbox -", 600, 200);
 
   const buffer = canvas.toBuffer();
 
