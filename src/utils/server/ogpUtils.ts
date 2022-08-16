@@ -1,9 +1,8 @@
 /* eslint-disable */
-// @ts-nocheck
-import { createCanvas, registerFont, loadImage } from 'canvas';
-
-import * as path from 'path';
 import fs from 'fs';
+import * as path from 'path';
+
+import { createCanvas, registerFont, loadImage, Canvas } from 'canvas';
 import matter from 'gray-matter';
 
 interface SeparatedText {
