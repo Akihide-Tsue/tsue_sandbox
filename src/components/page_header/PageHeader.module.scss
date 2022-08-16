@@ -5,8 +5,7 @@
   top: 0;
   z-index: 2;
   width: 100%;
-  background: rgb(255 255 255 / 0.5);
-  background-color: hsl(0deg 0% 100% / 0.5);
+  background: hsl(0deg 0% 100% / 0.5);
   box-shadow: 0 32px 30px -15px rgb(53 47 47 / 0.25);
   transition: all 0.15s ease-out;
   backdrop-filter: saturate(180%) blur(10px);
