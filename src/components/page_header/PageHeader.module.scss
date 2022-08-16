@@ -32,7 +32,13 @@
 }
 
 .icon_wrapper {
-  display: block;
+  display: flex;
+  gap: 0 24px;
+  margin-bottom: 2px;
+
+  @include media(sm) {
+    gap: 0 16px;
+  }
 }
 
 .icon {
