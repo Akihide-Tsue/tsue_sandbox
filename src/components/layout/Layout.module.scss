@@ -2,7 +2,7 @@
   max-width: 1000px;
   //PageHeaderとPageFooterを引く
   min-height: calc(100vh - 40px - 40px);
-  padding: 24px 24px 48px;
+  padding: 64px 24px 48px;
   margin: 0 auto;
 
   @include media(lg) {

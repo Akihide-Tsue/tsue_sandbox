@@ -15,7 +15,7 @@ tag: [Next.js, FrontEnd]
 - Google Analytics
 - Hotjar
 - Sentry
-- マークダウン、コードブロック表示 → MDX に変更予定
+- マークダウン、コードブロック表示
 - husky・ESLint・stylelint・prettier
 - 動的OGP自動生成
 - ブログカード生成(Recoil)
@@ -59,13 +59,17 @@ https://github.com/Akihide-Tsue/tsue_sandbox#readme
 
 ## TODO
 
-- ダークモード(Recoil)
+- markdownをMDXに変更
+- ダークモード(recoil-persist)
 - いいね・コメント機能（NestJs & MongoDB）
 - 記事のタグ付け・分類・個数表示・絞り込み（フロント → バックエンドに管理移行）
 - AMP 対応
 - PWA 対応
 - テスト
 - storybook
-- デザイン改善（記事のカードとリスト切り替えを'recoil-persist'化）
-- github, twitter 共有アイコン
+- デザイン改善（記事のカードとリスト切り替えをrecoil-persist化）
+- ヘッダーをスクロールで非表示
+- twitter 共有アイコン
 - コードの copy ボタン
+- zenn-markdown-htmlで目次生成
+- ページネーション

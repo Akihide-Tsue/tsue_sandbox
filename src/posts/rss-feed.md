@@ -18,8 +18,7 @@ tag: [Blog]
 ![feedlyでの表示例](/images/posts/feedly_sample.webp)
 
 それと、markdownをhtmlに変換するライブラリを調べていた所、
-[zenn-markdown-html](https://github.com/zenn-dev/zenn-editor#readme)というのがありまして、  
-今回はこちらを使用しました。  
+[zenn-markdown-html](https://github.com/zenn-dev/zenn-editor#readme)というのがありまして、今回はこちらを使用しました。  
 次回は、これを使ってブログの目次を表示したいと思います。
 
 ## 実装

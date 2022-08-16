@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
+import { useShowHeader } from '@hooks/useScrollPosition';
 import FeesIcon from 'public/images/icons/feed_icon.svg';
 import GithubIcon from 'public/images/icons/github_icon.svg';
 import TwitterIcon from 'public/images/icons/twitter_icon.svg';
@@ -9,8 +10,10 @@ import TwitterIcon from 'public/images/icons/twitter_icon.svg';
 import styles from './PageHeader.module.scss';
 
 const PageHeader: FC = ({}) => {
+  const showHeader = useShowHeader();
+
   return (
-    <div className={styles.header}>
+    <div className={`${styles.header} ${!showHeader && styles.hide}`}>
       <div className={styles.header_inner}>
         <Link href={`/`} passHref>
           <a>
