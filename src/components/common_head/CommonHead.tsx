@@ -2,11 +2,9 @@ import { FC } from 'react';
 
 import Head from 'next/head';
 
+import { metaDescription, metaTitle } from '@constants';
+
 import { useWindowSize } from '@hooks/useWindowSize';
-
-const metaTitle = '津江のサンドボックス｜大阪の不動産テックで働くフロントエンドエンジニアのブログ';
-
-const metaDescription = '大阪の不動産テックで働くフロントエンドエンジニアのブログです。日頃の学びをアウトプットしています。';
 
 const CommonHead: FC = ({}) => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? '';

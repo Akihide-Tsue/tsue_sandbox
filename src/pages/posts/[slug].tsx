@@ -119,7 +119,6 @@ const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
   });
 
   useEffect(() => {
-    // eslint-disable-next-line
     setLinks(cardData);
   }, []);
 
@@ -143,12 +142,7 @@ const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
           <span className={styles.post_date}>{frontMatter.date}</span>
           <span className={styles.tags_wrapper}>{tags}</span>
         </div>
-        <ReactMarkdown
-          // eslint-disable-next-line
-          components={{ code: CodeBlock, a: BlogCard }}
-          remarkPlugins={[remarkGfm]}
-          className={stylesMarkdown.content}
-        >
+        <ReactMarkdown components={{ code: CodeBlock, a: BlogCard }} remarkPlugins={[remarkGfm]} className={stylesMarkdown.content}>
           {content}
         </ReactMarkdown>
       </div>

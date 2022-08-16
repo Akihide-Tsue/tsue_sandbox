@@ -70,7 +70,6 @@ export const usePageView = () => {
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_APP_ENV === 'production_server' || process.env.NEXT_PUBLIC_APP_ENV === 'development_server') {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       hotjar.initialize(Number(process.env.NEXT_PUBLIC_HOTJAR_ID), Number(process.env.NEXT_PUBLIC_HOTJAR_SV));
     }
   }, []);

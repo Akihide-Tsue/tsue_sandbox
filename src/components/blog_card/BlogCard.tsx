@@ -1,5 +1,6 @@
+import { useState } from 'react';
+
 import Link from 'next/link';
-/* eslint-disable */
 
 // @ts-ignore
 import { CodeComponent } from 'react-markdown/src/ast-to-react';
@@ -8,7 +9,6 @@ import { useRecoilValue } from 'recoil';
 import { currentArticleLinks } from 'src/recoil/atoms/currentArticleLinks';
 
 import styles from './BlogCard.module.scss';
-import { useState } from 'react';
 
 interface Props {
   href: string;
@@ -20,7 +20,6 @@ const BlogCard: CodeComponent = ({ href, children }: Props) => {
   const currentArticleLink = useRecoilValue(currentArticleLinks);
   const state = currentArticleLink;
 
-  // eslint-disable-next-line
   const target = state.find((meta: any) => meta.url == href);
 
   const convertNoImage = () => {

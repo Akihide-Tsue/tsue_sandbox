@@ -4,6 +4,8 @@ import { Feed } from 'feed';
 import matter from 'gray-matter';
 import markdownToHtml from 'zenn-markdown-html';
 
+import { metaDescription } from '@constants';
+
 import { FrontMatterType } from 'src/type-def/postsType';
 
 const generatedRssFeed = (): void => {
@@ -19,7 +21,7 @@ const generatedRssFeed = (): void => {
   // デフォルトになる feed の情報
   const feed = new Feed({
     title: "津江's sandbox",
-    description: process.env.NEXT_PUBLIC_BASE_DISC,
+    description: metaDescription,
     id: baseUrl,
     link: baseUrl,
     language: 'ja',
