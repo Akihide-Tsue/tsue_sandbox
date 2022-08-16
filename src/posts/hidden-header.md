@@ -1,5 +1,5 @@
 ---
-title: 'スクロールでヘッダー表示を切り替えるhooks'
+title: 'スクロールに合わせて表示を切替えるhooks'
 date: '2022-08-16'
 description: 'スクロールでヘッダーの表示・非表示を切り替えるhooksを実装しました。'
 image: images/articles/browser.webp
