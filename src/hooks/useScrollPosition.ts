@@ -34,14 +34,14 @@ export function useScrollPosition(): ScrollPosition {
   return position;
 }
 
-export const useShowHeader = (minHeight: number): boolean => {
+export const useShowHeader = (visibleHeight: number): boolean => {
   const [showHeader, setShowHeader] = useState(true);
   const [position, setPosition] = useState<number | void>(0);
   const current = useScrollPosition();
 
   useEffect(() => {
     setPosition(() => {
-      setShowHeader(current.y < minHeight || position > current.y);
+      setShowHeader(current.y < visibleHeight || position > current.y);
     });
 
     setPosition(current.y);

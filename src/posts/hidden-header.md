@@ -13,7 +13,7 @@ tag: [FrontEnd]
 ヘッダーを隠す方法を探していた所、下記のライブラリを見つけました。
 https://github.com/neo/react-use-scroll-position
 こちらを参考にヘッダーを隠すhooksを作成しましたので共有します。  
-180px(引数で渡す値)以上スクロールすると非表示になり、上にスクロールすると表示されます。
+180px（引数で渡す値）以上スクロールすると非表示になり、上にスクロールすると表示されます。
 
 ## 実装
 ```js:hooks/useScrollPosition.ts
@@ -53,14 +53,14 @@ export function useScrollPosition(): ScrollPosition {
   return position;
 }
 
-export const useShowHeader = (minHeight: number): boolean => {
+export const useShowHeader = (visibleHeight: number): boolean => {
   const [showHeader, setShowHeader] = useState(true);
   const [position, setPosition] = useState<number | void>(0);
   const current = useScrollPosition();
 
   useEffect(() => {
     setPosition(() => {
-      setShowHeader(current.y < minHeight || position > current.y);
+      setShowHeader(current.y < visibleHeight || position > current.y);
     });
 
     setPosition(current.y);
@@ -78,7 +78,7 @@ export const useShowHeader = (minHeight: number): boolean => {
 　
 
 ちなみに、headerのcssはこのようになっています。
-```css:header.module.scss
+```css:Header.module.scss
 .header {
   position: fixed;
   top: 0;
