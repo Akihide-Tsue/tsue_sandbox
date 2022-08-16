@@ -17,7 +17,11 @@ const PageHeader: FC = ({}) => {
         </Link>
 
         <div className={styles.icon_wrapper}>
-          <FeesIcon width={24} height={24} className={styles.icon} />
+          <Link href={`/rss/feed.xml`} passHref>
+            <a target="_blank">
+              <FeesIcon width={24} height={24} className={styles.icon} />
+            </a>
+          </Link>
         </div>
       </div>
     </div>
