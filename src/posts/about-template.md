@@ -12,12 +12,12 @@ tag: [Next.js, FrontEnd]
 
 - Next.js(SSG)
 - TypeScript
+- husky・ESLint・stylelint・prettier
+- 動的OGP自動生成
+- マークダウン、コードブロック表示
 - Google Analytics
 - Hotjar
 - Sentry
-- マークダウン、コードブロック表示
-- husky・ESLint・stylelint・prettier
-- 動的OGP自動生成
 - ブログカード生成(Recoil)
 - RSSリーダー対応
 

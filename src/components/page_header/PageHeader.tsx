@@ -10,7 +10,7 @@ import TwitterIcon from 'public/images/icons/twitter_icon.svg';
 import styles from './PageHeader.module.scss';
 
 const PageHeader: FC = ({}) => {
-  const showHeader = useShowHeader();
+  const showHeader = useShowHeader(180);
 
   return (
     <div className={`${styles.header} ${!showHeader && styles.hidden}`}>
