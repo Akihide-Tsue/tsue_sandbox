@@ -11,7 +11,7 @@ tag: [Blog]
 
 ## RSSについて
 ブログと言えばRSS、RSSといえばブログですが、RSSリーダーは何を使ってますか？  
-僕は[innoreader](https://jp.inoreader.com/)派です。昔は[feedly](https://feedly.com/)を使っていました。  
+僕は[innoreader](https://jp.inoreader.com/search/feeds/https%3A%2F%2Ftsue-sandbox.vercel.app%2F)派です。昔は[feedly](https://feedly.com/i/discover/sources/search/feed/https%3A%2F%2Ftsue-sandbox.vercel.app%2F)を使っていました。  
 技術ブログを読む側としてはRSSに対応していないと萎えるので、早速対応しました。  
 フォローよろしくお願いします。
 
@@ -107,7 +107,7 @@ const generatedRssFeed = (): void => {
 
 export default generatedRssFeed;
 ```
-あとは関数をindex.tsxのgetStaticProps内で使うだけでです。
+あとは関数をindex.tsxのgetStaticProps内で使うだけです。
 
 ```js:src/pages/index.tsx
 import generatedRssFeed from 'src/lib/feed';
@@ -135,7 +135,6 @@ export const getStaticProps = () => {
 ```
 
 そうすると、下記の3つのファイルが生成されるので完成です。
-<!--TODO MDX対応 URLは環境変数をimport-->
 - [/rss/feed.xml](https://tsue-sandbox.vercel.app/rss/feed.xml)
 - [/rss/atom.xml](https://tsue-sandbox.vercel.app/rss/atom.xml)
 - [/rss/feed.json](https://tsue-sandbox.vercel.app/rss/feed.json)
