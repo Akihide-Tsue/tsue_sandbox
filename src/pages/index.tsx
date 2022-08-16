@@ -8,6 +8,7 @@ import matter from 'gray-matter';
 
 import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
 import ArticleLink from '@components/article_link/ArticleLink';
+import generatedRssFeed from 'src/lib/feed';
 import { PostType } from 'src/type-def/postsType';
 
 import styles from '@styles/index.module.scss';
@@ -25,6 +26,8 @@ export const getStaticProps = () => {
   });
 
   const sortedPosts = posts.sort((postA, postB) => (new Date(postA.frontMatter.date as Date) > new Date(postB.frontMatter.date as Date) ? -1 : 1));
+
+  generatedRssFeed();
 
   return {
     props: {

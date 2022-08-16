@@ -71,12 +71,12 @@ const createOgp = async (slug: string): Promise<void> => {
   context.font = '40px NotoSans';
   context.fillText(data.date.replace(/-/g, '/'), 1040, 580);
 
-  context.fillStyle = '#aaa';
+  context.fillStyle = '#bbb';
   context.font = '40px NotoSans';
   context.fillText(data.date.replace(/-/g, '/'), 1040, 580);
 
-  context.font = '32px NotoSans';
-  context.fillText("- Tsue's sandbox -", 600, 220);
+  context.font = '36px NotoSans';
+  context.fillText("- Tsue's sandbox -", 600, 200);
 
   context.font = 'bold 68px NotoSans';
   context.fillStyle = '#fff';
