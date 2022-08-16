@@ -53,14 +53,17 @@ const generatedRssFeed = (): void => {
     const url = `${baseUrl}/posts/${post.slug}`;
     const content = markdownToHtml(post.content);
 
-    feed.addItem({
-      title: post.frontMatter.title,
-      description: post.frontMatter.description,
-      id: url,
-      link: url,
-      content: content,
-      date: new Date(post.frontMatter.date),
-    });
+    //ドラフトは除く
+    if (post.frontMatter.draft === false) {
+      feed.addItem({
+        title: post.frontMatter.title,
+        description: post.frontMatter.description,
+        id: url,
+        link: url,
+        content: content,
+        date: new Date(post.frontMatter.date),
+      });
+    }
   });
 
   // フィード情報を public/rss 配下にディレクトリを作って保存
