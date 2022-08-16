@@ -1,11 +1,12 @@
 /* eslint-disable */
-//ローカル用：http://localhost:3000/api/posts/dynamic-ogp
-import { NextApiRequest, NextApiResponse } from 'next';
-import { createCanvas, registerFont, loadImage } from 'canvas';
-
 import fs from 'fs';
+
+import { NextApiRequest, NextApiResponse } from 'next';
+
+import { createCanvas, registerFont, loadImage } from 'canvas';
 import matter from 'gray-matter';
 
+//ローカル用：http://localhost:3000/api/posts/dynamic-ogp
 const createOgp = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   const slug = req.query.slug;
   const file = fs.readFileSync(`src/posts/${slug}.md`, 'utf-8');
