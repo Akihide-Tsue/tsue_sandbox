@@ -36,5 +36,11 @@ yarn-error.log*
 
 # other
 next-env.d.ts
+
 # Sentry
 .sentryclirc
+
+# rss feed
+/public/rss/atom.xml
+/public/rss/feed.json
+/public/rss/feed.xml
