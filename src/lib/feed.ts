@@ -2,10 +2,11 @@ import fs from 'fs';
 
 import { Feed } from 'feed';
 import matter from 'gray-matter';
+import markdownToHtml from 'zenn-markdown-html';
 
 import { FrontMatterType } from 'src/type-def/postsType';
 
-function generatedRssFeed(): void {
+const generatedRssFeed = (): void => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '';
   const date = new Date();
   // author の情報を書き換える
@@ -17,7 +18,7 @@ function generatedRssFeed(): void {
 
   // デフォルトになる feed の情報
   const feed = new Feed({
-    title: process.env.NEXT_PUBLIC_BASE_NAME || '',
+    title: "津江's sandbox",
     description: process.env.NEXT_PUBLIC_BASE_DISC,
     id: baseUrl,
     link: baseUrl,
@@ -48,12 +49,14 @@ function generatedRssFeed(): void {
   posts.forEach((post) => {
     // post のプロパティ情報は使用しているオブジェクトの形式に合わせる
     const url = `${baseUrl}/posts/${post.slug}`;
+    const content = markdownToHtml(post.content);
+
     feed.addItem({
       title: post.frontMatter.title,
       description: post.frontMatter.description,
       id: url,
       link: url,
-      content: post.content,
+      content: content,
       date: new Date(post.frontMatter.date),
     });
   });
@@ -63,6 +66,6 @@ function generatedRssFeed(): void {
   fs.writeFileSync('./public/rss/feed.xml', feed.rss2());
   fs.writeFileSync('./public/rss/atom.xml', feed.atom1());
   fs.writeFileSync('./public/rss/feed.json', feed.json1());
-}
+};
 
 export default generatedRssFeed;
