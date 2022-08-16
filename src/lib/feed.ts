@@ -15,7 +15,7 @@ const generatedRssFeed = (): void => {
   const author = {
     name: 'Tsue',
     email: 'akihide.tsue@gmail.com',
-    link: 'https://tsue-sandbox.vercel.app/',
+    link: process.env.NEXT_PUBLIC_SITE_HOME,
   };
 
   // デフォルトになる feed の情報
