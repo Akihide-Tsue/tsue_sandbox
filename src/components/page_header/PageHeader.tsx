@@ -13,7 +13,7 @@ const PageHeader: FC = ({}) => {
   const showHeader = useShowHeader();
 
   return (
-    <div className={`${styles.header} ${!showHeader && styles.hide}`}>
+    <div className={`${styles.header} ${!showHeader && styles.hidden}`}>
       <div className={styles.header_inner}>
         <Link href={`/`} passHref>
           <a>

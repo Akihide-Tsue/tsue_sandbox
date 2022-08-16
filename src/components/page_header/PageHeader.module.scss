@@ -11,7 +11,7 @@
   transition: all 0.15s ease-out;
   backdrop-filter: saturate(180%) blur(10px);
 
-  &.hide {
+  &.hidden {
     top: -40px;
   }
 }
