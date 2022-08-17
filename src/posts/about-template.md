@@ -18,9 +18,10 @@ tag: [Next.js, FrontEnd]
 - Google Analytics
 - Hotjar
 - Sentry
-- ブログカード生成(Recoil)
-- RSSリーダー対応
-
+- [ブログカード生成(Recoil)](https://tsue-sandbox.vercel.app/posts/blog-card)
+- [RSSリーダー対応](https://tsue-sandbox.vercel.app/posts/rss-feed)
+- [ヘッダーをスクロールで非表示](https://tsue-sandbox.vercel.app/posts/hidden-header)
+- [twitterの記事をシェアボタン]()
 
 ```json:package.json（一部抜粋）
     "dependencies": {
@@ -68,8 +69,6 @@ https://github.com/Akihide-Tsue/tsue_sandbox#readme
 - テスト
 - storybook
 - デザイン改善（記事のカードとリスト切り替えをrecoil-persist化）
-- ヘッダーをスクロールで非表示
-- twitter 共有アイコン
 - コードの copy ボタン
 - zenn-markdown-htmlで目次生成
 - ページネーション
