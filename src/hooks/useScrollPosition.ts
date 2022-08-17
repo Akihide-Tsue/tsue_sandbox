@@ -44,10 +44,7 @@ export const useShowComponent = (visibleHeight: number): boolean => {
   const current = useScrollPosition();
 
   useEffect(() => {
-    setPosition(() => {
-      setIsVisible(current.y < visibleHeight || position > current.y);
-    });
-
+    setIsVisible(current.y < visibleHeight || position > current.y);
     setPosition(current.y);
   }, [current.y]);
 

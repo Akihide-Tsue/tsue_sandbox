@@ -61,6 +61,11 @@
     color: $gray;
     background: $white;
     border-left: 4px solid $gray;
+
+    a {
+      color: $link_text;
+      // color: $gray;
+    }
   }
 
   a {

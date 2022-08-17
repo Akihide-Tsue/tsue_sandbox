@@ -59,10 +59,7 @@ export const useShowHeader = (visibleHeight: number): boolean => {
   const current = useScrollPosition();
 
   useEffect(() => {
-    setPosition(() => {
-      setShowHeader(current.y < visibleHeight || position > current.y);
-    });
-
+    setShowHeader(current.y < visibleHeight || position > current.y);
     setPosition(current.y);
   }, [current.y]);
 
