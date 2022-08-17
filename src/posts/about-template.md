@@ -21,6 +21,7 @@ tag: [Next.js, FrontEnd]
 - [ブログカード生成(Recoil)](https://tsue-sandbox.vercel.app/posts/blog-card)
 - [RSSリーダー対応](https://tsue-sandbox.vercel.app/posts/rss-feed)
 - [ヘッダーをスクロールで非表示](https://tsue-sandbox.vercel.app/posts/hidden-header)
+- [PWA対応](https://tsue-sandbox.vercel.app/posts/pwa)
 - [twitterの記事をシェアボタン]()
 
 ```json:package.json（一部抜粋）
@@ -64,12 +65,11 @@ https://github.com/Akihide-Tsue/tsue_sandbox#readme
 - ダークモード(recoil-persist)
 - いいね・コメント機能（NestJs & MongoDB）
 - 記事のタグ付け・分類・個数表示（フロント → バックエンドに管理移行）
+- 記事検索機能
 - AMP 対応
-- PWA 対応
 - テスト
 - storybook
 - デザイン改善（記事のカードとリスト切り替えをrecoil-persist化）
 - コードの copy ボタン
 - zenn-markdown-htmlで目次生成
 - ページネーション
-- 記事検索機能

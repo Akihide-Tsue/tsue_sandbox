@@ -25,7 +25,12 @@
   }
 
   @include media(sm) {
-    max-width: 55vw;
+    max-width: 58vw;
+    padding: 12px !important;
+  }
+
+  @include media(ssm) {
+    max-width: 54vw;
     padding: 12px !important;
   }
 }
