@@ -3,10 +3,10 @@
   "background_color": "#17bebb",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "name": "tsue_sandbox",
   "short_name": "tsue_sandbox",
-  "description": "\u6d25\u6c5f\u306e\u30d6\u30ed\u30b0",
+  "description": "",
   "icons": [
     {
       "src": "/icon-192x192.png",
