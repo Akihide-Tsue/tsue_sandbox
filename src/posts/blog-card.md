@@ -18,7 +18,7 @@ URL を貼ると、自動で変換されます。
 
 テキストのリンクよりおしゃれですよね。  
 例えば ↓ こんなやつです。
-https://beta.reactjs.org/
+https://reactnative.dev/
 
 WordPress なんかだとプラグインがあるようですが、Next.js だと中々たいへんでした。
 
