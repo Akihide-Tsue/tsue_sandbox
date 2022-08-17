@@ -3,7 +3,7 @@
 .grid_container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 64px 32px;
+  gap: 48px 32px;
   margin-top: 24px;
 
   @include media(sm) {

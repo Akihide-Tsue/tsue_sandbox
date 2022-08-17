@@ -9,7 +9,7 @@
 
 .lists {
   display: block;
-  padding: 16px 0;
+  padding: 12px 0;
   border-bottom: 1px solid $border_color;
 
   @media (hover: hover) {
@@ -24,13 +24,15 @@
 .image_container {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 160px;
   background: #fff;
 }
 
-// .image {
-//   object-fit: cover !important;
-// }
+.image {
+  @include media(sm) {
+    object-fit: cover !important;
+  }
+}
 
 .text_wrapper {
   margin: 8px 0;
@@ -38,16 +40,29 @@
 
 .title {
   min-height: 64px;
-  margin-bottom: 8px;
   font-size: 2rem;
+
+  @include media(sm) {
+    min-height: 0;
+  }
 }
 
 .lists_title {
   margin-bottom: 8px;
   font-size: 2rem;
+
+  @include media(sm) {
+    font-size: 1.8rem;
+  }
 }
 
 .date {
+  display: inline-block;
+  margin-bottom: 4px;
+  color: $text_gray;
+}
+
+.lists_date {
   margin-right: 12px;
   line-height: 1.8;
   color: $text_gray;
