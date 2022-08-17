@@ -34,3 +34,8 @@ issueを見つけまして、5.5.4なら問題ありませんでした。
 
 `yarn upgrade next-pwa@5.5.4`  
 https://github.com/shadowwalker/next-pwa/issues/383
+
+
+　
+
+ホーム画面に表示される名前はmanifest.jsonのshort_nameなので、忘れずに設定しましょう。
