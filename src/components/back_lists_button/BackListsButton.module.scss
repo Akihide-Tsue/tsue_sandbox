@@ -1,0 +1,22 @@
+@use '@variables' as *;
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 64px 0;
+}
+
+.back_button {
+  display: flex;
+  gap: 0 8px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.icon {
+  width: auto;
+  height: 20px;
+}

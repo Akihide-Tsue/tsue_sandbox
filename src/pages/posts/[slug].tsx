@@ -20,6 +20,7 @@ import createOgp from 'src/utils/server/ogpUtils';
 
 import stylesMarkdown from '@styles/markdown.module.scss';
 import styles from '@styles/posts.module.scss';
+import BackListsButton from '@components/back_lists_button/BackListsButton';
 
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
@@ -145,6 +146,8 @@ const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
         <ReactMarkdown components={{ code: CodeBlock, a: BlogCard }} remarkPlugins={[remarkGfm]} className={stylesMarkdown.content}>
           {content}
         </ReactMarkdown>
+
+        <BackListsButton />
       </div>
     </>
   );
