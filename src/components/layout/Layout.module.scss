@@ -1,3 +1,5 @@
+@use '@variables' as *;
+
 .container_inner {
   max-width: 1000px;
   //PageHeaderとPageFooterを引く

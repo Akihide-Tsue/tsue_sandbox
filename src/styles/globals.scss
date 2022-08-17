@@ -35,7 +35,27 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 1.6;
-  color: $black;
+  color: #2e282a;
+}
+
+@mixin form_reset_common {
+  padding: 0.3em 1em;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #444;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: none;
+
+  &:focus {
+    border: 1px solid $main_blue;
+  }
+
+  &::placeholder {
+    color: $placeholder_text_color !important;
+  }
 }
 
 select {
