@@ -112,6 +112,13 @@ https://github.com/Akihide-Tsue/tsue_sandbox/blob/main/src/components/blog_card/
 
 ## おまけ
 
+faviconを取得する関数はこちら。
+```js:utils/getFaviconUrl.ts
+export function getFaviconUrl(pageUrl: string, size: 32 | 64 = 64) {
+  return `http://www.google.com/s2/favicons?domain=${encodeURIComponent(pageUrl)}&size=${size}`;
+}
+```
+
 BlogCard に表示する meta 情報のスタイルについて、  
 2 行以上だと...で text を省略する css は下記の通りなのですが、  
 stylelint が自動で `display: -webkit-box; → display: box;`  

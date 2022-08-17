@@ -7,7 +7,7 @@ import { CodeComponent } from 'react-markdown/src/ast-to-react';
 import { useRecoilValue } from 'recoil';
 
 import { currentArticleLinks } from 'src/recoil/atoms/currentArticleLinks';
-import { getFaviconUrl } from 'src/utils/server/getFaviconUrl';
+import { getFaviconUrl } from 'src/utils/getFaviconUrl';
 
 import styles from './BlogCard.module.scss';
 
