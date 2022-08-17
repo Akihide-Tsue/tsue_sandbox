@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import { useDebounce } from './useDebounce';
+
 interface ScrollPosition {
   x: number;
   y: number;
@@ -34,18 +36,20 @@ export function useScrollPosition(): ScrollPosition {
   return position;
 }
 
-export const useShowHeader = (visibleHeight: number): boolean => {
-  const [showHeader, setShowHeader] = useState(true);
+export const useShowComponent = (visibleHeight: number): boolean => {
+  const [isVisible, setIsVisible] = useState(true);
+  const debouncedIsVisible = useDebounce(isVisible, 500);
+
   const [position, setPosition] = useState<number | void>(0);
   const current = useScrollPosition();
 
   useEffect(() => {
     setPosition(() => {
-      setShowHeader(current.y < visibleHeight || position > current.y);
+      setIsVisible(current.y < visibleHeight || position > current.y);
     });
 
     setPosition(current.y);
   }, [current.y]);
 
-  return showHeader;
+  return debouncedIsVisible;
 };
