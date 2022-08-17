@@ -63,7 +63,7 @@ https://github.com/Akihide-Tsue/tsue_sandbox#readme
 - markdownをMDXに変更
 - ダークモード(recoil-persist)
 - いいね・コメント機能（NestJs & MongoDB）
-- 記事のタグ付け・分類・個数表示・絞り込み（フロント → バックエンドに管理移行）
+- 記事のタグ付け・分類・個数表示（フロント → バックエンドに管理移行）
 - AMP 対応
 - PWA 対応
 - テスト
@@ -72,3 +72,4 @@ https://github.com/Akihide-Tsue/tsue_sandbox#readme
 - コードの copy ボタン
 - zenn-markdown-htmlで目次生成
 - ページネーション
+- 記事検索機能

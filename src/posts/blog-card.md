@@ -137,3 +137,8 @@ stylelint が自動で `display: -webkit-box; → display: box;`
   -webkit-line-clamp: $lines;
 }
 ```
+
+
+---
+参考記事
+- [自分のウェブサイトにブログカードを実装してみた](https://zenn.dev/tomi/articles/2021-03-22-blog-card)
