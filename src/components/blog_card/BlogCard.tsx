@@ -36,10 +36,8 @@ const BlogCard: CodeComponent = ({ href, children }: Props) => {
       <Link href={href} passHref>
         <a target="_brank" className={styles.container}>
           <div className={styles.text_wrapper}>
-            <div>
-              <div className={styles.title}>{target.title}</div>
-              <div className={styles.description}>{target.description}</div>
-            </div>
+            <div className={styles.title}>{target.title}</div>
+            <div className={styles.description}>{target.description}</div>
 
             <div className={styles.href_flex}>
               <img src={getFaviconUrl(href)} alt="" className={styles.favicon} />

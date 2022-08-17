@@ -55,6 +55,13 @@
     }
   }
 
+  blockquote {
+    padding: 2px 0 2px 16px;
+    margin: 1.4rem 0;
+    color: $gray;
+    border-left: 4px solid $gray;
+  }
+
   a {
     max-width: 100%;
     color: $link_text;
