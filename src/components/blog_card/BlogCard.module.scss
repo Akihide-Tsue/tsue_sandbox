@@ -23,6 +23,11 @@
     max-width: 60vw;
     padding: 12px !important;
   }
+
+  @include media(sm) {
+    max-width: 55vw;
+    padding: 12px !important;
+  }
 }
 
 .title {
