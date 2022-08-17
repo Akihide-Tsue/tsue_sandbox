@@ -111,7 +111,6 @@ children として Props を渡せないので、Recoil で state を渡して�
 https://github.com/Akihide-Tsue/tsue_sandbox/blob/main/src/components/blog_card/BlogCard.tsx
 
 ## おまけ
-
 faviconを取得する関数はこちら。
 ```js:utils/getFaviconUrl.ts
 export function getFaviconUrl(pageUrl: string, size: 32 | 64 = 64) {
@@ -119,7 +118,9 @@ export function getFaviconUrl(pageUrl: string, size: 32 | 64 = 64) {
 }
 ```
 
-BlogCard に表示する meta 情報のスタイルについて、  
+　
+
+また、BlogCard に表示する meta 情報のスタイルについて、  
 2 行以上だと...で text を省略する css は下記の通りなのですが、  
 stylelint が自動で `display: -webkit-box; → display: box;`  
 と書き換えており、悩みました。  
