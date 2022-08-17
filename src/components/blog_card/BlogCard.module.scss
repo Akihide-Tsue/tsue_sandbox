@@ -109,6 +109,7 @@
 
   &.no_image {
     object-fit: contain;
+    padding: 4px;
 
     @include media(sm) {
       width: 140px !important;

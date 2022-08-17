@@ -1,4 +1,5 @@
 const path = require('path');
+const withPWA = require('next-pwa');
 
 const { withSentryConfig } = require('@sentry/nextjs');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
@@ -34,4 +35,14 @@ const moduleExports = {
 
 module.exports = withSentryConfig(moduleExports, {
   dryRun: process.env.VERCEL_ENV !== 'production',
+});
+
+module.exports = withPWA({
+  pwa: {
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+    disable: process.env.NODE_ENV === 'development',
+  },
+  reactStrinctMode: true,
 });
