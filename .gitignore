@@ -54,4 +54,4 @@ next-env.d.ts
 **/public/worker-*.js.map
 
 # ogp
-/public/ogp/
+/public/ogp/*
