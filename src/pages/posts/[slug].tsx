@@ -154,7 +154,7 @@ const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
 
         <div className={styles.slug_footer}>
           <TwitterIntentTweet text={frontMatter.title} url={`${process.env.NEXT_PUBLIC_BASE_URL}/posts/${slug}`} hashtags={frontMatter.tags}>
-            <TwitterIcon width={20} height={20} className={styles.twitter_icon} />
+            <TwitterIcon className={styles.twitter_share_icon} />
             記事をシェア
           </TwitterIntentTweet>
         </div>

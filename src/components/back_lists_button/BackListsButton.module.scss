@@ -5,6 +5,10 @@
   align-items: center;
   justify-content: center;
   margin: 64px 0 24px;
+
+  @include media(sm) {
+    margin: 48px 0 32px;
+  }
 }
 
 .back_button {
