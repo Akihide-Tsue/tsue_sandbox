@@ -4,6 +4,7 @@ import fs from 'fs';
 
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import matter from 'gray-matter';
@@ -11,10 +12,13 @@ import ReactMarkdown from 'react-markdown';
 import { useRecoilState } from 'recoil';
 import remarkGfm from 'remark-gfm';
 
+import { config } from '@constants';
+
 import BackListsButton from '@components/back_lists_button/BackListsButton';
 import BlogCard from '@components/blog_card/BlogCard';
 import CodeBlock from '@components/codeblock/CodeBlock';
 import { TwitterIntentTweet } from '@components/share_twitter/ShareTwitter';
+import GithubIcon from 'public/images/icons/github_icon.svg';
 import TwitterIcon from 'public/images/icons/twitter_icon.svg';
 import { currentArticleLinks } from 'src/recoil/atoms/currentArticleLinks';
 import { FrontMatterType } from 'src/type-def/postsType';
@@ -154,9 +158,16 @@ const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
 
         <div className={styles.slug_footer}>
           <TwitterIntentTweet text={frontMatter.title} url={`${process.env.NEXT_PUBLIC_BASE_URL}/posts/${slug}`} hashtags={frontMatter.tags}>
-            <TwitterIcon className={styles.twitter_share_icon} />
+            <TwitterIcon className={styles.slug_footer_icon} />
             記事をシェア
           </TwitterIntentTweet>
+
+          <Link href={`${config.repository}/tree/main/src/posts/${slug}.md`} prefetch={false}>
+            <a target="_brank" className={styles.github_pr_button}>
+              <GithubIcon className={styles.slug_footer_icon} />
+              GitHubで修正をリクエストする
+            </a>
+          </Link>
         </div>
       </div>
     </>

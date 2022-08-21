@@ -64,10 +64,8 @@ const BlogCard: CodeComponent = ({ href, children }: Props) => {
   }
 
   return (
-    <Link href={`/`}>
-      <a href={href} target="_brank">
-        {children}
-      </a>
+    <Link href={href}>
+      <a target="_brank">{children}</a>
     </Link>
   );
 };

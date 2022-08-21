@@ -54,11 +54,25 @@
   height: 40px;
 
   @include media(sm) {
-    height: 36px;
+    display: block;
+    height: unset;
   }
 }
 
-.twitter_share_icon {
+.github_pr_button {
+  padding: 5px 16px;
+  font-size: 1.8rem;
+  color: #fff;
+  background: $black;
+  border-radius: 8px;
+
+  @include media(sm) {
+    height: 36px;
+    font-size: 1.6rem;
+  }
+}
+
+.slug_footer_icon {
   position: relative;
   top: -2px;
   width: 20px;
@@ -68,7 +82,7 @@
   fill: #fff;
 
   @include media(sm) {
-    top: 0;
+    top: -1px;
     width: 18px;
     height: 18px;
   }

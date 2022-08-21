@@ -8,6 +8,10 @@
   border-radius: 8px;
 
   @include media(sm) {
+    display: block;
+    width: 148px;
+    height: 36px;
+    margin-bottom: 16px;
     font-size: 1.6rem;
   }
 }

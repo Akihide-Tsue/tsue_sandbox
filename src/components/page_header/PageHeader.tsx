@@ -2,6 +2,8 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
+import { config } from '@constants';
+
 import { useShowComponent } from '@hooks/useScrollPosition';
 import FeesIcon from 'public/images/icons/feed_icon.svg';
 import GithubIcon from 'public/images/icons/github_icon.svg';
@@ -22,13 +24,13 @@ const PageHeader: FC = ({}) => {
         </Link>
 
         <div className={styles.icon_wrapper}>
-          <Link href={`https://twitter.com/tsue_dev`} passHref>
+          <Link href={`https://twitter.com/${config.twitter}`} passHref>
             <a target="_blank">
               <TwitterIcon width={22} height={24} className={styles.icon} />
             </a>
           </Link>
 
-          <Link href={`https://github.com/Akihide-Tsue`} passHref>
+          <Link href={config.github} passHref>
             <a target="_blank">
               <GithubIcon width={22} height={24} className={styles.icon} />
             </a>
