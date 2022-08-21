@@ -70,7 +70,7 @@
   border-radius: 8px;
 
   @include media(sm) {
-    width: 272px;
+    display: inline-flex;
     height: 36px;
     font-size: 1.6rem;
   }
