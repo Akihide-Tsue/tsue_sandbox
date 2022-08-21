@@ -5,7 +5,7 @@ description: 'Next.jsでPWAに対応するための手順と注意点'
 image: images/articles/pwa.webp
 categories: Tech
 draft: false
-tag: [Blog]
+tags: [Blog]
 ---
 
 ## PWAについて

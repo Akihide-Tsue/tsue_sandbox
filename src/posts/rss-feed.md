@@ -5,7 +5,7 @@ description: 'Next.jsで簡単RSS導入'
 image: images/articles/rss_feed.webp
 categories: Tech
 draft: false
-tag: [Blog]
+tags: [Blog]
 ---
 
 

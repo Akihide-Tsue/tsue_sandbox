@@ -1,0 +1,10 @@
+@use '@variables' as *;
+
+.button {
+  padding: 0 16px;
+  font-size: 2rem;
+  line-height: 2;
+  color: #fff;
+  background: $twitter_theme;
+  border-radius: 8px;
+}

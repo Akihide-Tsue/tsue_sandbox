@@ -5,7 +5,7 @@ description: 'スクロールでヘッダーの表示・非表示を切り替え
 image: images/articles/browser.webp
 categories: Tech
 draft: false
-tag: [UI]
+tags: [UI]
 ---
 
 ## ヘッダーを隠そう

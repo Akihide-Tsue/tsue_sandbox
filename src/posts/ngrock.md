@@ -5,7 +5,7 @@ description: 'Ngrok導入についての解説。フロントエンド開発で�
 image: images/articles/ngrok.webp
 categories: Tech
 draft: false
-tag: [Tool]
+tags: [Tool]
 ---
 
 ## Ngrok とは

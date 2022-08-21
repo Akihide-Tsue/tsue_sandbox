@@ -5,7 +5,7 @@ description: 'このmarkdownブログでの採用技術と実装予定を書い�
 image: images/articles/nextjs_logo.webp
 categories: Tech
 draft: false
-tag: [Next.js, FrontEnd]
+tags: [Next.js, FrontEnd]
 ---
 
 ## DONE

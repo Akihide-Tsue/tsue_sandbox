@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { FC, useEffect } from 'react';
 
 import fs from 'fs';
@@ -12,16 +11,19 @@ import ReactMarkdown from 'react-markdown';
 import { useRecoilState } from 'recoil';
 import remarkGfm from 'remark-gfm';
 
+import BackListsButton from '@components/back_lists_button/BackListsButton';
 import BlogCard from '@components/blog_card/BlogCard';
 import CodeBlock from '@components/codeblock/CodeBlock';
+import { TwitterIntentTweet } from '@components/share_twitter/ShareTwitter';
+import TwitterIcon from 'public/images/icons/twitter_icon.svg';
 import { currentArticleLinks } from 'src/recoil/atoms/currentArticleLinks';
 import { FrontMatterType } from 'src/type-def/postsType';
 import createOgp from 'src/utils/server/ogpUtils';
 
 import stylesMarkdown from '@styles/markdown.module.scss';
-import styles from '@styles/posts.module.scss';
-import BackListsButton from '@components/back_lists_button/BackListsButton';
+import styles from '@styles/slug.module.scss';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
@@ -111,7 +113,7 @@ const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
   const { slug } = router.query;
   const [links, setLinks] = useRecoilState(currentArticleLinks);
 
-  const tags = frontMatter.tag.map((tag, i) => {
+  const tags = frontMatter.tags.map((tag, i) => {
     return (
       <span key={i} className={styles.tag}>
         #{tag}
@@ -120,6 +122,7 @@ const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
   });
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     setLinks(cardData);
   }, []);
 
@@ -148,6 +151,13 @@ const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
         </ReactMarkdown>
 
         <BackListsButton />
+
+        <div className={styles.slug_footer}>
+          <TwitterIntentTweet text={frontMatter.title} url={`${process.env.NEXT_PUBLIC_BASE_URL}/posts/${slug}`} hashtags={frontMatter.tags}>
+            <TwitterIcon width={22} height={22} className={styles.twitter_icon} />
+            記事をシェア
+          </TwitterIntentTweet>
+        </div>
       </div>
     </>
   );

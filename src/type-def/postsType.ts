@@ -5,7 +5,7 @@ export type FrontMatterType = {
   image: string;
   categories: string;
   draft: boolean;
-  tag: string[];
+  tags: string[];
 };
 
 export type PostType = {

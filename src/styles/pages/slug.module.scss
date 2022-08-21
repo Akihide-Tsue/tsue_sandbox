@@ -47,3 +47,17 @@
   background: #e5e5e5;
   border-radius: 4px;
 }
+
+.slug_footer {
+  display: flex;
+  gap: 24px;
+  height: 40px;
+
+  .twitter_icon {
+    position: relative;
+    top: -3px;
+    margin-right: 8px;
+    vertical-align: middle;
+    fill: #fff;
+  }
+}

@@ -10,7 +10,7 @@ import styles from './ArticleLink.module.scss';
 type Props = { post: PostType; layout: 'card' | 'list' };
 
 const ArticleLink: FC<Props> = ({ post, layout }) => {
-  const tags = post.frontMatter.tag.map((tag, i) => {
+  const tags = post.frontMatter.tags.map((tag, i) => {
     return (
       <span key={i} className={styles.tag}>
         #{tag}

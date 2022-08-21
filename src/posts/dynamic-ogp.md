@@ -5,7 +5,7 @@ description: '動的OGPを導入しましたので、その過程です。canvas
 image: images/articles/seo_image.webp
 categories: Tech
 draft: true
-tag: [SEO]
+tags: [SEO]
 ---
 
 ## 準備
