@@ -78,6 +78,7 @@
 
 .slug_footer_icon {
   position: relative;
+  top: -1px;
   width: 20px;
   height: 20px;
   margin-right: 8px;
@@ -85,6 +86,7 @@
   fill: #fff;
 
   @include media(sm) {
+    top: 0;
     width: 18px;
     height: 18px;
   }
