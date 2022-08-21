@@ -5,7 +5,7 @@ description: 'スクロールでヘッダーの表示・非表示を切り替え
 image: images/articles/browser.webp
 categories: Tech
 draft: false
-tag: [FrontEnd]
+tag: [UI]
 ---
 
 ## ヘッダーを隠そう
@@ -13,7 +13,7 @@ tag: [FrontEnd]
 ヘッダーを隠す方法を探していた所、下記のライブラリを見つけました。
 https://github.com/neo/react-use-scroll-position
 こちらを参考にヘッダーを隠すhooksを作成しましたので共有します。  
-180px（引数で渡す値）以上スクロールすると非表示になり、上にスクロールすると表示されます。
+160px（引数で渡す値）以上スクロールすると非表示になり、上にスクロールすると表示されます。
 
 ## 実装
 ```js:hooks/useScrollPosition.ts
@@ -69,7 +69,7 @@ export const useShowHeader = (visibleHeight: number): boolean => {
 ```
 
 このように使えます。  
-`const isVisible = useShowHeader(180);`  
+`const isVisible = useShowHeader(160);`  
 
 　
 　
