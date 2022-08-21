@@ -1,14 +1,16 @@
 @use '@variables' as *;
 
 .button {
-  padding: 5px 16px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
   font-size: 1.8rem;
   color: #fff;
   background: $twitter_theme;
   border-radius: 8px;
 
   @include media(sm) {
-    display: block;
     width: 148px;
     height: 36px;
     margin-bottom: 20px;

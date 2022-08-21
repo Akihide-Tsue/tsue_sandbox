@@ -60,21 +60,24 @@
 }
 
 .github_pr_button {
-  padding: 5px 16px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
   font-size: 1.8rem;
   color: #fff;
   background: $black;
   border-radius: 8px;
 
   @include media(sm) {
-    padding: 6px 16px;
+    width: 272px;
+    height: 36px;
     font-size: 1.6rem;
   }
 }
 
 .slug_footer_icon {
   position: relative;
-  top: -2px;
   width: 20px;
   height: 20px;
   margin-right: 8px;
