@@ -14,6 +14,6 @@ https://tsue-sandbox.vercel.app/
 ###  Usage
 `$ git clone https://github.com/Akihide-Tsue/tsue_sandbox.git`  
 `$ yarn install`  
-`$ yarn start`  
+`$ yarn dev`  
 ### License
 [MIT](https://raw.githubusercontent.com/aocattleya/Ramen-Timer/master/LICENSE)  
