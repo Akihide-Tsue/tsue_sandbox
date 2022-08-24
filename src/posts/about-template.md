@@ -12,6 +12,7 @@ tags: [Next.js, FrontEnd]
 
 - Next.js(SSG)
 - TypeScript
+- recoil
 - husky・ESLint・stylelint・prettier
 - 動的OGP自動生成
 - マークダウン、コードブロック表示
@@ -68,7 +69,7 @@ https://github.com/Akihide-Tsue/tsue_sandbox#readme
 - AMP 対応
 - テスト
 - storybook
-- デザイン改善（記事のカードとリスト切り替えをrecoil-persist化）
+- デザイン改善
 - コードの copy ボタン
 - zenn-markdown-htmlで目次生成
 - ページネーション
