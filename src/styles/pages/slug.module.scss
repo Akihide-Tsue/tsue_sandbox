@@ -67,12 +67,12 @@
   font-size: 1.8rem;
   color: #fff;
   background: $black;
-  border-radius: 8px;
+  border-radius: 999px;
 
   @include media(sm) {
     display: inline-flex;
-    height: 36px;
-    font-size: 1.6rem;
+    height: 32px;
+    font-size: 1.4rem;
   }
 }
 

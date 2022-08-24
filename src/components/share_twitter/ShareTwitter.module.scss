@@ -8,12 +8,13 @@
   font-size: 1.8rem;
   color: #fff;
   background: $twitter_theme;
-  border-radius: 8px;
+  border-radius: 999px;
 
   @include media(sm) {
-    width: 148px;
-    height: 36px;
-    margin-bottom: 20px;
-    font-size: 1.6rem;
+    display: inline-flex;
+    height: 32px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    font-size: 1.4rem;
   }
 }
