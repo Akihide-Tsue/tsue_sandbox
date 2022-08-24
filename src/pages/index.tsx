@@ -25,7 +25,11 @@ export const getStaticProps = () => {
     };
   });
 
-  const sortedPosts = posts.sort((postA, postB) => (new Date(postA.frontMatter.date as Date) > new Date(postB.frontMatter.date as Date) ? -1 : 1));
+  const filteredPosts = posts.filter((post) => {
+    return post.frontMatter.categories === 'Tech';
+  });
+
+  const sortedPosts = filteredPosts.sort((postA, postB) => (new Date(postA.frontMatter.date as Date) > new Date(postB.frontMatter.date as Date) ? -1 : 1));
 
   generatedRssFeed();
 
@@ -41,6 +45,7 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ posts }) => {
+  console.log('posts', posts);
   const [layout, setLayout] = useRecoilState(articleLayout);
 
   return (

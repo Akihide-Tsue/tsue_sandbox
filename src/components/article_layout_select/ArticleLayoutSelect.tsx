@@ -16,13 +16,30 @@ const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout }) => {
 
   return (
     <div className={styles.layout_selector}>
-      <span className={styles.layout_selector_text}>表示</span>
-      <button className={styles.layout_selector_button} onClick={() => setLayout('card')}>
-        <CardIcon width={20} height={20} fill={layout === 'card' ? activeColor : inActiveColor} />
-      </button>
-      <button className={styles.layout_selector_button} onClick={() => setLayout('list')}>
-        <ListIcon width={20} height={20} fill={layout === 'list' ? activeColor : inActiveColor} />
-      </button>
+      <div className={styles.index_section}>
+        {/* <Link href={`/`} passHref>
+          <a className={`${styles.index_label} ${styles.current_page}`}>Blog</a>
+        </Link> */}
+        {/* <Link href={`/tags`} passHref>
+          <a className={styles.index_label}>Tags</a>
+        </Link> */}
+        {/* <Link href={`/sandbox`} passHref>
+          <a className={styles.index_label}>Sandbox</a>
+        </Link> */}
+        {/* <Link href={`/about`} passHref>
+          <a className={styles.index_label}>About</a>
+        </Link> */}
+      </div>
+
+      <div className={styles.layout_section}>
+        <span className={styles.layout_selector_text}>表示</span>
+        <button className={styles.layout_selector_button} onClick={() => setLayout('card')}>
+          <CardIcon width={20} height={20} fill={layout === 'card' ? activeColor : inActiveColor} />
+        </button>
+        <button className={styles.layout_selector_button} onClick={() => setLayout('list')}>
+          <ListIcon width={20} height={20} fill={layout === 'list' ? activeColor : inActiveColor} />
+        </button>
+      </div>
     </div>
   );
 };

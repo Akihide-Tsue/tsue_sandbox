@@ -62,9 +62,8 @@
 .github_pr_button {
   display: flex;
   align-items: center;
-  height: 40px;
+  height: 36px;
   padding: 0 16px;
-  font-size: 1.8rem;
   color: #fff;
   background: $black;
   border-radius: 999px;
@@ -78,16 +77,9 @@
 
 .slug_footer_icon {
   position: relative;
-  top: -1px;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   margin-right: 8px;
   vertical-align: middle;
   fill: #fff;
-
-  @include media(sm) {
-    top: 0;
-    width: 18px;
-    height: 18px;
-  }
 }

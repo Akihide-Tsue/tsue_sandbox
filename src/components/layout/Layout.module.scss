@@ -2,8 +2,8 @@
 
 .container_inner {
   max-width: 1000px;
-  //PageHeaderとPageFooterを引く
-  min-height: calc(100vh - 40px - 40px);
+  //PageHeaderを引く
+  min-height: calc(100vh - 40px);
   padding: 64px 24px 48px;
   margin: 0 auto;
 
