@@ -65,6 +65,7 @@ https://github.com/Akihide-Tsue/tsue_sandbox#readme
 - ダークモード(recoil-persist)
 - いいね・コメント機能（NestJs & MongoDB）
 - 記事のタグ付け・分類・個数表示（フロント → バックエンドに管理移行）
+- TwitterのEmbed要素をURLから生成
 - 記事検索機能
 - AMP 対応
 - テスト
