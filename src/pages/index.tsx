@@ -1,14 +1,14 @@
-import { useState } from 'react';
-
 import fs from 'fs';
 
 import type { NextPage } from 'next';
 
 import matter from 'gray-matter';
+import { useRecoilState } from 'recoil';
 
 import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
 import ArticleLink from '@components/article_link/ArticleLink';
 import generatedRssFeed from 'src/lib/feed';
+import { articleLayout } from 'src/recoil/atoms/articleLayout';
 import { PostType } from 'src/type-def/postsType';
 
 import styles from '@styles/index.module.scss';
@@ -41,7 +41,7 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ posts }) => {
-  const [layout, setLayout] = useState<'card' | 'list'>('card');
+  const [layout, setLayout] = useRecoilState(articleLayout);
 
   return (
     <>

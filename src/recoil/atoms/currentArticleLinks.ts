@@ -7,6 +7,7 @@ type Props = {
   image: string;
 }[];
 
+//ブログカード用
 export const currentArticleLinks = atom<Props>({
   key: 'currentArticleLinks',
   default: [],
