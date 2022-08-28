@@ -70,6 +70,7 @@
 
 .lists_flex {
   display: flex;
+  align-items: center;
   margin-top: 8px;
 }
 
@@ -79,6 +80,7 @@
 }
 
 .tag {
+  height: 24px;
   padding: 2px 8px;
   font-size: 1.4rem;
   line-height: 1.4;

@@ -5,30 +5,6 @@
 /* stylelint-disable-next-line no-invalid-position-at-import-rule */
 @import 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap';
 
-.MuiCalendarPicker-root {
-  .MuiButton-textSizeMedium,
-  .PrivatePickersMonth-root {
-    font-size: 1.5rem;
-  }
-
-  .MuiCalendarPicker-viewTransitionContainer {
-    margin-top: 16px;
-  }
-
-  .MuiPickersDay-root,
-  .MuiTypography-caption {
-    width: 36px;
-    height: 36px;
-    font-size: 1.5rem;
-  }
-
-  .PrivatePickersYear-yearButton,
-  [role='presentation'] {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-}
-
 html {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 62.5%;
@@ -39,6 +15,11 @@ body {
   font-size: 1.6rem;
   line-height: 1.6;
   color: $black;
+}
+
+body.dark-theme {
+  color: $white;
+  background: $black;
 }
 
 select {
@@ -79,77 +60,5 @@ button {
 
   @include media(lg) {
     display: block;
-  }
-}
-
-.MuiSnackbarContent-message {
-  margin: 0 auto !important;
-}
-
-.MuiAutocomplete-root {
-  .MuiAutocomplete-endAdornment {
-    display: none;
-  }
-
-  .MuiChip-label {
-    font-size: 13px;
-  }
-
-  .MuiOutlinedInput-input.MuiInputBase-input.MuiAutocomplete-input {
-    width: 100%;
-
-    @include form_reset_common;
-  }
-
-  .MuiOutlinedInput-notchedOutline {
-    border: none !important;
-  }
-
-  .MuiOutlinedInput-root.MuiInputBase-root.MuiInputBase-fullWidth,
-  .MuiOutlinedInput-root.MuiInputBase-root.MuiInputBase-fullWidth.MuiInputBase-formControl {
-    padding: 0;
-  }
-
-  .MuiOutlinedInput-input.MuiInputBase-input.MuiAutocomplete-input::placeholder,
-  .MuiOutlinedInput-input.MuiInputBase-input.MuiAutocomplete-input:placeholder {
-    opacity: 1;
-  }
-}
-
-.MuiAutocomplete-paper {
-  max-width: 400px !important; // プルダウン
-}
-
-.MuiAutocomplete-popper {
-  .MuiAutocomplete-listbox,
-  .MuiAutocomplete-noOptions {
-    font-size: 16px !important;
-    color: #444;
-  }
-}
-
-//都道府県のインプットのplaceholder
-.MuiInputBase-input.MuiInputBase-input::placeholder {
-  color: $placeholder_text_color;
-  opacity: 1;
-}
-
-.util-formWidth1 {
-  width: 400px !important;
-
-  @include media(lg) {
-    width: 100% !important;
-  }
-}
-
-.util-formWidth2 {
-  width: 200px !important;
-}
-
-.util-formWidth3 {
-  width: 550px !important;
-
-  @include media(lg) {
-    width: 100% !important;
   }
 }
