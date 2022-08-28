@@ -68,7 +68,8 @@ https://github.com/Akihide-Tsue/tsue_sandbox#readme
 - TwitterのEmbed要素をURLから生成
 - 記事検索機能
 - AMP 対応
-- テスト
+- テスト(Jest、PlayWrite)
+- ビジュアルリグレッションテスト
 - storybook
 - デザイン改善
 - コードの copy ボタン

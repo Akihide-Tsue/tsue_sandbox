@@ -69,7 +69,7 @@ export const usePageView = () => {
   }, [router.events]);
 
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_APP_ENV === 'production_server' || process.env.NEXT_PUBLIC_APP_ENV === 'development_server') {
+    if (process.env.NEXT_PUBLIC_APP_ENV === 'production') {
       hotjar.initialize(Number(process.env.NEXT_PUBLIC_HOTJAR_ID), Number(process.env.NEXT_PUBLIC_HOTJAR_SV));
     }
   }, []);
