@@ -9,6 +9,14 @@ tags: [Design,Recoil]
 ---
 
 ## ダークモードを導入しよう
+人は何故ダークモードを搭載したくなるのか...  
+それはそこにブログがあるからだ。  
+
+　
+
+ということで、ダークモードを導入しました。
+
+
 
 ## svgの表示バグ解決
 renderされた後にダークモードの場合の条件分岐が行われており、
@@ -16,7 +24,20 @@ renderされた後にダークモードの場合の条件分岐が行われて�
 解決方法としては、下記のissueの通り**hasMounted**のhooksを適用しました。
 https://github.com/facebook/react/issues/17741
 
-```
+```js:useHasMounted.ts
+import { useEffect, useState } from 'react';
+
+const useHasMounted = () => {
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  return hasMounted;
+};
+
+export default useHasMounted;
 
 ```
 これにより、setMount後に表示できるようになりました。

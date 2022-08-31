@@ -95,6 +95,10 @@
   font-size: 1.2rem;
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  @include dark_mode {
+    color: $darkMode_gray !important;
+  }
 }
 
 .image_wrapper {

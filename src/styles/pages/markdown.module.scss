@@ -67,6 +67,7 @@
     }
   }
 
+  //引用
   blockquote {
     padding: 4px 8px;
     margin: 1.4rem 0;
@@ -84,7 +85,7 @@
       color: $link_text;
 
       @include dark_mode {
-        color: $white !important;
+        color: $link_text_light !important;
       }
     }
   }
@@ -110,6 +111,7 @@
     font-style: normal;
     background: linear-gradient(transparent 80%, $main_yellow 80%);
   }
+
   //**文字**
   strong {
     color: $main_red;
