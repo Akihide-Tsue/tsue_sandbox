@@ -1,5 +1,6 @@
 import { Dispatch, FC, SetStateAction } from 'react';
 
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { useRecoilValue } from 'recoil';
@@ -38,9 +39,9 @@ const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout }) => {
         {/* <Link href={`/tags`} passHref>
           <a className={styles.index_label}>Tags</a>
         </Link> */}
-        {/* <Link href={`/sandbox`} passHref>
+        <Link href={`/sandbox`} passHref>
           <a className={`${styles.index_label} ${pathname === `/sandbox` ? styles.current_page : ''}`}>Sandbox</a>
-        </Link> */}
+        </Link>
         {/* <Link href={`/about`} passHref>
           <a className={`${styles.index_label} ${pathname === `/about` ? styles.current_page : ''}`}>About</a>
         </Link> */}
