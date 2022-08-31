@@ -79,7 +79,7 @@ body.dark_theme {
 
 　
 
-細かい調整は各コンポーネントを上書きしなくいてはいけませんが、仕方ないので下記を使っています。
+細かい調整は各コンポーネントを上書きしなくてはいけませんが、仕方ないので下記を使っています。
 ```css:variables.scss
 @mixin dark_mode {
   :global(.dark_theme) & {
