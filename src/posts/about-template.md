@@ -23,6 +23,8 @@ tags: [Next.js, FrontEnd]
 - [RSSリーダー対応](https://tsue-sandbox.vercel.app/posts/rss-feed)
 - [ヘッダーをスクロールで非表示](https://tsue-sandbox.vercel.app/posts/hidden-header)
 - [PWA対応](https://tsue-sandbox.vercel.app/posts/pwa)
+- [ダークモード(recoil-persist)](https://tsue-sandbox.vercel.app/posts/dark-mode)
+
 
 ```json:package.json（一部抜粋）
     "dependencies": {
@@ -62,7 +64,6 @@ https://github.com/Akihide-Tsue/tsue_sandbox#readme
 ## TODO
 
 - markdownをMDXに変更
-- ダークモード(recoil-persist)
 - いいね・コメント機能（NestJs & MongoDB）
 - 記事のタグ付け・分類・個数表示（フロント → バックエンドに管理移行）
 - TwitterのEmbed要素をURLから生成

@@ -34,11 +34,11 @@ const PageHeader: FC = ({}) => {
   useLayoutEffect(() => {
     const body = document.body;
     if (isDarkMode === 'dark') {
-      body.classList.remove('light-theme');
+      body.classList.remove('light_theme');
       body.classList.add('dark_theme');
     } else {
       body.classList.remove('dark_theme');
-      body.classList.add('light-theme');
+      body.classList.add('light_theme');
     }
   }, [isDarkMode]);
 
