@@ -5,6 +5,10 @@
   border-radius: 8px;
 
   @include button_shadow;
+
+  @include dark_mode {
+    background: #222;
+  }
 }
 
 .lists {
@@ -12,11 +16,18 @@
   padding: 12px 0;
   border-bottom: 1px solid $border_color;
 
-  @media (hover: hover) {
-    &:hover {
-      background: rgb(249 249 249);
-      background: radial-gradient(circle, rgb(249 249 249 / 1) 0%, rgb(255 255 255 / 1) 100%);
-      transition: 0.25s;
+  @include hover {
+    background: rgb(249 249 249); // Old browsers
+    background: radial-gradient(circle, rgb(249 249 249 / 1) 0%, rgb(255 255 255 / 1) 100%);
+    transition: 0.25s;
+  }
+
+  @include dark_mode {
+    border-bottom: 1px solid $darkMode_border_color;
+
+    @include hover {
+      color: $main_yellow;
+      background: $black;
     }
   }
 }
@@ -29,9 +40,7 @@
 }
 
 .image {
-  @include media(sm) {
-    object-fit: cover !important;
-  }
+  object-fit: cover !important;
 }
 
 .text_wrapper {
@@ -60,12 +69,20 @@
   display: inline-block;
   margin-bottom: 4px;
   color: $text_gray;
+
+  @include dark_mode {
+    color: $darkMode_gray;
+  }
 }
 
 .lists_date {
   margin-right: 12px;
   line-height: 1.8;
   color: $text_gray;
+
+  @include dark_mode {
+    color: $darkMode_gray;
+  }
 }
 
 .lists_flex {
@@ -84,8 +101,11 @@
   padding: 2px 8px;
   font-size: 1.4rem;
   line-height: 1.4;
-  color: #fff;
   color: $black;
   background: #e5e5e5;
   border-radius: 4px;
+
+  @include dark_mode {
+    background: $border_color;
+  }
 }

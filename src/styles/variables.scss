@@ -12,7 +12,7 @@ $placeholder_text_color: rgb(68 68 68 / 0.7);
 $twitter_theme: #1da1f2;
 //dark_mode
 $darkMode_gray: #bbb;
-$darkMode_border_color: #555b6e;
+$darkMode_border_color: #999;
 
 //breakpoints
 $breakpoints: (
@@ -38,6 +38,15 @@ $breakpoints: (
 @mixin dark_mode {
   :global(.dark_theme) & {
     @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      transition: 0.25s;
+      @content;
+    }
   }
 }
 

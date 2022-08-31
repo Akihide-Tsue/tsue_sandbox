@@ -68,19 +68,19 @@
   margin-top: -6px;
   transition: 0.25s;
 
-  @media (hover: hover) {
-    &:hover {
-      filter: brightness(90%);
+  @include hover {
+    filter: brightness(90%);
+
+    @include dark_mode {
+      filter: brightness(110%);
     }
   }
 
   &.disabled {
     cursor: default;
 
-    @media (hover: hover) {
-      &:hover {
-        filter: none;
-      }
+    @include hover {
+      filter: none;
     }
   }
 }
