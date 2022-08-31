@@ -56,7 +56,7 @@
   border-radius: 4px;
 
   @include dark_mode {
-    background: $border_color;
+    // background: $white;
   }
 }
 
@@ -98,4 +98,8 @@
   margin-right: 8px;
   vertical-align: middle;
   fill: #fff;
+
+  @include dark_mode {
+    fill: $white;
+  }
 }

@@ -1,4 +1,4 @@
-import { FC, useEffect, useLayoutEffect, useState } from 'react';
+import { FC, useLayoutEffect } from 'react';
 
 import Link from 'next/link';
 
@@ -6,6 +6,7 @@ import { useRecoilState } from 'recoil';
 
 import { config } from '@constants';
 
+import useHasMounted from '@hooks/useHasMounted';
 import { useShowComponent } from '@hooks/useScrollPosition';
 import DarkIcon from 'public/images/icons/dark_icon.svg';
 import FeedIcon from 'public/images/icons/feed_icon.svg';
@@ -18,12 +19,10 @@ import styles from './PageHeader.module.scss';
 
 const PageHeader: FC = ({}) => {
   const showHeader = useShowComponent(160);
-
+  const hasMounted = useHasMounted();
   const [isDarkMode, setIsDarkMode] = useRecoilState(colorTheme);
-  const [hasMounted, setHasMounted] = useState(false);
 
   useLayoutEffect(() => {
-    setIsDarkMode('dark');
     //初回起動時に、端末の設定がdarkだった場合に暗くする
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const darkModeOn = darkModeMediaQuery.matches;
@@ -42,11 +41,6 @@ const PageHeader: FC = ({}) => {
       body.classList.add('light-theme');
     }
   }, [isDarkMode]);
-
-  useEffect(() => {
-    //これがないと初期表示のアイコンがdark固定になる
-    setHasMounted(true);
-  }, []);
 
   return (
     <div className={`${styles.header} ${!showHeader && styles.hidden}`}>

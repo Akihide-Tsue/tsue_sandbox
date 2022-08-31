@@ -1,9 +1,10 @@
-import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 
 import { useRouter } from 'next/router';
 
 import { useRecoilValue } from 'recoil';
 
+import useHasMounted from '@hooks/useHasMounted';
 import CardIcon from 'public/images/icons/card_icon.svg';
 import ListIcon from 'public/images/icons/list_icon.svg';
 import { colorTheme } from 'src/recoil/atoms/colorTheme';
@@ -18,7 +19,7 @@ type Props = {
 const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout }) => {
   const { pathname } = useRouter();
   const isDarkMode = useRecoilValue(colorTheme);
-  const [hasMounted, setHasMounted] = useState(false);
+  const hasMounted = useHasMounted();
 
   const activeColorCode = '#2e282a'; //$black
   const inactiveColorCode = '#ccc'; //$border_color
@@ -27,11 +28,6 @@ const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout }) => {
   const activeColor = () => {
     return isDarkMode === 'dark' ? darkModeActiveColorCode : activeColorCode;
   };
-
-  useEffect(() => {
-    //これがないとactiveColor()の分岐が行われない
-    setHasMounted(true);
-  }, []);
 
   return (
     <div className={styles.layout_selector}>
