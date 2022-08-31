@@ -23,4 +23,8 @@
 .icon {
   width: auto;
   height: 20px;
+
+  @include dark_mode {
+    fill: $white;
+  }
 }

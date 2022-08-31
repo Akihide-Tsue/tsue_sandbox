@@ -8,7 +8,7 @@ import { config } from '@constants';
 
 import { useShowComponent } from '@hooks/useScrollPosition';
 import DarkIcon from 'public/images/icons/dark_icon.svg';
-import FeesIcon from 'public/images/icons/feed_icon.svg';
+import FeedIcon from 'public/images/icons/feed_icon.svg';
 import GithubIcon from 'public/images/icons/github_icon.svg';
 import LightIcon from 'public/images/icons/light_icon.svg';
 import TwitterIcon from 'public/images/icons/twitter_icon.svg';
@@ -98,7 +98,7 @@ const PageHeader: FC = ({}) => {
 
           <Link href={`/rss/feed.xml`} passHref>
             <a target="_blank">
-              <FeesIcon width={22} height={24} className={styles.icon} />
+              <FeedIcon width={22} height={24} className={styles.icon} />
             </a>
           </Link>
         </div>
