@@ -12,7 +12,7 @@ const BackListsButton: FC = ({}) => {
       <Link href={`/`}>
         <a className={styles.back_button}>
           すべての記事一覧へ
-          <ArrowIcon width={22} height={24} className={styles.icon} />
+          <ArrowIcon className={styles.icon} />
         </a>
       </Link>
     </div>
