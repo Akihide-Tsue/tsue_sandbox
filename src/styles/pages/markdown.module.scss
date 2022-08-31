@@ -16,21 +16,33 @@
     font-size: 2.2rem;
     font-weight: bold;
     color: #fff;
-    background-color: $main_blue;
+    background: $main_blue;
     border-radius: 4px;
+
+    @include dark_mode {
+      background: $main_blue_dark;
+    }
   }
   h3 {
     margin: 32px 0 16px;
     font-size: 2.2rem;
     font-weight: bold;
     border-bottom: 3px solid $main_blue;
+
+    @include dark_mode {
+      border-bottom: 3px solid $main_blue_dark;
+    }
   }
   h4 {
-    padding: 0 0 0 10px;
+    padding: 0 0 0 8px;
     margin: 32px 0 16px;
     font-size: 1.8rem;
     font-weight: bold;
     border-left: 3px solid $main_blue;
+
+    @include dark_mode {
+      border-left: 6px solid $main_blue_dark;
+    }
   }
   h5 {
     margin: 32px 0 16px;
@@ -55,6 +67,7 @@
     }
   }
 
+  //引用
   blockquote {
     padding: 4px 8px;
     margin: 1.4rem 0;
@@ -62,9 +75,18 @@
     background: $white;
     border-left: 4px solid $gray;
 
+    @include dark_mode {
+      color: $white;
+      background: #222;
+      border-left: 4px solid $text_gray;
+    }
+
     a {
       color: $link_text;
-      // color: $gray;
+
+      @include dark_mode {
+        color: $link_text_light !important;
+      }
     }
   }
 
@@ -73,6 +95,10 @@
     color: $link_text;
     text-decoration: underline;
     overflow-wrap: anywhere;
+
+    @include dark_mode {
+      color: $link_text_light !important;
+    }
   }
 
   hr {
@@ -85,6 +111,7 @@
     font-style: normal;
     background: linear-gradient(transparent 80%, $main_yellow 80%);
   }
+
   //**文字**
   strong {
     color: $main_red;
@@ -99,11 +126,17 @@
     font-family: Consolas, 'Courier New', monospace;
     color: $white;
     overflow-wrap: anywhere;
-    background-color: $black;
+    background: $black;
     border-radius: 4px;
+
+    @include dark_mode {
+      background: $darkMode_black !important;
+    }
   }
   pre {
-    background-color: $black !important;
+    @include dark_mode {
+      background: $darkMode_black !important;
+    }
   }
 
   /* ////////////////////////////////////////////// */
@@ -124,6 +157,10 @@
   }
   ul > li::marker {
     color: $main_blue;
+
+    @include dark_mode {
+      color: $link_text_light;
+    }
   }
 
   /* arrow */
@@ -135,7 +172,7 @@
     width: 6px;
     height: 6px;
     content: '';
-    background-color: inherit;
+    background: inherit;
     border-right: 2px solid $main_blue;
     border-bottom: 2px solid $main_blue;
     border-radius: 0;
@@ -151,7 +188,7 @@
     width: 8px;
     height: 3px;
     content: '';
-    background-color: inherit;
+    background: inherit;
     border-bottom: 2px solid $main_blue;
     border-left: 2px solid $main_blue;
     border-radius: 0;
@@ -258,7 +295,7 @@
     width: 6px;
     height: 6px;
     content: '';
-    background-color: $main_red;
+    background: $main_red;
     border-radius: 100%;
   }
 
@@ -266,6 +303,7 @@
   .box_gray ol {
     padding: 0 0 0 1.5em;
   }
+
   .box_gray ol > li::before {
     position: absolute;
     top: 0.3em;
@@ -276,6 +314,7 @@
     color: #b8bfbe;
     content: counter(li);
   }
+
   .box_gray ul > li::after {
     position: absolute;
     top: 0.5em;
@@ -284,7 +323,7 @@
     width: 6px;
     height: 6px;
     content: '';
-    background-color: #b8bfbe;
+    background: #b8bfbe;
     border-radius: 100%;
   }
 }

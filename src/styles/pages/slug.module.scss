@@ -20,6 +20,10 @@
   font-size: 1.8rem;
   font-weight: bold;
   color: $text_gray;
+
+  @include dark_mode {
+    color: $darkMode_gray;
+  }
 }
 
 .top_image {
@@ -28,6 +32,10 @@
   height: 200px;
   margin-top: 8px;
   background: #fff;
+
+  @include dark_mode {
+    background: $black;
+  }
 }
 
 .flex {
@@ -46,6 +54,10 @@
   color: $black;
   background: #e5e5e5;
   border-radius: 4px;
+
+  @include dark_mode {
+    // background: $white;
+  }
 }
 
 .slug_footer {
@@ -68,6 +80,10 @@
   background: $black;
   border-radius: 999px;
 
+  @include dark_mode {
+    background: $darkMode_black;
+  }
+
   @include media(sm) {
     display: inline-flex;
     height: 32px;
@@ -82,4 +98,8 @@
   margin-right: 8px;
   vertical-align: middle;
   fill: #fff;
+
+  @include dark_mode {
+    fill: $white;
+  }
 }

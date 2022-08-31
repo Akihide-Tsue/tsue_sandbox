@@ -122,7 +122,8 @@ export function getFaviconUrl(pageUrl: string, size: 32 | 64 = 64) {
 
 また、BlogCard に表示する meta 情報のスタイルについて、  
 2 行以上だと...で text を省略する css は下記の通りなのですが、  
-stylelint が自動で `display: -webkit-box; → display: box;`  
+stylelint が自動で  
+`display: -webkit-box; → display: box;`  
 と書き換えており、悩みました。  
 `/* stylelint-disable-next-line */` にて解決。
 

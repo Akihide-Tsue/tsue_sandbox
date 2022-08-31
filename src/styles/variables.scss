@@ -8,8 +8,17 @@ $gray: #555b6e;
 $text_gray: #787878;
 $border_color: #ccc;
 $link_text: #1d17be;
+
+//ui
 $placeholder_text_color: rgb(68 68 68 / 0.7);
 $twitter_theme: #1da1f2;
+
+//dark_mode
+$main_blue_dark: darken($main_blue, 6%);
+$link_text_light: lighten($main_yellow, 6%);
+$darkMode_gray: darken($white, 15%);
+$darkMode_border_color: #999;
+$darkMode_black: #121212;
 
 //breakpoints
 $breakpoints: (
@@ -32,9 +41,18 @@ $breakpoints: (
   }
 }
 
-@mixin hoverable() {
-  @media (hover: hover) {
+@mixin dark_mode {
+  :global(.dark_theme) & {
     @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      transition: 0.25s;
+      @content;
+    }
   }
 }
 
@@ -62,14 +80,14 @@ $breakpoints: (
   box-shadow: 0 7px 30px -10px rgb(150 170 180 / 0.5);
 }
 
-@mixin hover_color($hover_color) {
-  @include hoverable {
-    &:hover {
-      background: $hover_color;
-      transition: 0.25s ease-out background;
-    }
-  }
-}
+// @mixin hover_color($hover_color) {
+//   @media (hover: hover) {
+//     &:hover {
+//       background: $hover_color;
+//       transition: 0.25s ease-out background;
+//     }
+//   }
+// }
 
 @mixin text_hidden($lines) {
   /* stylelint-disable-next-line */

@@ -35,9 +35,9 @@ Homebrew 経由でインストールします。
 
 #### サーバーにアクセス
 
-localhost と同じ番号でターミナルに入力しましょう。  
+localhost と同じポート番号で下記のコマンドをターミナルに入力しましょう。  
 `ngrok http 3000`  
-Forwarding 　　https://xxxxxxxxxxxxx.jp.ngrok.io → http://localhost:3000  
+`Forwarding 　　https://xxxxxxxxxxxxx.jp.ngrok.io → http://localhost:3000`  
 と表示されるのでその URL にアクセス。
 
 そして、**Visit Site** をクリックするとローカル環境が表示されます。

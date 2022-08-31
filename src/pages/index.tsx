@@ -45,7 +45,6 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ posts }) => {
-  console.log('posts', posts);
   const [layout, setLayout] = useRecoilState(articleLayout);
 
   return (

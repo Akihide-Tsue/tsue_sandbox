@@ -10,6 +10,11 @@
   text-decoration: none !important;
   border: 1px solid $border_color !important;
   border-radius: 4px;
+
+  @include dark_mode {
+    background: $darkMode_black;
+    border: 1px solid $darkMode_border_color !important;
+  }
 }
 
 .text_wrapper {
@@ -42,6 +47,10 @@
   font-weight: 700;
   color: $black;
 
+  @include dark_mode {
+    color: $white;
+  }
+
   @include text_hidden(2);
 
   @include media(md) {
@@ -58,6 +67,10 @@
   color: $text_gray;
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  @include dark_mode {
+    color: $border_color;
+  }
 
   @include media(sm) {
     font-size: 1.3rem;
@@ -82,6 +95,10 @@
   font-size: 1.2rem;
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  @include dark_mode {
+    color: $darkMode_gray !important;
+  }
 }
 
 .image_wrapper {
@@ -107,6 +124,10 @@
   object-fit: cover;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
+
+  @include dark_mode {
+    background: $border_color;
+  }
 
   @include media(lg) {
     max-width: 240px !important;
