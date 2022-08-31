@@ -73,4 +73,14 @@
       filter: brightness(90%);
     }
   }
+
+  &.disabled {
+    cursor: default;
+
+    @media (hover: hover) {
+      &:hover {
+        filter: none;
+      }
+    }
+  }
 }

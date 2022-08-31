@@ -16,6 +16,11 @@
     margin: 0 auto;
   }
 
+  @include dark_mode {
+    color: $darkMode_gray;
+    border-top: 1px solid $darkMode_border_color;
+  }
+
   @include media(lg) {
     padding: 0 16px;
   }

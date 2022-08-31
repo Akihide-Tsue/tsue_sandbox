@@ -36,9 +36,9 @@ const PageHeader: FC = ({}) => {
     const body = document.body;
     if (isDarkMode === 'dark') {
       body.classList.remove('light-theme');
-      body.classList.add('dark-theme');
+      body.classList.add('dark_theme');
     } else {
-      body.classList.remove('dark-theme');
+      body.classList.remove('dark_theme');
       body.classList.add('light-theme');
     }
   }, [isDarkMode]);
@@ -57,6 +57,7 @@ const PageHeader: FC = ({}) => {
           </a>
         </Link>
 
+        {/* TODO tooltip追加 */}
         <div className={styles.icon_wrapper}>
           {hasMounted && (
             <>

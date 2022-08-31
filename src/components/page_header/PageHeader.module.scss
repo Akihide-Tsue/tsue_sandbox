@@ -10,6 +10,11 @@
   transition: all 0.15s ease-out;
   backdrop-filter: saturate(180%) blur(10px);
 
+  @include dark_mode {
+    background: rgb(120 120 120 / 0.7);
+    box-shadow: none;
+  }
+
   &.hidden {
     top: -40px;
   }
@@ -47,11 +52,15 @@
 
 .icon {
   cursor: pointer;
+
+  @include dark_mode {
+    fill: white;
+  }
 }
 
 .theme_icon {
   position: relative;
   top: 2px;
-  left: 4px;
+  left: 2px;
   cursor: pointer;
 }

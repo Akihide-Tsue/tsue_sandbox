@@ -10,6 +10,9 @@ $border_color: #ccc;
 $link_text: #1d17be;
 $placeholder_text_color: rgb(68 68 68 / 0.7);
 $twitter_theme: #1da1f2;
+//dark_mode
+$darkMode_gray: #bbb;
+$darkMode_border_color: #555b6e;
 
 //breakpoints
 $breakpoints: (
@@ -32,8 +35,8 @@ $breakpoints: (
   }
 }
 
-@mixin hoverable() {
-  @media (hover: hover) {
+@mixin dark_mode {
+  :global(.dark_theme) & {
     @content;
   }
 }
@@ -60,6 +63,12 @@ $breakpoints: (
 
 @mixin button_shadow {
   box-shadow: 0 7px 30px -10px rgb(150 170 180 / 0.5);
+}
+
+@mixin hoverable() {
+  @media (hover: hover) {
+    @content;
+  }
 }
 
 @mixin hover_color($hover_color) {
