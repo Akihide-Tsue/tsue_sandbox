@@ -125,7 +125,7 @@ export function getFaviconUrl(pageUrl: string, size: 32 | 64 = 64) {
 stylelint が自動で  
 `display: -webkit-box; → display: box;`  
 と書き換えており、悩みました。  
-`/* stylelint-disable-next-line */` にて解決。
+`/* stylelint-disable-next-line */` にてとりあえず解決（保留）。
 
 ```css:BlogCard.module.scss
 .meta_title {

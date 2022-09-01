@@ -9,6 +9,10 @@
   background: $twitter_theme;
   border-radius: 999px;
 
+  @include dark_mode {
+    background: $twitter_theme_dark;
+  }
+
   @include media(sm) {
     display: inline-flex;
     height: 32px;
