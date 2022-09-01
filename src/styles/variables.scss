@@ -14,8 +14,9 @@ $placeholder_text_color: rgb(68 68 68 / 0.7);
 $twitter_theme: #1da1f2;
 
 //dark_mode
-$main_blue_dark: darken($main_blue, 6%);
-$link_text_light: lighten($main_yellow, 6%);
+$main_blue_dark: darken($main_blue, 6%); //#14a3a0
+$main_blue_light: lighten($main_blue, 32%);
+$link_text_light: lighten($main_yellow, 8%);
 $darkMode_gray: darken($white, 15%);
 $darkMode_border_color: #999;
 $darkMode_black: #121212;

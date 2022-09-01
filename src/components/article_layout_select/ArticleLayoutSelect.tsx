@@ -24,7 +24,7 @@ const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout }) => {
 
   const activeColorCode = '#2e282a'; //$black
   const inactiveColorCode = '#ccc'; //$border_color
-  const darkModeActiveColorCode = '#ffc914'; //$main_yellow
+  const darkModeActiveColorCode = '#7fefed'; //$main_blue系
 
   const activeColor = () => {
     return isDarkMode === 'dark' ? darkModeActiveColorCode : activeColorCode;

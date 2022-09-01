@@ -1,14 +1,17 @@
+import { useLayoutEffect } from 'react';
+
 import fs from 'fs';
 
 import type { NextPage } from 'next';
 
 import matter from 'gray-matter';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
 import ArticleLink from '@components/article_link/ArticleLink';
 import generatedRssFeed from 'src/lib/feed';
 import { articleLayout } from 'src/recoil/atoms/articleLayout';
+import { colorTheme } from 'src/recoil/atoms/colorTheme';
 import { PostType } from 'src/type-def/postsType';
 
 import styles from '@styles/index.module.scss';
@@ -45,12 +48,18 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ posts }) => {
+  const isDarkMode = useRecoilValue(colorTheme);
   const [layout, setLayout] = useRecoilState(articleLayout);
+
+  useLayoutEffect(() => {
+    //dark_mode時の初期設定はリスト表示
+    if (isDarkMode === 'dark') setLayout('list');
+  }, []);
 
   return (
     <>
       <ArticleLayoutSelect layout={layout} setLayout={setLayout} />
-      <div className={`${layout === 'card' && styles.grid_container}`}>
+      <div className={`${layout === 'card' ? styles.grid_container : styles.list_container}`}>
         {posts.map((post: PostType) => {
           return !post.frontMatter.draft && <ArticleLink key={post.slug} post={post} layout={layout} />;
         })}
