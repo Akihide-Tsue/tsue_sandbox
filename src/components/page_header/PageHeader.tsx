@@ -58,8 +58,8 @@ const PageHeader: FC = ({}) => {
               {isDarkMode === 'dark' ? (
                 <LightIcon
                   width={26}
-                  height={26}
-                  className={styles.theme_icon}
+                  height={25}
+                  className={styles.light_icon}
                   fill="white"
                   onClick={() => {
                     setIsDarkMode('light');
@@ -68,8 +68,8 @@ const PageHeader: FC = ({}) => {
               ) : (
                 <DarkIcon
                   width={26}
-                  height={25}
-                  className={styles.theme_icon}
+                  height={23}
+                  className={styles.dark_icon}
                   onClick={() => {
                     setIsDarkMode('dark');
                   }}

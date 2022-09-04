@@ -58,9 +58,16 @@
   }
 }
 
-.theme_icon {
+.light_icon {
   position: relative;
-  top: 2px;
+  top: 3px;
   left: 2px;
+  cursor: pointer;
+}
+
+.dark_icon {
+  position: relative;
+  top: 3px;
+  left: 3px;
   cursor: pointer;
 }
