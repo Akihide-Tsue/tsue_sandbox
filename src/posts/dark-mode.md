@@ -19,7 +19,10 @@ recoil-persistを使用しテーマの状態管理と、
 初回表示時に端末で標準で搭載されている設定を取得し、ダークモードで設定されていればdarkテーマで表示する実装を行いました。  
 
 ## 実装
-まずは、atomを下記の通り作成。
+まずは、atomを下記の通り作成。  
+`effects_UNSTABLE: [persistAtom],`  
+この1行でlocalStorageに保存できます。便利すぎる。
+
 
 ```js:colorTheme.ts
 import { atom } from 'recoil';
@@ -87,7 +90,7 @@ body.dark_theme {
   }
 }
 
-//使用時
+//使用方法は下記のように
 @include dark_mode {
   color: #fff;
 }
@@ -119,4 +122,5 @@ const useHasMounted = () => {
 export default useHasMounted;
 
 ```
-これにより、setMount後に表示できるようになりました。
+これにより、setMount後に表示できるようになりました。  
+目に優しい配色が難しいので徐々に改善していきたい。
