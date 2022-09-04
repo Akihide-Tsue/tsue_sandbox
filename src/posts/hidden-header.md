@@ -55,7 +55,7 @@ export function useScrollPosition(): ScrollPosition {
 
 export const useShowHeader = (visibleHeight: number): boolean => {
   const [showHeader, setShowHeader] = useState(true);
-  const [position, setPosition] = useState<number | void>(0);
+  const [position, setPosition] = useState<number>(0);
   const current = useScrollPosition();
 
   useEffect(() => {

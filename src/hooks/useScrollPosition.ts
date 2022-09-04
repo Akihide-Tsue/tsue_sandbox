@@ -40,7 +40,7 @@ export const useShowComponent = (visibleHeight: number): boolean => {
   const [isVisible, setIsVisible] = useState(true);
   const debouncedIsVisible = useDebounce(isVisible, 200);
 
-  const [position, setPosition] = useState<number | void>(0);
+  const [position, setPosition] = useState<number>(0);
   const current = useScrollPosition();
 
   useEffect(() => {
