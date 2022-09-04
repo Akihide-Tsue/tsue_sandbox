@@ -34,18 +34,26 @@ const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout, displayLayoutSelect
   return (
     <div className={styles.layout_selector}>
       <div className={styles.index_section}>
-        <Link href={`/`} passHref>
-          <a className={`${styles.index_label} ${pathname === `/` ? styles.current_page : ''}`}>Blog</a>
-        </Link>
-        {/* <Link href={`/tags`} passHref>
-          <a className={styles.index_label}>Tags</a>
-        </Link> */}
-        <Link href={`/sandbox`} passHref>
-          <a className={`${styles.index_label} ${pathname === `/sandbox` ? styles.current_page : ''}`}>Sandbox</a>
-        </Link>
-        {/* <Link href={`/about`} passHref>
-          <a className={`${styles.index_label} ${pathname === `/about` ? styles.current_page : ''}`}>About</a>
-        </Link> */}
+        <li className={styles.item}>
+          <Link href={`/`} passHref>
+            <a className={`${styles.index_label} ${pathname === `/` ? styles.current_page : ''}`}>Blog</a>
+          </Link>
+        </li>
+        {/* <li className={styles.item}>
+          <Link href={`/tags`} passHref>
+            <a className={styles.index_label}>Tags</a>
+          </Link>
+        </li> */}
+        <li className={styles.item}>
+          <Link href={`/sandbox`} passHref>
+            <a className={`${styles.index_label} ${pathname === `/sandbox` ? styles.current_page : ''}`}>Sandbox</a>
+          </Link>
+        </li>
+        {/* <li className={styles.item}>
+          <Link href={`/about`} passHref>
+            <a className={`${styles.index_label} ${pathname === `/about` ? styles.current_page : ''}`}>About</a>
+          </Link>
+        </li> */}
       </div>
 
       {hasMounted && displayLayoutSelector && setLayout && (
