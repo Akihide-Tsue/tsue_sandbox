@@ -13,11 +13,12 @@ import { colorTheme } from 'src/recoil/atoms/colorTheme';
 import styles from './ArticleLayoutSelect.module.scss';
 
 type Props = {
-  layout: 'card' | 'list';
-  setLayout: Dispatch<SetStateAction<'card' | 'list'>>;
+  layout?: 'card' | 'list';
+  setLayout?: Dispatch<SetStateAction<'card' | 'list'>>;
+  displayLayoutSelector: boolean;
 };
 
-const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout }) => {
+const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout, displayLayoutSelector = false }) => {
   const { pathname } = useRouter();
   const isDarkMode = useRecoilValue(colorTheme);
   const hasMounted = useHasMounted();
@@ -33,9 +34,9 @@ const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout }) => {
   return (
     <div className={styles.layout_selector}>
       <div className={styles.index_section}>
-        {/* <Link href={`/`} passHref>
+        <Link href={`/`} passHref>
           <a className={`${styles.index_label} ${pathname === `/` ? styles.current_page : ''}`}>Blog</a>
-        </Link> */}
+        </Link>
         {/* <Link href={`/tags`} passHref>
           <a className={styles.index_label}>Tags</a>
         </Link> */}
@@ -47,7 +48,7 @@ const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout }) => {
         </Link> */}
       </div>
 
-      {hasMounted && (
+      {hasMounted && displayLayoutSelector && setLayout && (
         <div className={`${styles.layout_section} ${pathname !== `/` && styles.invisible}`}>
           <span className={styles.layout_selector_text}>表示</span>
           <button className={`${styles.layout_selector_button} ${layout === 'card' && styles.disabled}`} onClick={() => setLayout('card')}>

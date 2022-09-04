@@ -58,7 +58,7 @@ const Home: NextPage<Props> = ({ posts }) => {
 
   return (
     <>
-      <ArticleLayoutSelect layout={layout} setLayout={setLayout} />
+      <ArticleLayoutSelect layout={layout} setLayout={setLayout} displayLayoutSelector />
       <div className={`${layout === 'card' ? styles.grid_container : styles.list_container}`}>
         {posts.map((post: PostType) => {
           return !post.frontMatter.draft && <ArticleLink key={post.slug} post={post} layout={layout} />;
