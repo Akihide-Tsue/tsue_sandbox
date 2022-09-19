@@ -64,6 +64,7 @@ https://github.com/Akihide-Tsue/tsue_sandbox#readme
 ## TODO
 
 - markdownをMDXに変更
+- gtag整備
 - いいね・コメント機能（NestJs & MongoDB）
 - 記事のタグ付け・分類・個数表示（フロント → バックエンドに管理移行）
 - TwitterのEmbed要素をURLから生成
@@ -76,3 +77,4 @@ https://github.com/Akihide-Tsue/tsue_sandbox#readme
 - コードの copy ボタン
 - zenn-markdown-htmlで目次生成
 - ページネーション
+- [IPアドレスでratelimitをかける](https://zenn.dev/hasehiro0828/articles/8a5212198840cd)
