@@ -23,11 +23,13 @@ type AssetDataType = {
   };
 };
 
-const CompaundInterest: NextPage = ({}) => {
+const CompoundInterest: NextPage = ({}) => {
   const [isDarkMode, setIsDarkMode] = useRecoilState(colorTheme);
   const originalDarkMode = isDarkMode;
   const initialArray = [{ principal: 0, percentage: 0, year: 0 }];
   const [interestArray, setInterestArray] = useState<InterestListType>(initialArray);
+  const [year, setYear] = useState(20);
+  const [zenkakuError, setZenkakuError] = useState(false);
   const [disabled, setDisabled] = useState(true);
 
   const initialAssetData = () => {
@@ -89,17 +91,20 @@ const CompaundInterest: NextPage = ({}) => {
               <span className={styles.input_label}>{'資産' + String(index + 1)}</span>
               <input
                 type="text"
-                // inputMode="decimal"
                 inputMode="numeric"
                 className={styles.asset_input_area}
                 autoComplete="off"
                 placeholder=""
+                maxLength={6}
                 value={capital ? capital : ''}
-                onChange={(e) =>
-                  // (e: ChangeEvent<HTMLInputElement>) => convertZenkakuToHankaku(e.target.value)
-                  // handleLandAreaCalculate.landFormInputHandler('land', id, convertZenkakuToHankaku(e.target.value), setAssetData, assetData)
-                  assetFormInputHandler('capital', id, convertZenkakuToHankaku(e.target.value), setAssetData, assetData)
-                }
+                onKeyDown={(e) => {
+                  e.code === 'KeyE' && e.preventDefault();
+                }}
+                onChange={(e) => {
+                  isNaN(Number(convertZenkakuToHankaku(e.target.value))) && setZenkakuError(true);
+                  !isNaN(Number(convertZenkakuToHankaku(e.target.value))) &&
+                    (assetFormInputHandler('capital', id, convertZenkakuToHankaku(e.target.value), setAssetData, assetData), setZenkakuError(false));
+                }}
               />
               <span className={styles.unit_label}>万円</span>
               <button
@@ -115,22 +120,45 @@ const CompaundInterest: NextPage = ({}) => {
           );
         })}
 
-        {/* <div> */}
-        <button onClick={addAssetInputsRowHandler} disabled={disabled} className={styles.plus_section}>
-          <PlusButton className={`${!disabled ? styles.is_active : styles.is_disabled} ${styles.add_button_icon}`} />
-        </button>
+        {Object.keys(assetData).length < 10 && (
+          <button onClick={addAssetInputsRowHandler} disabled={disabled} className={styles.plus_section}>
+            <PlusButton className={`${!disabled ? styles.is_active : styles.is_disabled} ${styles.add_button_icon}`} />
+          </button>
+        )}
       </div>
-      {/* </div> */}
+
+      <div className={styles.asset_input_form}>
+        <span className={styles.input_label}>期間</span>
+        <input
+          type="text"
+          inputMode="numeric"
+          className={styles.asset_input_area}
+          autoComplete="off"
+          placeholder=""
+          maxLength={3}
+          value={year ? year : ''}
+          onKeyDown={(e) => {
+            e.code === 'KeyE' && e.preventDefault();
+          }}
+          onChange={(e) => {
+            isNaN(Number(convertZenkakuToHankaku(e.target.value))) && setZenkakuError(true);
+            !isNaN(Number(convertZenkakuToHankaku(e.target.value))) && (setYear(Number(convertZenkakuToHankaku(e.target.value))), setZenkakuError(false));
+          }}
+        />
+        <span className={styles.unit_label}>年</span>
+      </div>
+      {zenkakuError && <span className={styles.error_text}>半角数値を入力して下さい</span>}
 
       <div>
         {interestArray.map((data) => {
           return data.percentage;
         })}
       </div>
+
       <div></div>
       <div></div>
     </>
   );
 };
 
-export default CompaundInterest;
+export default CompoundInterest;

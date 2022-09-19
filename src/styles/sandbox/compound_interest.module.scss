@@ -12,8 +12,8 @@
 
 .input_label {
   display: inline-block;
+  min-width: 64px;
   margin: auto 0;
-  margin-right: 16px;
 }
 
 .unit_label {
@@ -44,6 +44,7 @@
 
 .plus_section {
   margin: 0 auto;
+  margin-bottom: 16px;
 }
 
 .add_button_icon {
@@ -59,4 +60,10 @@
   }
 
   @include hover_color(lighten($button_blue, 8%));
+}
+
+.error_text {
+  margin: auto 0;
+  font-weight: 500;
+  color: $error_text;
 }

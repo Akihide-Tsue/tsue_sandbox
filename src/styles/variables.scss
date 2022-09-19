@@ -26,6 +26,7 @@ $button_blue: #3b83c3;
 $button_blue_hover: darken($button_blue, 6%);
 $button_red: #d62c45;
 $button_red_hover: darken($button_red, 6%);
+$error_text: $button_red;
 
 //breakpoints
 $breakpoints: (
