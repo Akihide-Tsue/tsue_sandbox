@@ -51,7 +51,7 @@
     color: $white;
   }
 
-  @include text_hidden(2);
+  @include lines_text_hidden(2);
 
   @include media(md) {
     margin-bottom: 4px;

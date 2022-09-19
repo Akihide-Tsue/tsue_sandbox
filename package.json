@@ -51,6 +51,7 @@
     "sass": "^1.53.0",
     "sass-loader": "^13.0.2",
     "terser-webpack-plugin": "^5.3.3",
+    "uuidv4": "^6.2.13",
     "zenn-markdown-html": "^0.1.117"
   },
   "devDependencies": {

@@ -1,0 +1,62 @@
+@use '@variables' as *;
+
+.calc_section {
+  width: 280px;
+}
+
+.asset_input_form {
+  display: flex;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.input_label {
+  display: inline-block;
+  margin: auto 0;
+  margin-right: 16px;
+}
+
+.unit_label {
+  display: inline-block;
+  margin: auto 0;
+  margin-right: 24px;
+}
+
+.asset_input_area {
+  width: 120px;
+  margin-right: 8px;
+}
+
+.remove_button_icon {
+  width: 30px;
+  height: 30px;
+
+  &.is_active {
+    color: $button_red;
+  }
+
+  &.is_disabled {
+    color: $disabled_color;
+  }
+
+  @include hover_color(lighten($button_red, 8%));
+}
+
+.plus_section {
+  margin: 0 auto;
+}
+
+.add_button_icon {
+  width: 30px;
+  height: 30px;
+
+  &.is_active {
+    color: $button_blue;
+  }
+
+  &.is_disabled {
+    color: $disabled_color;
+  }
+
+  @include hover_color(lighten($button_blue, 8%));
+}

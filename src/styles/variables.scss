@@ -10,7 +10,7 @@ $border_color: #ccc;
 $link_text: #1d17be;
 
 //dark_mode
-$main_blue_dark: darken($main_blue, 10%); //#14a3a0
+$main_blue_dark: darken($main_blue, 8%);
 $main_blue_light: lighten($main_blue, 32%);
 $link_text_light: lighten($main_yellow, 10%);
 $darkMode_gray: darken($white, 15%);
@@ -18,9 +18,14 @@ $darkMode_border_color: #999;
 $darkMode_black: #121212;
 
 //ui
+$disabled_color: rgba(160, 160, 160, 0.6);
 $placeholder_text_color: rgb(68 68 68 / 0.7);
 $twitter_theme: #1da1f2;
 $twitter_theme_dark: darken($twitter_theme, 6%);
+$button_blue: #3b83c3;
+$button_blue_hover: darken($button_blue, 6%);
+$button_red: #d62c45;
+$button_red_hover: darken($button_red, 6%);
 
 //breakpoints
 $breakpoints: (
@@ -62,9 +67,9 @@ $breakpoints: (
   padding: 0.3em 1em;
   font-size: 1.6rem;
   line-height: 1.6;
-  color: #444;
-  background: #fff;
-  border: 1px solid #ccc;
+  color: $black;
+  // background: $white;
+  border: 1px solid $border_color;
   border-radius: 4px;
   outline: none;
   box-shadow: none;
@@ -82,16 +87,25 @@ $breakpoints: (
   box-shadow: 0 7px 30px -10px rgb(150 170 180 / 0.5);
 }
 
-// @mixin hover_color($hover_color) {
-//   @media (hover: hover) {
-//     &:hover {
-//       background: $hover_color;
-//       transition: 0.25s ease-out background;
-//     }
-//   }
-// }
+@mixin hover_color($hover_color) {
+  @media (hover: hover) {
+    &:hover {
+      color: $hover_color;
+      transition: 0.3s ease-out background;
+    }
+  }
+}
 
-@mixin text_hidden($lines) {
+@mixin hover_background($hover_color) {
+  @media (hover: hover) {
+    &:hover {
+      background: $hover_color;
+      transition: 0.25s ease-out background;
+    }
+  }
+}
+
+@mixin lines_text_hidden($lines) {
   /* stylelint-disable-next-line */
   display: -webkit-box;
   overflow: hidden;
