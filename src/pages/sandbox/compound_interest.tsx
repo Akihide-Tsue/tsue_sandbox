@@ -5,6 +5,7 @@ import type { NextPage } from 'next';
 import { useRecoilState } from 'recoil';
 import { v4 as uuid } from 'uuid';
 
+import LineChart from '@components/line_chart/LineChart';
 import MinusButton from 'public/images/icons/calc_minus_button.svg';
 import PlusButton from 'public/images/icons/calc_plus_button.svg';
 import { colorTheme } from 'src/recoil/atoms/colorTheme';
@@ -26,8 +27,8 @@ type AssetDataType = {
 const CompoundInterest: NextPage = ({}) => {
   const [isDarkMode, setIsDarkMode] = useRecoilState(colorTheme);
   const originalDarkMode = isDarkMode;
-  const initialArray = [{ principal: 0, percentage: 0, year: 0 }];
-  const [interestArray, setInterestArray] = useState<InterestListType>(initialArray);
+  // const initialArray = [{ principal: 0, percentage: 0, year: 0 }];
+  // const [interestArray, setInterestArray] = useState<InterestListType>(initialArray);
   const [year, setYear] = useState(20);
   const [zenkakuError, setZenkakuError] = useState(false);
   const [disabled, setDisabled] = useState(true);
@@ -36,7 +37,7 @@ const CompoundInterest: NextPage = ({}) => {
     const id = uuid();
     return {
       [id]: {
-        capital: 1,
+        capital: 100,
       },
     };
   };
@@ -81,6 +82,22 @@ const CompoundInterest: NextPage = ({}) => {
     const { [id]: deleteData, ...newData } = assetData;
     setAssetData(newData);
   };
+
+  const currentYear = new Date().getFullYear();
+  const array: string[][] = [['Year', '資産']];
+  Object.values(assetData).map((data, index) => {
+    array.push([String(currentYear + index), data.capital as string]);
+  });
+
+  console.log('d', array);
+
+  // const data = [
+  //   ['Year', 'Sales', 'Expenses'],
+  //   [currentYear, 1000, 400],
+  //   ['2005', 1170, 460],
+  //   ['2006', 660, 1120],
+  //   ['2007', 1030, 540],
+  // ];
 
   return (
     <>
@@ -149,11 +166,7 @@ const CompoundInterest: NextPage = ({}) => {
       </div>
       {zenkakuError && <span className={styles.error_text}>半角数値を入力して下さい</span>}
 
-      <div>
-        {interestArray.map((data) => {
-          return data.percentage;
-        })}
-      </div>
+      <LineChart data={array} />
 
       <div></div>
       <div></div>

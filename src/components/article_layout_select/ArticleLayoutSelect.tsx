@@ -50,6 +50,11 @@ const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout, displayLayoutSelect
           </Link>
         </li>
         {/* <li className={styles.item}>
+          <Link href={`/resume`} passHref>
+            <a className={`${styles.index_label} ${pathname === `/sandbox` ? styles.current_page : ''}`}>Resume</a>
+          </Link>
+        </li> */}
+        {/* <li className={styles.item}>
           <Link href={`/about`} passHref>
             <a className={`${styles.index_label} ${pathname === `/about` ? styles.current_page : ''}`}>About</a>
           </Link>
