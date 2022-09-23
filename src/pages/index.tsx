@@ -9,6 +9,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 
 import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
 import ArticleLink from '@components/article_link/ArticleLink';
+import useMediaQuery from '@hooks/useMediaQuery';
 import generatedRssFeed from 'src/lib/feed';
 import { articleLayout } from 'src/recoil/atoms/articleLayout';
 import { colorTheme } from 'src/recoil/atoms/colorTheme';
@@ -50,15 +51,16 @@ type Props = {
 const Home: NextPage<Props> = ({ posts }) => {
   const isDarkMode = useRecoilValue(colorTheme);
   const [layout, setLayout] = useRecoilState(articleLayout);
+  const isMobile = useMediaQuery();
 
   useLayoutEffect(() => {
-    //dark_mode時の初期設定はリスト表示
-    if (isDarkMode === 'dark') setLayout('list');
+    //mobileかつdark_mode時の場合の初期設定はリスト表示
+    if (isMobile && isDarkMode === 'dark') setLayout('list');
   }, []);
 
   return (
     <>
-      <ArticleLayoutSelect layout={layout} setLayout={setLayout} />
+      <ArticleLayoutSelect layout={layout} setLayout={setLayout} displayLayoutSelector />
       <div className={`${layout === 'card' ? styles.grid_container : styles.list_container}`}>
         {posts.map((post: PostType) => {
           return !post.frontMatter.draft && <ArticleLink key={post.slug} post={post} layout={layout} />;

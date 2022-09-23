@@ -38,7 +38,7 @@ const Home: NextPage<Props> = ({ content, frontMatter }) => {
 
   return (
     <>
-      <ArticleLayoutSelect layout={layout} setLayout={setLayout} />
+      <ArticleLayoutSelect layout={layout} setLayout={setLayout} displayLayoutSelector={false} />
       <ReactMarkdown components={{ code: CodeBlock, a: BlogCard }} remarkPlugins={[remarkGfm]} className={stylesMarkdown.content}>
         {content}
       </ReactMarkdown>

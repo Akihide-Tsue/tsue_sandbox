@@ -17,9 +17,9 @@
   border-bottom: 1px solid $border_color;
 
   @include hover {
-    background: rgb(249 249 249); // Old browsers
-    background: radial-gradient(circle, rgb(249 249 249 / 1) 0%, rgb(255 255 255 / 1) 100%);
-    transition: 0.25s;
+    color: $main_blue_dark;
+    // background: rgb(249 249 249); // Old browsers
+    // background: radial-gradient(circle, rgb(249 249 249 / 1) 0%, rgb(255 255 255 / 1) 100%);
   }
 
   @include dark_mode {

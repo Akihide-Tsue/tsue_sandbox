@@ -13,11 +13,12 @@ import { colorTheme } from 'src/recoil/atoms/colorTheme';
 import styles from './ArticleLayoutSelect.module.scss';
 
 type Props = {
-  layout: 'card' | 'list';
-  setLayout: Dispatch<SetStateAction<'card' | 'list'>>;
+  layout?: 'card' | 'list';
+  setLayout?: Dispatch<SetStateAction<'card' | 'list'>>;
+  displayLayoutSelector: boolean;
 };
 
-const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout }) => {
+const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout, displayLayoutSelector = false }) => {
   const { pathname } = useRouter();
   const isDarkMode = useRecoilValue(colorTheme);
   const hasMounted = useHasMounted();
@@ -33,21 +34,34 @@ const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout }) => {
   return (
     <div className={styles.layout_selector}>
       <div className={styles.index_section}>
-        {/* <Link href={`/`} passHref>
-          <a className={`${styles.index_label} ${pathname === `/` ? styles.current_page : ''}`}>Blog</a>
-        </Link> */}
-        {/* <Link href={`/tags`} passHref>
-          <a className={styles.index_label}>Tags</a>
-        </Link> */}
-        <Link href={`/sandbox`} passHref>
-          <a className={`${styles.index_label} ${pathname === `/sandbox` ? styles.current_page : ''}`}>Sandbox</a>
-        </Link>
-        {/* <Link href={`/about`} passHref>
-          <a className={`${styles.index_label} ${pathname === `/about` ? styles.current_page : ''}`}>About</a>
-        </Link> */}
+        <li className={styles.item}>
+          <Link href={`/`} passHref>
+            <a className={`${styles.index_label} ${pathname === `/` ? styles.current_page : ''}`}>Blog</a>
+          </Link>
+        </li>
+        {/* <li className={styles.item}>
+          <Link href={`/tags`} passHref>
+            <a className={styles.index_label}>Tags</a>
+          </Link>
+        </li> */}
+        <li className={styles.item}>
+          <Link href={`/sandbox`} passHref>
+            <a className={`${styles.index_label} ${pathname === `/sandbox` ? styles.current_page : ''}`}>Sandbox</a>
+          </Link>
+        </li>
+        {/* <li className={styles.item}>
+          <Link href={`/resume`} passHref>
+            <a className={`${styles.index_label} ${pathname === `/sandbox` ? styles.current_page : ''}`}>Resume</a>
+          </Link>
+        </li> */}
+        {/* <li className={styles.item}>
+          <Link href={`/about`} passHref>
+            <a className={`${styles.index_label} ${pathname === `/about` ? styles.current_page : ''}`}>About</a>
+          </Link>
+        </li> */}
       </div>
 
-      {hasMounted && (
+      {hasMounted && displayLayoutSelector && setLayout && (
         <div className={`${styles.layout_section} ${pathname !== `/` && styles.invisible}`}>
           <span className={styles.layout_selector_text}>表示</span>
           <button className={`${styles.layout_selector_button} ${layout === 'card' && styles.disabled}`} onClick={() => setLayout('card')}>

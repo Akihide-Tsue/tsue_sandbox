@@ -45,12 +45,14 @@
     "react-hotjar": "^5.0.0",
     "react-markdown": "^8.0.3",
     "react-syntax-highlighter": "^15.5.0",
+    "recharts": "2.1.9",
     "recoil": "^0.7.5",
     "recoil-persist": "^4.2.0",
     "remark-gfm": "^3.0.1",
     "sass": "^1.53.0",
     "sass-loader": "^13.0.2",
     "terser-webpack-plugin": "^5.3.3",
+    "uuidv4": "^6.2.13",
     "zenn-markdown-html": "^0.1.117"
   },
   "devDependencies": {
