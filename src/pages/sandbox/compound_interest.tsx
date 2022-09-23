@@ -27,15 +27,11 @@ const CompoundInterest: NextPage = ({}) => {
   const [interestRate, setInterestRate] = useState(5);
   const [zenkakuError, setZenkakuError] = useState(false);
   const [disabled, setDisabled] = useState(true);
-  const initialAssetData = () => {
-    const id = uuid();
-    return {
-      [id]: {
-        capital: 100,
-      },
-    };
-  };
-  const [assetData, setAssetData] = useState<AssetDataType>({ ...initialAssetData() });
+  const [assetData, setAssetData] = useState<AssetDataType>({
+    [uuid()]: {
+      capital: 100,
+    },
+  });
 
   useEffect(() => {
     //TODO:ダークモードのCSS設定するまではlight表示固定
@@ -62,13 +58,17 @@ const CompoundInterest: NextPage = ({}) => {
     assetData: AssetDataType,
   ) => {
     if (value !== null && which === 'capital') {
-      //   (landAreaFloatNumberRegex.test(value) || !value) &&
       setAssetData({ ...assetData, [id]: { ...assetData[id], capital: value } });
     }
   };
 
   const addAssetInputsRowHandler = () => {
-    setAssetData({ ...assetData, ...initialAssetData() });
+    setAssetData({
+      ...assetData,
+      [uuid()]: {
+        capital: 100 * (Object.keys(assetData).length + 1),
+      },
+    });
   };
 
   const deleteAssetInputsRowHandler = (id: string) => {
@@ -93,8 +93,6 @@ const CompoundInterest: NextPage = ({}) => {
       }
     }
   });
-
-  console.log('year, list', year, list);
 
   return (
     <>
