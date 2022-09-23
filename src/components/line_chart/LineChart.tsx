@@ -4,6 +4,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 import styles from 'src/styles/sandbox/compound_interest.module.scss';
 
+//https://v4.mui.com/ja/customization/color/
 const strokes = ['#f44336', '#9c27b0', '#5c6bc0', '#29b6f6', '#4caf50', '#ffc107', '#795548', '#607d8b'];
 
 type Props = {
@@ -30,7 +31,7 @@ const Chart: FC<Props> = ({ data }) => {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="year" />
           <YAxis tickCount={10} />
-          <Tooltip />
+          <Tooltip separator=" - " formatter={(value: string) => value + '万円'} />
           <Legend />
           {displayChartData()}
         </LineChart>
