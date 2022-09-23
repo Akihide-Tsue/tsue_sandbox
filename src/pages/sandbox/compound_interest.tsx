@@ -86,10 +86,10 @@ const CompoundInterest: NextPage = ({}) => {
     for (let i = 0; i < year; i++) {
       //元本*(1+利率)^年数
       if (index === 0) {
-        list.push({ year: currentYear + i, [`資産${index + 1}`]: Math.round(Number(data.capital) * (1 + interestPercent) ** (i + 1)) });
+        list.push({ year: currentYear + i, [`資産${index + 1}`]: Math.round(Number(data.capital) * (1 + interestPercent) ** i) });
       } else {
         //資産2以降の処理は追加のみ
-        list[i][`資産${index + 1}`] = Math.round(Number(data.capital) * (1 + interestPercent) ** (i + 1));
+        list[i][`資産${index + 1}`] = Math.round(Number(data.capital) * (1 + interestPercent) ** i);
       }
     }
   });
