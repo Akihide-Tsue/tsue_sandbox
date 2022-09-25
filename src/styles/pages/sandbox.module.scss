@@ -7,14 +7,25 @@
 .menu_item {
   display: block;
   width: 100%;
-  padding: 0 0 16px 16px;
-  border-bottom: 1px solid $darkMode_border_color;
+  padding: 0 0 16px;
+  margin-bottom: 8px;
+  font-size: 2rem;
+  border-bottom: 1px solid $border_color;
+
+  @include media(sm) {
+    font-size: 1.8rem;
+  }
 
   @include hover {
     color: $main_blue_dark;
+  }
 
-    @include dark_mode {
+  @include dark_mode {
+    border-bottom: 1px solid $darkMode_border_color;
+
+    @include hover {
       color: $main_blue_light;
+      background: $black;
     }
   }
 }
