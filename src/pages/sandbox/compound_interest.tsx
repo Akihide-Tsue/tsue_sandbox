@@ -1,6 +1,8 @@
 import { SetStateAction, useEffect, useState } from 'react';
 
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
+
 const LineChart = dynamic(() => import('@components/line_chart/LineChart'), { ssr: false });
 
 import type { NextPage } from 'next';
@@ -31,16 +33,10 @@ const CompoundInterest: NextPage = ({}) => {
     [uuid()]: {
       capital: 100,
     },
+    [uuid()]: {
+      capital: 200,
+    },
   });
-
-  useEffect(() => {
-    //TODO:ダークモードのCSS設定するまではlight表示固定
-    setIsDarkMode('light');
-    return () => {
-      setIsDarkMode(originalDarkMode);
-    };
-  }, [isDarkMode]);
-
   useEffect(() => {
     const allDataFilled = Object.keys(assetData).every((id) => assetData[id].capital !== (0 || null));
     if (allDataFilled) {
@@ -97,7 +93,16 @@ const CompoundInterest: NextPage = ({}) => {
   return (
     <>
       <div className={styles.calc_section}>
-        <h1 className={styles.page_title}>複利計算チャート</h1>
+        <h1 className={styles.bread_crumb}>
+          <Link href={`/`} passHref>
+            <a className={styles.bread_link}>top</a>
+          </Link>
+          {`/`}
+          <Link href={`/sandbox`} passHref>
+            <a className={styles.bread_link}>sandbox</a>
+          </Link>
+          {`/ 複利計算チャート`}
+        </h1>
         {Object.entries(assetData).map(([id, { capital }], index) => {
           return (
             <div className={styles.asset_input_form} key={id}>
