@@ -18,6 +18,7 @@ import BackListsButton from '@components/back_lists_button/BackListsButton';
 import BlogCard from '@components/blog_card/BlogCard';
 import CodeBlock from '@components/codeblock/CodeBlock';
 import { TwitterIntentTweet } from '@components/share_twitter/ShareTwitter';
+import { usePostData } from '@hooks/usePostData';
 import GithubIcon from 'public/images/icons/github_icon.svg';
 import TwitterIcon from 'public/images/icons/twitter_icon.svg';
 import { currentArticleLinks } from 'src/recoil/atoms/currentArticleLinks';
@@ -113,6 +114,7 @@ type Props = { frontMatter: FrontMatterType; content: string; cardData: any };
 
 const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? '';
+  const { getPost } = usePostData();
   const router = useRouter();
   const { slug } = router.query;
   const [links, setLinks] = useRecoilState(currentArticleLinks);
@@ -128,6 +130,14 @@ const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     setLinks(cardData);
+  }, []);
+
+  useEffect(() => {
+    const getPostAction = (async () => {
+      const post_id = 1;
+      const post = await getPost(post_id);
+      console.log('post', post);
+    })();
   }, []);
 
   return (
