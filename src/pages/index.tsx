@@ -5,14 +5,12 @@ import fs from 'fs';
 import type { NextPage } from 'next';
 
 import matter from 'gray-matter';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 
 import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
 import ArticleLink from '@components/article_link/ArticleLink';
-import useMediaQuery from '@hooks/useMediaQuery';
 import generatedRssFeed from 'src/lib/feed';
 import { articleLayout } from 'src/recoil/atoms/articleLayout';
-import { colorTheme } from 'src/recoil/atoms/colorTheme';
 import { PostType } from 'src/type-def/postsType';
 
 import styles from '@styles/index.module.scss';
@@ -49,13 +47,11 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ posts }) => {
-  const isDarkMode = useRecoilValue(colorTheme);
   const [layout, setLayout] = useRecoilState(articleLayout);
-  const isMobile = useMediaQuery();
 
   useLayoutEffect(() => {
     //mobileかつdark_mode時の場合の初期設定はリスト表示
-    if (isMobile && isDarkMode === 'dark') setLayout('list');
+    // if (isMobile && isDarkMode === 'dark') setLayout('list');
   }, []);
 
   return (
