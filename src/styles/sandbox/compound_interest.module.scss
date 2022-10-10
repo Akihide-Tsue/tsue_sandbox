@@ -1,8 +1,12 @@
 @use '@variables' as *;
 
 .calc_section {
-  width: 280px;
+  width: 360px;
   padding-top: 64px;
+
+  @include media(lg) {
+    width: 100%;
+  }
 }
 
 .asset_input_form {
@@ -13,25 +17,37 @@
 
 .input_label {
   display: inline-block;
-  min-width: 64px;
+  min-width: 80px;
   margin: auto 0;
 }
 
 .info_input_label {
   display: inline-block;
-  min-width: 40px;
+  min-width: 44px;
   margin: auto 0;
 }
 
 .unit_label {
   display: inline-block;
   margin: auto 0;
-  margin-right: 24px;
+  margin-right: 16px;
+
+  @include media(lg) {
+    font-size: 1.4rem;
+  }
 }
 
 .asset_input_area {
-  width: 120px;
-  margin-right: 8px;
+  width: 80px;
+  margin-right: 4px;
+
+  @include media(lg) {
+    padding: 0.3em 0.6em !important;
+  }
+
+  &.additional {
+    width: 72px;
+  }
 
   @include dark_mode {
     background: $white;
@@ -40,11 +56,38 @@
 
 .info_input_wrapper {
   display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid $border_color;
+
+  div:nth-child(1) {
+    margin-right: 24px;
+  }
+
+  @include dark_mode {
+    border-bottom: 1px solid $darkMode_border_color;
+  }
+}
+
+.accumulation_wrapper {
+  margin-bottom: 20px;
+  border-bottom: 1px solid $border_color;
+
+  @include dark_mode {
+    border-bottom: 1px solid $darkMode_border_color;
+  }
 }
 
 .info_input {
-  width: 64px;
+  width: 56px;
   margin-right: 8px;
+
+  @include media(lg) {
+    width: 48px;
+  }
+
+  @include media(lg) {
+    padding: 0.3em 0.6em !important;
+  }
 
   @include dark_mode {
     background: $white;
@@ -101,11 +144,53 @@
 }
 
 .chart_container {
-  width: 100%;
+  position: relative;
+  left: -32px;
+  width: 110%;
   height: 500px;
-  margin: 40px auto 0;
+  margin: 24px auto 0;
 
   @include dark_mode {
-    color: $white;
+    color: $black;
+  }
+}
+
+.radio_area {
+  display: flex;
+  gap: 8px;
+
+  @include dark_mode {
+    color: $black;
+  }
+
+  .label {
+    width: 64px;
+    padding: 8px;
+    font-size: 1.4rem;
+    text-align: center;
+    background: #ededed;
+    border-radius: 6px;
+  }
+}
+
+.radio_button {
+  display: none;
+}
+
+.radio_button:checked + .label {
+  background: $link_text_light;
+}
+
+.form_header {
+  padding-left: 80px;
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+
+  .form_header_first {
+    margin-right: 92px;
+
+    @include media(lg) {
+      margin-right: 88px;
+    }
   }
 }

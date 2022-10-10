@@ -23,32 +23,35 @@ const Chart: FC<Props> = ({ data }) => {
     const lineList = [];
     for (let i = 0; i < Object.keys(data[0]).length - 1; i++) {
       //https://recharts.org/en-US/api/Line
-      lineList.push(
-        <Line
-          key={data[i].year}
-          type="monotone"
-          r={2}
-          dataKey={`資産${i + 1}`}
-          stroke={isDarkMode === 'dark' ? darkModeStrokes[i] : strokes[i]}
-          strokeWidth={2}
-        />,
-      );
+      data[i]?.year &&
+        lineList.push(
+          <Line
+            key={data[i].year}
+            type="monotone"
+            r={2}
+            dataKey={`資産${i + 1}`}
+            stroke={isDarkMode === 'dark' ? darkModeStrokes[i] : strokes[i]}
+            strokeWidth={2}
+          />,
+        );
     }
     return lineList;
   };
 
   return (
     <div className={styles.chart_container}>
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="year" tick={isDarkMode === 'dark' ? { fill: '#f0f0f0' } : {}} />
-          <YAxis tickCount={10} tick={isDarkMode === 'dark' ? { fill: '#f0f0f0' } : {}} />
-          <Tooltip separator=" - " formatter={(value: string) => value + '万円'} />
-          <Legend />
-          {displayChartData()}
-        </LineChart>
-      </ResponsiveContainer>
+      {data.length > 1 && (
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="year" tick={isDarkMode === 'dark' ? { fill: '#f0f0f0' } : {}} />
+            <YAxis tickCount={10} tick={isDarkMode === 'dark' ? { fill: '#f0f0f0' } : {}} />
+            <Tooltip separator=" : " formatter={(value: number) => String(value.toLocaleString()) + '万円'} />
+            <Legend />
+            {displayChartData()}
+          </LineChart>
+        </ResponsiveContainer>
+      )}
     </div>
   );
 };

@@ -17,7 +17,26 @@ export const convertZenkakuToHankakuNumber = (str: string | number) => {
     });
 
   // 文字コードシフトで対応できない文字の変換
-  return Number(
-    halfVal.replace(/”/g, '"').replace(/’/g, "'").replace(/‘/g, '`').replace(/￥/g, '\\').replace(/　/g, ' ').replace(/〜/g, '~').replace(/ー/g, '-'),
-  );
+  if (halfVal.split('.').length - 1 < 2) {
+    return halfVal
+      .replace(/”/g, '"')
+      .replace(/’/g, "'")
+      .replace(/‘/g, '`')
+      .replace(/￥/g, '\\')
+      .replace(/　/g, ' ')
+      .replace(/〜/g, '~')
+      .replace(/ー/g, '-')
+      .replace(/。/g, '.');
+  } else {
+    return halfVal
+      .replace(/”/g, '"')
+      .replace(/’/g, "'")
+      .replace(/‘/g, '`')
+      .replace(/￥/g, '\\')
+      .replace(/　/g, ' ')
+      .replace(/〜/g, '~')
+      .replace(/ー/g, '-')
+      .replace(/。/g, '.')
+      .replace(/./g, '');
+  }
 };
