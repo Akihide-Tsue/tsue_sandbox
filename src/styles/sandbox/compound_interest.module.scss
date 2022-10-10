@@ -1,33 +1,8 @@
 @use '@variables' as *;
 
-.bread_crumb {
-  position: relative;
-  top: -16px;
-  display: inline-block;
-  padding-right: 4px;
-  margin-bottom: 40px;
-  font-size: 1.4rem;
-  border-bottom: 1px solid $border_color;
-
-  @include dark_mode {
-    border-bottom: 1px solid $darkMode_border_color;
-  }
-}
-
-.bread_link {
-  padding: 0 4px;
-
-  @include hover {
-    color: $main_blue;
-
-    @include dark_mode {
-      color: $main_blue_light;
-    }
-  }
-}
-
 .calc_section {
   width: 280px;
+  padding-top: 64px;
 }
 
 .asset_input_form {
@@ -42,6 +17,12 @@
   margin: auto 0;
 }
 
+.info_input_label {
+  display: inline-block;
+  min-width: 40px;
+  margin: auto 0;
+}
+
 .unit_label {
   display: inline-block;
   margin: auto 0;
@@ -50,6 +31,19 @@
 
 .asset_input_area {
   width: 120px;
+  margin-right: 8px;
+
+  @include dark_mode {
+    background: $white;
+  }
+}
+
+.info_input_wrapper {
+  display: flex;
+}
+
+.info_input {
+  width: 64px;
   margin-right: 8px;
 
   @include dark_mode {

@@ -1,0 +1,92 @@
+@use '@variables' as *;
+
+.bread_crumb {
+  position: absolute;
+  display: inline-flex;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  font-size: 1.4rem;
+  border: 1px solid $black;
+  border-radius: 8px;
+
+  :first-child {
+    padding-left: 1.6rem;
+  }
+
+  @include dark_mode {
+    background: white;
+    border: 1px solid $darkMode_border_color;
+  }
+}
+
+.bread_link {
+  position: relative;
+  display: block;
+  padding: 1rem 1rem 1rem 2.8rem;
+  color: $black;
+  background: #fff;
+  outline: none;
+  transition: background 0.2s linear;
+
+  &.is_active {
+    color: $white;
+    background: $black;
+  }
+
+  @include hover {
+    color: $white;
+  }
+
+  @include dark_mode {
+    color: $white;
+    background: $black;
+
+    &.is_active {
+      color: $black;
+      background: $white;
+    }
+
+    @include hover {
+      color: $black;
+    }
+  }
+}
+
+.bread_link:hover::after,
+.bread_link:hover {
+  background: $black;
+
+  @include dark_mode {
+    background: $white;
+  }
+}
+
+.bread_link::after,
+.bread_link::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  z-index: 1;
+  width: 2.8rem;
+  clip-path: polygon(50% 50%, -50% -50%, 0 100%);
+  content: '';
+  background: white;
+  transition: background 0.2s linear;
+
+  @include dark_mode {
+    background: $black;
+  }
+}
+
+.bread_link::before {
+  margin-left: 1px;
+  background: $black;
+
+  @include dark_mode {
+    background: $white;
+  }
+}
