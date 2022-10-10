@@ -38,6 +38,8 @@ const Chart: FC<Props> = ({ data }) => {
     return lineList;
   };
 
+  console.log('data', data);
+
   return (
     <div className={styles.chart_container}>
       {data.length > 1 && (

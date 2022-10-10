@@ -39,7 +39,7 @@
 
 .asset_input_area {
   width: 80px;
-  margin-right: 4px;
+  margin-right: 8px;
 
   @include media(lg) {
     padding: 0.3em 0.6em !important;
@@ -192,5 +192,17 @@
     @include media(lg) {
       margin-right: 88px;
     }
+  }
+}
+
+.method_text {
+  padding: 16px;
+  margin-top: 24px;
+  border: 2px solid $border_color;
+  border-radius: 8px;
+
+  @include media(lg) {
+    padding: 8px;
+    font-size: 1.4rem;
   }
 }

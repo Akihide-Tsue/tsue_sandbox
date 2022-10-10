@@ -81,11 +81,12 @@ const CompoundInterest: NextPage = ({}) => {
     [key: string]: number;
   }[] = [];
 
-  const loopLength = year < Object.keys(assetData).length ? Object.keys(assetData).length : year;
-  Object.values(assetData).map((data, index) => {
-    const interestPercent = Number(interestRate) * 0.01;
+  const interestPercent = Number(interestRate) * 0.01;
+  //年数が表示ライン数より少ないと描画されないため
+  const minLoop = year < Object.values(assetData).length ? Object.values(assetData).length : year;
 
-    for (let i = 1; i < loopLength + 1; i++) {
+  Object.values(assetData).map((data, index) => {
+    for (let i = 0; i < minLoop; i++) {
       if (index === 0) {
         list.push({
           year: currentYear + i,
@@ -97,13 +98,11 @@ const CompoundInterest: NextPage = ({}) => {
         });
       } else {
         //資産2以降の処理は追加のみ
-        // console.log('aaadasdsdws', i, list[i], Number(data.capital));
-        // list[i][`資産${index + 1}`] = Math.round(Number(data.capital) * (1 + interestPercent) ** i);
-        // list[i][`資産${index + 1}`] =
-        //   Number(data.capital) +
-        //   Math.round(((Number(annualAccumulationPrice) * ((1 + interestPercent) ** i - 1)) / (interestPercent)) * 100) / 100;
+        list[i][`資産${index + 1}`] =
+          Math.round(
+            (Number(data.capital) * (1 + interestPercent) ** i + (Number(annualAccumulationPrice) * ((1 + interestPercent) ** i - 1)) / interestPercent) * 100,
+          ) * 0.01;
       }
-      console.log('aaadasdsdws', i, list[i], Number(data.capital));
     }
   });
 
@@ -292,6 +291,12 @@ const CompoundInterest: NextPage = ({}) => {
       {zenkakuError && <span className={styles.error_text}>半角数値を入力して下さい</span>}
 
       <LineChart data={list} />
+
+      <div className={styles.method_text}>
+        複利計算式
+        <br />
+        Math.round((原元 * (1 + 利率) ** 経過年 + (年間積立額 * ((1 + 利率) ** 経過年 - 1)) / 利率))
+      </div>
     </>
   );
 };
