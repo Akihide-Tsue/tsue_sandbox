@@ -287,7 +287,6 @@ const CompoundInterest: NextPage = ({}) => {
         )}
       </div>
 
-      {/* 積立額、一括or個別、年・月 */}
       {zenkakuError && <span className={styles.error_text}>半角数値を入力して下さい</span>}
 
       <LineChart data={list} />
@@ -295,7 +294,7 @@ const CompoundInterest: NextPage = ({}) => {
       <div className={styles.method_text}>
         複利計算式
         <br />
-        Math.round((原元 * (1 + 利率) ** 経過年 + (年間積立額 * ((1 + 利率) ** 経過年 - 1)) / 利率))
+        Math.round((元本 * (1 + 利率) ** 経過年 + (年間積立額 * ((1 + 利率) ** 経過年 - 1)) / 利率))
       </div>
     </>
   );
