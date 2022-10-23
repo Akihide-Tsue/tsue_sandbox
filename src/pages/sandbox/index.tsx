@@ -25,7 +25,7 @@ const Sandbox: NextPage<Props> = ({}) => {
           <a className={styles.menu_item}>福利計算チャート</a>
         </Link>
         <Link href={`/sandbox/chat_bot`} passHref>
-          <a className={styles.menu_item}>AIチャットボット</a>
+          <a className={styles.menu_item}>りんなAPI（会話ボット）を叩く</a>
         </Link>
       </div>
     </>
