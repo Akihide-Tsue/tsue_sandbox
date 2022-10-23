@@ -34,6 +34,16 @@ const moduleExports = {
   },
 };
 
+//buildの速度向上
+const config = {
+  experimental: {
+    swcLoader: true,
+    swcMinify: true,
+    cpus: 4,
+  },
+};
+module.exports = config;
+
 module.exports = withSentryConfig(moduleExports, {
   dryRun: process.env.VERCEL_ENV !== 'production',
 });

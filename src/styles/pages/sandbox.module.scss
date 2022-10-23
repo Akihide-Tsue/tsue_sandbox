@@ -1,16 +1,19 @@
 @use '@variables' as *;
 
 .sandbox_container {
-  padding: 40px 0;
+  margin: 40px 0;
+  border-top: 1px solid $border_color;
+
+  @include dark_mode {
+    border-top: 1px solid $darkMode_border_color;
+  }
 }
 
 .menu_item {
   display: block;
   width: 100%;
   padding: 20px 0;
-  margin-bottom: 8px;
   font-size: 2rem;
-  border-top: 1px solid $border_color;
   border-bottom: 1px solid $border_color;
 
   @include media(sm) {
@@ -22,7 +25,6 @@
   }
 
   @include dark_mode {
-    border-top: 1px solid $darkMode_border_color;
     border-bottom: 1px solid $darkMode_border_color;
 
     @include hover {

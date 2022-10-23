@@ -24,6 +24,9 @@ const Sandbox: NextPage<Props> = ({}) => {
         <Link href={`/sandbox/compound_interest`} passHref>
           <a className={styles.menu_item}>福利計算チャート</a>
         </Link>
+        <Link href={`/sandbox/chat_bot`} passHref>
+          <a className={styles.menu_item}>AIチャットボット</a>
+        </Link>
       </div>
     </>
   );

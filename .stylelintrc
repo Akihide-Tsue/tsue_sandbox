@@ -12,6 +12,7 @@
   },
   "rules": {
     "string-quotes": "single",
+    "declaration-block-no-duplicate-properties": true,
     "declaration-colon-newline-after": null,
     "selector-id-pattern": null,
     "selector-class-pattern": null,
