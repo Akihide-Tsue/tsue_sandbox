@@ -18,7 +18,7 @@ const ChatBot: NextPage = ({}) => {
 
   return (
     <>
-      <SandboxBreadCrumb currentTitle="りんなAPI" />
+      <SandboxBreadCrumb currentTitle="AIチャットBot" />
 
       <div className={styles.container}>
         <button
