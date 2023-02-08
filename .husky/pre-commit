@@ -3,3 +3,4 @@
 
 yarn check-types
 yarn lint-staged
+yarn lint:style
