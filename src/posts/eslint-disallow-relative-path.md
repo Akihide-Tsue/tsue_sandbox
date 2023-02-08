@@ -51,7 +51,7 @@ yarn lint:style
 ## 説明
 .eslintrcの今回追記した"no-restricted-imports"のgroupに禁止したいパスの正規表現を書きます。  
 scssファイルのみ相対パスでimportを許可しています。  
-ドメインが異なるものの同じ名前のコンポーネントがリポジトリ内に存在する場合に制御したい場合に重宝します。
+ドメインが異なるものの同じ名前のコンポーネントがリポジトリ内に存在する場合にimportを制御するのに重宝します。
 
 ## 動作確認
 ![動作確認](/images/posts/disallow-relative-path.webp)
