@@ -2,11 +2,9 @@
 
 .bread_crumb {
   position: absolute;
-  display: inline-flex;
   display: flex;
   align-items: center;
   height: 30px;
-  margin-bottom: 40px;
   overflow: hidden;
   font-size: 1.4rem;
   border: 1px solid $black;
