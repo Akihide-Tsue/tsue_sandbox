@@ -1,5 +1,5 @@
-import '../styles/destyle.scss';
-import '../styles/globals.scss';
+import 'src/styles/destyle.scss';
+import 'src/styles/globals.scss';
 import type { AppProps } from 'next/app';
 
 import { RecoilRoot } from 'recoil';
