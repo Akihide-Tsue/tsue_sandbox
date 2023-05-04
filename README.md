@@ -12,8 +12,25 @@
 ###  App URL
 https://tsue-sandbox.vercel.app/
 ###  Usage
-`$ git clone https://github.com/Akihide-Tsue/tsue_sandbox.git`  
-`$ yarn install`  
-`$ yarn dev`  
+`$ git clone https://github.com/Akihide-Tsue/tsue_sandbox.git`
+`$ yarn install`
+`$ yarn dev`
+open `http://localhost:3000/`
+
+### node version
+nvmで管理
+
+### その他
+```
+brew install pre-commit
+```
+
+### canvasのエラーがある場合
+```
+// 試す
+brew install pkg-config cairo pango libpng jpeg giflib librsvg
+```
+
+
 ### License
-[MIT](https://raw.githubusercontent.com/aocattleya/Ramen-Timer/master/LICENSE)  
+[MIT](https://raw.githubusercontent.com/aocattleya/Ramen-Timer/master/LICENSE)

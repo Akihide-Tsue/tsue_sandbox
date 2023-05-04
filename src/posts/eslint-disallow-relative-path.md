@@ -11,7 +11,7 @@ tags: [ESLint]
 ## まずはインストール
 
 `yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-prettier husky lint-staged prettier`
-このあたりを参考に：[Next12でESLint,Prettier,husky,lint-stagedの環境構築](https://www.gaji.jp/blog/2021/12/16/8810/)
+このあたりを参考に：[Next 12 で ESLint, Prettier, husky, lint-staged の環境構築](https://www.gaji.jp/blog/2021/12/16/8810/)
 
 ## ESLintの設定を追加
 
