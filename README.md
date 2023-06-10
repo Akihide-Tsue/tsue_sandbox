@@ -30,8 +30,7 @@ brew install pre-commit
 // 試す
 brew install pkg-config cairo pango libpng jpeg giflib librsvg
 ```
-
-仮でversion固定2.6.1
+https://github.com/Automattic/node-canvas/issues/1779
 https://zenn.dev/marusho/articles/319ceee8bb98ca
 
 
