@@ -3127,15 +3127,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"canvas@npm:2.8.0":
-  version: 2.8.0
-  resolution: "canvas@npm:2.8.0"
+"canvas@npm:^2.11.2":
+  version: 2.11.2
+  resolution: "canvas@npm:2.11.2"
   dependencies:
     "@mapbox/node-pre-gyp": ^1.0.0
-    nan: ^2.14.0
+    nan: ^2.17.0
     node-gyp: latest
     simple-get: ^3.0.3
-  checksum: 4cc909f63eaf88d22f9164601903745abcc6ccb7f70090b9389dc2cb68cbf139c220dbd75837e6d04602ff122b44a2eb17413bca850f9c6c602f74f1f0f1cc3f
+  checksum: 61e554aef80022841dc836964534082ec21435928498032562089dfb7736215f039c7d99ee546b0cf10780232d9bf310950f8b4d489dc394e0fb6f6adfc97994
   languageName: node
   linkType: hard
 
@@ -7582,7 +7582,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nan@npm:^2.14.0":
+"nan@npm:^2.17.0":
   version: 2.17.0
   resolution: "nan@npm:2.17.0"
   dependencies:
@@ -10572,7 +10572,7 @@ __metadata:
     autoprefixer: ^10.4.7
     babel-plugin-inline-react-svg: ^2.0.1
     babel-plugin-module-resolver: ^4.1.0
-    canvas: 2.8.0
+    canvas: ^2.11.2
     case-sensitive-paths-webpack-plugin: ^2.4.0
     eslint: 8.20.0
     eslint-config-next: 12.2.2
