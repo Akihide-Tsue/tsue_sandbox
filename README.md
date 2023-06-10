@@ -18,7 +18,7 @@ https://tsue-sandbox.vercel.app/
 open `http://localhost:3000/`
 
 ### node version
-nvmで管理
+voltaで管理
 
 ### その他
 ```

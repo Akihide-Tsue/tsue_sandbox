@@ -48,7 +48,7 @@ Sentry.init({
 
 ```
 
-## Breadcrumbsの情報を追加する
+## Breadcrumbsに情報を追加する
 ```js:ログイン成功後
 Sentry.addBreadcrumb({
   category: "auth",
@@ -59,7 +59,7 @@ Sentry.addBreadcrumb({
 詳細は[公式ドキュメント](https://docs.sentry.io/product/issues/issue-details/breadcrumbs/)参照
 
 
-## Tagsの情報を追加する
+## Tagsの情報に追加する
 ```js:fetchのエラーハンドリング
 Sentry.captureException(error, {
   tags: {

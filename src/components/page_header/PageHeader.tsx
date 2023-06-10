@@ -84,7 +84,7 @@ const PageHeader: FC = ({}) => {
             </a>
           </Link>
 
-          <Link href={config.github} passHref>
+          <Link href={config.repository} passHref>
             <a target="_blank">
               <GithubIcon width={22} height={24} className={styles.icon} />
             </a>
