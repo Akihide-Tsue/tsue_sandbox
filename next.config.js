@@ -30,6 +30,9 @@ const moduleExports = {
         extractComments: 'all',
       }),
     ];
+    config.externals.push({
+      canvas: 'commonjs canvas',
+    });
     return config;
   },
 };
