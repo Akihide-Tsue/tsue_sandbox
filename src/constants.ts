@@ -1,6 +1,7 @@
-export const metaTitle = '津江のサンドボックス｜大阪の不動産テックで働くフロントエンドエンジニアのブログ';
+export const metaTitle = '津江のサンドボックス｜大阪で働くフロントエンドエンジニアのブログ';
+export const productTitle = "津江's sandbox";
 
-export const metaDescription = '大阪の不動産テックで働くフロントエンドエンジニアのブログです。日頃の学びをアウトプットしています。';
+export const metaDescription = '大阪ので働くフロントエンドエンジニアのブログです。日頃の学びをアウトプットしています。';
 
 export const config = {
   siteUrl: 'https://tsue-sandbox.vercel.app/',

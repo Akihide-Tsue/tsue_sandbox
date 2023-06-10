@@ -4,7 +4,7 @@ import { Feed } from 'feed';
 import matter from 'gray-matter';
 import markdownToHtml from 'zenn-markdown-html';
 
-import { metaDescription } from '@constants';
+import { metaDescription, productTitle } from '@constants';
 
 import { FrontMatterType } from 'src/type-def/postsType';
 
@@ -20,7 +20,7 @@ const generatedRssFeed = (): void => {
 
   // デフォルトになる feed の情報
   const feed = new Feed({
-    title: "津江's sandbox",
+    title: productTitle,
     description: metaDescription,
     id: baseUrl,
     link: baseUrl,

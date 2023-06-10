@@ -12,7 +12,7 @@ import ReactMarkdown from 'react-markdown';
 import { useRecoilState } from 'recoil';
 import remarkGfm from 'remark-gfm';
 
-import { config } from '@constants';
+import { config, productTitle } from '@constants';
 
 import BackListsButton from '@components/back_lists_button/BackListsButton';
 import BlogCard from '@components/blog_card/BlogCard';
@@ -143,7 +143,9 @@ const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
   return (
     <>
       <Head>
-        <title>{frontMatter.title}</title>
+        <title>
+          {frontMatter.title} | {productTitle}
+        </title>
         <meta property="og:image" content={`${baseUrl}/ogp/${slug}.png`} />
         <meta property="twitter:image" content={`${baseUrl}/ogp/${slug}.png`} />
         <meta name="twitter:card" content="summary_large_image" />

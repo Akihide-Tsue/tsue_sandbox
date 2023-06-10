@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { useRecoilState } from 'recoil';
 
-import { config } from '@constants';
+import { config, productTitle } from '@constants';
 
 import useHasMounted from '@hooks/useHasMounted';
 import { useShowComponent } from '@hooks/useScrollPosition';
@@ -47,7 +47,7 @@ const PageHeader: FC = ({}) => {
       <div className={styles.header_inner}>
         <Link href={`/`} passHref>
           <a>
-            <h1 className={styles.logo}>{"津江's sandbox"}</h1>
+            <h1 className={styles.logo}>{productTitle}</h1>
           </a>
         </Link>
 
