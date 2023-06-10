@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "now-build": "yum install libuuid-devel libmount-devel zlib && cp /lib64/{libuuid,libmount,libblkid,libz}.so.1 node_modules/canvas/build/Release/ && npm run build",
+    "now-build": "yum install libuuid-devel libmount-devel --skip-broken && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build",
     "lint": "next lint --dir src",
     "lint:fix": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
     "lint:style": "stylelint './**/*.{css,scss,sass}'",
