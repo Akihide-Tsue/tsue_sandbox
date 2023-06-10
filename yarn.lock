@@ -3127,7 +3127,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"canvas@npm:^2.11.2":
+"canvas@npm:^2.7.0":
   version: 2.11.2
   resolution: "canvas@npm:2.11.2"
   dependencies:
@@ -10572,7 +10572,7 @@ __metadata:
     autoprefixer: ^10.4.7
     babel-plugin-inline-react-svg: ^2.0.1
     babel-plugin-module-resolver: ^4.1.0
-    canvas: ^2.11.2
+    canvas: ^2.7.0
     case-sensitive-paths-webpack-plugin: ^2.4.0
     eslint: 8.20.0
     eslint-config-next: 12.2.2
