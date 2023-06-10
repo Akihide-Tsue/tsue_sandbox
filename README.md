@@ -31,6 +31,9 @@ brew install pre-commit
 brew install pkg-config cairo pango libpng jpeg giflib librsvg
 ```
 
+仮でversion固定2.6.1
+https://zenn.dev/marusho/articles/319ceee8bb98ca
+
 
 ### License
 [MIT](https://raw.githubusercontent.com/aocattleya/Ramen-Timer/master/LICENSE)
