@@ -4,6 +4,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
   transform: translate(-50%, -50%);
 }
 
@@ -18,6 +19,10 @@
 
   @include media(sm) {
     font-size: 9rem;
+  }
+
+  @include dark_mode {
+    color: $darkMode_gray;
   }
 }
 
@@ -42,11 +47,15 @@
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 29px;
-  color: #555;
+  color: $gray;
 
   @include media(sm) {
     margin: auto;
     font-size: 1.4rem;
     text-align: center;
+  }
+
+  @include dark_mode {
+    color: $darkMode_gray;
   }
 }

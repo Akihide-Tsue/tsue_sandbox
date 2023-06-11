@@ -19,7 +19,7 @@ type Props = {
 const Sandbox: NextPage<Props> = ({}) => {
   return (
     <>
-      <ArticleLayoutSelect displayLayoutSelector={false} />
+      <ArticleLayoutSelect />
       <div className={styles.sandbox_container}>
         <Link href={`/sandbox/compound_interest`} passHref>
           <a className={styles.menu_item}>福利計算チャート</a>

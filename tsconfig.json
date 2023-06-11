@@ -21,7 +21,8 @@
       "@pages/*": ["src/pages/*"],
       "@variables": ["src/styles/variables.scss"],
       "@styles/*": ["src/styles/pages/*"],
-      "@constants": ["src/constants.ts"]
+      "@constants": ["src/constants.ts"],
+      "@type-def/*": ["src/type-def/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

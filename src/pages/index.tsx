@@ -1,5 +1,3 @@
-import { useLayoutEffect } from 'react';
-
 import fs from 'fs';
 
 import type { NextPage } from 'next';
@@ -49,10 +47,10 @@ type Props = {
 const Home: NextPage<Props> = ({ posts }) => {
   const [layout, setLayout] = useRecoilState(articleLayout);
 
-  useLayoutEffect(() => {
-    //mobileかつdark_mode時の場合の初期設定はリスト表示
-    // if (isMobile && isDarkMode === 'dark') setLayout('list');
-  }, []);
+  // useLayoutEffect(() => {
+  // mobileかつdark_mode時の場合の初期設定はリスト表示
+  // if (isMobile && isDarkMode === 'dark') setLayout('list');
+  // }, []);
 
   return (
     <>
