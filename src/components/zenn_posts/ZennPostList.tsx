@@ -21,7 +21,7 @@ const ZennPostList: React.FC<{ item: PostItem }> = (props) => {
     <article className="post-link">
       <Link href={getMemberPath(member.id)} passHref>
         <a className="post-link__author">
-          <img src={member.avatarSrc} className="post-link__author-img" width={35} height={35} alt={member.name} />
+          {/* <img src={member.avatarSrc} className="post-link__author-img" width={35} height={35} alt={member.name} /> */}
           <div className="post-link__author-name">
             <div className="post-link__author-name">{member.name}</div>
             <time dateTime={isoDate} className="post-link__date">
