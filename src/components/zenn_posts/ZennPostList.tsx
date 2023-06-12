@@ -4,13 +4,13 @@ import Link from 'next/link';
 // import dayjs from 'dayjs';
 // import relativeTime from 'dayjs/plugin/relativeTime';
 
-import { PostItem } from '@type-def/members';
+import { ZennPostItem } from '@type-def/members';
 
 import { getFaviconSrcFromOrigin, getMemberPath, getMemberById } from '@components/zenn_posts/helper';
 
 // dayjs.extend(relativeTime);
 
-const ZennPostList: React.FC<{ item: PostItem }> = (props) => {
+const ZennPost: React.FC<{ item: ZennPostItem }> = (props) => {
   const { authorId, title, isoDate, link, dateMilliSeconds } = props.item;
   const member = getMemberById(authorId);
   if (!member) return null;
@@ -44,7 +44,7 @@ const ZennPostList: React.FC<{ item: PostItem }> = (props) => {
   );
 };
 
-export const PostList: React.FC<{ items: PostItem[] }> = (props) => {
+export const ZennPostList: React.FC<{ items: ZennPostItem[] }> = (props) => {
   const [displayItemsCount, setDisplayItemsCount] = useState<number>(32);
   const totalItemsCount = props.items?.length || 0;
   const canLoadMore = totalItemsCount - displayItemsCount > 0;
@@ -57,7 +57,7 @@ export const PostList: React.FC<{ items: PostItem[] }> = (props) => {
     <>
       <div className="post-list">
         {props.items.slice(0, displayItemsCount).map((item, i) => (
-          <ZennPostList key={`post-item-${i}`} item={item} />
+          <ZennPost key={`post-item-${i}`} item={item} />
         ))}
       </div>
       {canLoadMore && (

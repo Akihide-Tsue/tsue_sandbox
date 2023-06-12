@@ -3,8 +3,7 @@ import Link from 'next/link';
 import type { NextPage } from 'next';
 
 import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
-
-import styles from '@styles/sandbox.module.scss';
+import styles from '@styles/pages/sandbox.module.scss';
 
 export const getStaticProps = () => {
   return {

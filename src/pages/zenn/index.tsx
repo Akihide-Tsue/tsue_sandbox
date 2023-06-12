@@ -2,12 +2,12 @@ import type { NextPage } from 'next';
 
 import { useRecoilState } from 'recoil';
 
-import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
-import { PostList } from '@components/zenn_posts/ZennPostList';
-import { articleLayout } from 'src/recoil/atoms/articleLayout';
-import { PostItem } from 'src/type-def/members';
+import { ZennPostItem } from '@type-def/members';
 
-import posts from '.contents/posts.json';
+import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
+import { ZennPostList } from '@components/zenn_posts/ZennPostList';
+import posts from '@rss/zenn-posts.json';
+import { articleLayout } from 'src/recoil/atoms/articleLayout';
 
 const Zenn: NextPage = () => {
   const [layout, setLayout] = useRecoilState(articleLayout);
@@ -20,7 +20,7 @@ const Zenn: NextPage = () => {
         <h2 className="home-section-title">Articles</h2>
       </div>
       <div className="home-posts-container">
-        <PostList items={posts as PostItem[]} />
+        <ZennPostList items={posts as ZennPostItem[]} />
       </div>
     </>
   );

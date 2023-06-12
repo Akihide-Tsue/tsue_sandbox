@@ -1,10 +1,9 @@
-import { PostItem } from '@type-def/members';
+import { ZennPostItem } from '@type-def/members';
 
 // import { members } from '@components/zenn_posts/zennBuilder';
 
 import { MemberType } from '@components/zenn_posts/zennBuilder';
-
-import posts from '.contents/posts.json';
+import posts from '@rss/zenn-posts.json';
 
 export const members: MemberType[] = [
   {
@@ -30,7 +29,7 @@ export function getMemberById(id: string) {
 }
 
 export function getMemberPostsById(id: string) {
-  return (posts as PostItem[]).filter((item) => item.authorId === id);
+  return (posts as ZennPostItem[]).filter((item) => item.authorId === id);
 }
 
 export function getFaviconSrcFromOrigin(hostname: string) {
