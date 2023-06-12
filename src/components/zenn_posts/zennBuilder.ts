@@ -3,7 +3,7 @@ import Parser from 'rss-parser';
 
 import { ZennPostItem } from '@type-def/members';
 
-import { members } from '@components/zenn_posts/helper';
+// import { members } from '@components/zenn_posts/helper';
 
 type FeedItem = {
   title: string;
@@ -37,20 +37,21 @@ export type MemberType = {
   websiteUrl?: string;
 };
 
-// export const members: MemberType[] = [
-//   {
-//     id: 'catnose',
-//     name: 'CatNose',
-//     // role: 'CTO',
-//     bio: 'デザインが好きなプログラマー。開発者向けの情報共有プラットフォームzenn.devを開発しています。',
-//     avatarSrc: '/avatars/catnose.jpg',
-//     sources: ['https://zenn.dev/catnose99/feed', 'https://catnose.medium.com/feed'],
-//     includeUrlRegex: 'medium.com|zenn.dev',
-//     twitterUsername: 'catnose99',
-//     githubUsername: 'catnose99',
-//     websiteUrl: 'https://catnose99.com',
-//   },
-// ];
+//TODO 重複
+export const members: MemberType[] = [
+  {
+    id: 'catnose',
+    name: 'CatNose',
+    // role: 'CTO',
+    bio: 'デザインが好きなプログラマー。開発者向けの情報共有プラットフォームzenn.devを開発しています。',
+    avatarSrc: '/avatars/catnose.jpg',
+    sources: ['https://zenn.dev/catnose99/feed', 'https://catnose.medium.com/feed'],
+    includeUrlRegex: 'medium.com|zenn.dev',
+    twitterUsername: 'catnose99',
+    githubUsername: 'catnose99',
+    websiteUrl: 'https://catnose99.com',
+  },
+];
 
 function isValidUrl(str: string): boolean {
   try {
@@ -127,5 +128,6 @@ async function getMemberFeedItems(member: MemberType): Promise<ZennPostItem[]> {
     if (items) allPostItems = [...allPostItems, ...items];
   }
   allPostItems.sort((a, b) => b.dateMilliSeconds - a.dateMilliSeconds);
+  fs.ensureDirSync('src/rss');
   fs.writeJsonSync('src/rss/zenn-posts.json', allPostItems);
 })();
