@@ -3,7 +3,7 @@ import { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { PostType } from 'src/type-def/postsType';
+import { PostType } from '@type-def/postsType';
 
 import styles from './ArticleLink.module.scss';
 

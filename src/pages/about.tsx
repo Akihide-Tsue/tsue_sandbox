@@ -10,10 +10,9 @@ import remarkGfm from 'remark-gfm';
 import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
 import BlogCard from '@components/blog_card/BlogCard';
 import CodeBlock from '@components/codeblock/CodeBlock';
+import stylesMarkdown from '@styles/pages/markdown.module.scss';
 import { articleLayout } from 'src/recoil/atoms/articleLayout';
 import { FrontMatterType } from 'src/type-def/postsType';
-
-import stylesMarkdown from '@styles/markdown.module.scss';
 
 export const getStaticProps = () => {
   const fileContent = fs.readFileSync(`src/posts/about.md`, 'utf-8');

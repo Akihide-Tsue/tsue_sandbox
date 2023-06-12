@@ -15,7 +15,7 @@ import styles from './ArticleLayoutSelect.module.scss';
 type Props = {
   layout?: 'card' | 'list';
   setLayout?: Dispatch<SetStateAction<'card' | 'list'>>;
-  displayLayoutSelector: boolean;
+  displayLayoutSelector?: boolean;
 };
 
 const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout, displayLayoutSelector = false }) => {
@@ -44,6 +44,11 @@ const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout, displayLayoutSelect
             <a className={styles.index_label}>Tags</a>
           </Link>
         </li> */}
+        <li className={styles.item}>
+          <Link href={`/zenn`} passHref>
+            <a className={`${styles.index_label} ${pathname === `/zenn` ? styles.current_page : ''}`}>Zenn</a>
+          </Link>
+        </li>
         <li className={styles.item}>
           <Link href={`/sandbox`} passHref>
             <a className={`${styles.index_label} ${pathname === `/sandbox` ? styles.current_page : ''}`}>Sandbox</a>

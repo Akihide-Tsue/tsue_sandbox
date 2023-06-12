@@ -1,0 +1,38 @@
+[
+  {
+    "title": "MF勤怠自動化計画",
+    "contentSnippet": "概要MF勤怠の出勤・退勤を自動で打刻します。puppeteerでブラウザ操作します。(動作確認:2021/12/6)実装内容は下記を参照頂きたく。https://github.com/Akihide-Tsue/mf-auto 流れ（自分の場合）Googleカレンダーに「出社」「リモート」の終日予定を入れる。繰り返しで。なぜかCalender APIで正しいデータが取れなかったため予定をGASでスプシに出力。GASに下記を登録、適当な時間をトリガーにし毎日更新するfunction getEvents() {  const calendar = Calenda...",
+    "link": "https://zenn.dev/tsue/articles/121b2d22108554",
+    "isoDate": "2021-12-06T01:26:11.000Z",
+    "dateMilliSeconds": 1638753971000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "Slack APIで画像ファイルは送れないのか~Node.js編~",
+    "contentSnippet": "概要残念ながらSlack webhook APIで画像ファイルをそのまま送ることは出来ません。Json形式しか対応していないからです。「AWSなど使わず、無料で済ませたい！」という場合は下記の手順が有効であることを発見しました。図らずも人類初の偉業を達成してしまったようです。１．画像ファイルをbase64にエンコードする２．imagekit上にアップロードする３．attachmentsとして添付する コードimagekitでAPIキーを取得し.envに登録しましょう。require('dotenv').config();const fs = require(...",
+    "link": "https://zenn.dev/tsue/articles/4fab6474af7476",
+    "isoDate": "2021-11-22T12:02:56.000Z",
+    "dateMilliSeconds": 1637582576000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "「銀行丸め」を知っているか？~JavaScript編~",
+    "contentSnippet": "経緯フロントエンドエンジニアとして、自社サービスのキャッシュレスPOSレジ（タブレットアプリ）をReact Nativeで開発しています。先日、値引按分額を算出する際にデバッグしていたところ「1円がどうしても合わない！！！」と悩んでいました。調べたところ、「銀行丸め」で計算すればOKとのこと。※「偶数丸め」とも呼ぶそうです。 銀行丸め とは何かこちらの記事に詳しく書かれていました。抜粋すると下記の通り。四捨五入の特殊版です。「端数が0.5より小さいなら切り捨て、端数が0.5より大きいならば切り上げる。端数がちょうど0.5なら切り捨てと切り上げのうち結果が偶数となる...",
+    "link": "https://zenn.dev/tsue/articles/63921de486c7a7",
+    "isoDate": "2021-08-05T01:42:16.000Z",
+    "dateMilliSeconds": 1628127736000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "【React Native】動的なフォーム作成",
+    "contentSnippet": "概要動的に増減しつつ、順番をドラッグ＆ドロップで変更できるフォームを作成しました。コードは下記のExpo Snackのリンクからご参照下さい。 動作確認 コードは下記https://snack.expo.io/@tsue/super-dynamic-form 使用したライブラリ\"react-native-drax\"",
+    "link": "https://zenn.dev/tsue/articles/5dfe3c1f955cb6",
+    "isoDate": "2021-05-16T08:17:38.000Z",
+    "dateMilliSeconds": 1621153058000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  }
+]

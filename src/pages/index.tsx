@@ -1,5 +1,3 @@
-import { useLayoutEffect } from 'react';
-
 import fs from 'fs';
 
 import type { NextPage } from 'next';
@@ -9,11 +7,10 @@ import { useRecoilState } from 'recoil';
 
 import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
 import ArticleLink from '@components/article_link/ArticleLink';
+import styles from '@styles/pages/index.module.scss';
 import generatedRssFeed from 'src/lib/feed';
 import { articleLayout } from 'src/recoil/atoms/articleLayout';
 import { PostType } from 'src/type-def/postsType';
-
-import styles from '@styles/index.module.scss';
 
 export const getStaticProps = () => {
   const files = fs.readdirSync('src/posts');
@@ -49,10 +46,10 @@ type Props = {
 const Home: NextPage<Props> = ({ posts }) => {
   const [layout, setLayout] = useRecoilState(articleLayout);
 
-  useLayoutEffect(() => {
-    //mobileかつdark_mode時の場合の初期設定はリスト表示
-    // if (isMobile && isDarkMode === 'dark') setLayout('list');
-  }, []);
+  // useLayoutEffect(() => {
+  // mobileかつdark_mode時の場合の初期設定はリスト表示
+  // if (isMobile && isDarkMode === 'dark') setLayout('list');
+  // }, []);
 
   return (
     <>

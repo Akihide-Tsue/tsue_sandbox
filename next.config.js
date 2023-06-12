@@ -11,7 +11,7 @@ const moduleExports = {
   reactStrictMode: true,
   sassOptions: {
     prependData: `
-    @use '@variables' as *;
+    @use '@styles/variables' as *;
     `,
   },
   compress: true,

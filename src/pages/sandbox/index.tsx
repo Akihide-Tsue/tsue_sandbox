@@ -3,8 +3,7 @@ import Link from 'next/link';
 import type { NextPage } from 'next';
 
 import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
-
-import styles from '@styles/sandbox.module.scss';
+import styles from '@styles/pages/sandbox.module.scss';
 
 export const getStaticProps = () => {
   return {
@@ -19,7 +18,7 @@ type Props = {
 const Sandbox: NextPage<Props> = ({}) => {
   return (
     <>
-      <ArticleLayoutSelect displayLayoutSelector={false} />
+      <ArticleLayoutSelect />
       <div className={styles.sandbox_container}>
         <Link href={`/sandbox/compound_interest`} passHref>
           <a className={styles.menu_item}>福利計算チャート</a>
