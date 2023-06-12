@@ -57,6 +57,3 @@ next-env.d.ts
 
 # ogp
 /public/ogp/*
-
-# generated data
-# /src/rss/*.json 必要
