@@ -3,6 +3,8 @@ import Parser from 'rss-parser';
 
 import { ZennPostItem } from '@components/features/zennRss/types';
 
+//参考：https://zenn.dev/catnose99/articles/cb72a73368a547756862
+
 type FeedItem = {
   title: string;
   link: string;
@@ -14,9 +16,9 @@ type FeedItem = {
 export type MemberType = {
   id: string;
   name: string;
-  avatarSrc: string;
+  // avatarSrc: string;
   // role?: string;
-  bio?: string;
+  // bio?: string;
   sources?: string[];
   includeUrlRegex?: string;
   excludeUrlRegex?: string;
@@ -31,13 +33,13 @@ export const members: MemberType[] = [
     id: 'catnose',
     name: 'CatNose',
     // role: 'CTO',
-    bio: 'デザインが好きなプログラマー。開発者向けの情報共有プラットフォームzenn.devを開発しています。',
-    avatarSrc: '/avatars/catnose.jpg',
-    sources: ['https://zenn.dev/catnose99/feed', 'https://catnose.medium.com/feed'],
-    includeUrlRegex: 'medium.com|zenn.dev',
-    twitterUsername: 'catnose99',
-    githubUsername: 'catnose99',
-    websiteUrl: 'https://catnose99.com',
+    // bio: 'デザインが好きなプログラマー。開発者向けの情報共有プラットフォームzenn.devを開発しています。',
+    // avatarSrc: '/avatars/catnose.jpg',
+    sources: ['https://zenn.dev/tsue/feed'],
+    includeUrlRegex: 'zenn.dev',
+    // twitterUsername: 'catnose99',
+    // githubUsername: 'catnose99',
+    // websiteUrl: 'https://catnose99.com',
   },
 ];
 
