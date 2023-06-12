@@ -7,11 +7,10 @@ import { useRecoilState } from 'recoil';
 
 import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
 import ArticleLink from '@components/article_link/ArticleLink';
+import styles from '@styles/pages/index.module.scss';
 import generatedRssFeed from 'src/lib/feed';
 import { articleLayout } from 'src/recoil/atoms/articleLayout';
 import { PostType } from 'src/type-def/postsType';
-
-import styles from '@styles/index.module.scss';
 
 export const getStaticProps = () => {
   const files = fs.readdirSync('src/posts');

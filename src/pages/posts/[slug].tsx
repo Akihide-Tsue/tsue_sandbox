@@ -19,14 +19,13 @@ import BlogCard from '@components/blog_card/BlogCard';
 import CodeBlock from '@components/codeblock/CodeBlock';
 import { TwitterIntentTweet } from '@components/share_twitter/ShareTwitter';
 import { usePostData } from '@hooks/usePostData';
+import stylesMarkdown from '@styles/pages/markdown.module.scss';
+import styles from '@styles/pages/slug.module.scss';
 import GithubIcon from 'public/images/icons/github_icon.svg';
 import TwitterIcon from 'public/images/icons/twitter_icon.svg';
 import { currentArticleLinks } from 'src/recoil/atoms/currentArticleLinks';
 import { FrontMatterType } from 'src/type-def/postsType';
 import createOgp from 'src/utils/server/ogpUtils';
-
-import stylesMarkdown from '@styles/markdown.module.scss';
-import styles from '@styles/slug.module.scss';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const jsdom = require('jsdom');
