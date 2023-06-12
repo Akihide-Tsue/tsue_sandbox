@@ -1,9 +1,7 @@
 import fs from 'fs-extra';
 import Parser from 'rss-parser';
 
-import { ZennPostItem } from '@type-def/members';
-
-// import { members } from '@components/zenn_posts/helper';
+import { ZennPostItem } from '@components/features/zennRss/types';
 
 type FeedItem = {
   title: string;
@@ -12,16 +10,6 @@ type FeedItem = {
   isoDate?: string;
   dateMilliSeconds: number;
 };
-
-// type ZennPostItem = {
-//   authorId: string;
-//   authorName: string;
-//   title: string;
-//   link: string;
-//   contentSnippet?: string;
-//   isoDate?: string;
-//   dateMilliSeconds: number;
-// };
 
 export type MemberType = {
   id: string;
@@ -128,6 +116,6 @@ async function getMemberFeedItems(member: MemberType): Promise<ZennPostItem[]> {
     if (items) allPostItems = [...allPostItems, ...items];
   }
   allPostItems.sort((a, b) => b.dateMilliSeconds - a.dateMilliSeconds);
-  fs.ensureDirSync('src/rss');
+  // fs.ensureDirSync('src/rss');
   fs.writeJsonSync('src/rss/zenn-posts.json', allPostItems);
 })();

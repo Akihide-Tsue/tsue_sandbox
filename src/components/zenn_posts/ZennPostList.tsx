@@ -4,8 +4,7 @@ import Link from 'next/link';
 // import dayjs from 'dayjs';
 // import relativeTime from 'dayjs/plugin/relativeTime';
 
-import { ZennPostItem } from '@type-def/members';
-
+import { ZennPostItem } from '@components/features/zennRss/types';
 import { getFaviconSrcFromOrigin, getMemberPath, getMemberById } from '@components/zenn_posts/helper';
 
 // dayjs.extend(relativeTime);

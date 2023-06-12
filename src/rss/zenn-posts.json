@@ -1,0 +1,198 @@
+[
+  {
+    "title": "未ログインでも叩けるAPIエンドポイントにレートリミットを導入する",
+    "contentSnippet": "先日だれでもAIメーカーというWebサービスをリリースしました。このサービスは例によってOpenAI APIを使っており、トークンの使用量がランニングコストに大きく影響します。また、気軽に使ってもらえるよう未ログインでも使用できる仕様にしているため、気をつけないと悪意のある人に大量にトークンを使用されてしまう可能性があります。 ノーガードだとどうなるか例えば、POST /api/askという「リクエストbodyのpromptの値を取り出し、OpenAI APIのChat Completionsに投げる」という単純なエンドポイントを作ったとします。「未ログインでも使ってもらいたい...",
+    "link": "https://zenn.dev/catnose99/articles/9183c86d3558e5",
+    "isoDate": "2023-05-03T02:09:12.000Z",
+    "dateMilliSeconds": 1683079752000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "Webサービスで「ユーザーページに独自ドメインを登録できる」機能を提供するのがなぜ難しいか",
+    "contentSnippet": "コンテンツ投稿系のWebサービスでは「ユーザーのページに好きな独自ドメインを登録できる」という機能をつけたくなることがあります。ユーザーからすると「コンテンツが自分自身の所有物であること」を感じやすいですし、コンテンツのポータビリティが上がりますし、とても夢がありますよね。僕もいつか実装してみたい機能のひとつです。しかし、この機能を提供するには、以下のようなハードルがあります。料金ベンダーロックイン複雑な実装（とくに認証）(1)の料金についてはデプロイ先によります。例えばVercelであればProプラン以上であれば無制限に独自ドメインを登録できます（Unlimited cu...",
+    "link": "https://zenn.dev/catnose99/articles/6c9851560c132e",
+    "isoDate": "2022-10-18T07:29:25.000Z",
+    "dateMilliSeconds": 1666078165000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "「CSSで蛍光ペンっぽいアンダーライン」はtext-decorationで実現できる",
+    "contentSnippet": "2022年現在、CSSでテキストに蛍光ペン風の下線を引く方法をググるとだいたいlinear-gradientを使った記事がヒットします。しかし、いまどきはlinear-gradientを使わなくてもtext-decorationで同じような表現ができるので紹介しておきます。 結論: こういうCSSをあてる/* セレクタ名はてきとう */.highlight {  text-decoration: underline; /* 下線 */  text-decoration-thickness: 0.5em; /* 線の太さ */  text-decoration-color:...",
+    "link": "https://zenn.dev/catnose99/articles/3239ba0d49cda9",
+    "isoDate": "2022-09-26T02:32:10.000Z",
+    "dateMilliSeconds": 1664159530000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "CSSでフッターの下に隙間ができないようにメインコンテンツの高さを調整する",
+    "contentSnippet": "メインコンテンツの高さが足りなくてもフッターが中途半端な位置に来ないようにしたいWebアプリケーションのレイアウトで、①ヘッダー②メインコンテンツ③フッターの3つで構成するというパターンはよくあると思うんですが、👇 こんな感じでフッターの下に中途半端な隙間を作りたくないですよね。これは困る👇 メインコンテンツの高さが短くても、フッターがぴったりビューポートの下にくっつくようにしたいですよね。良いね👇 ただ、フッターが常に下に固定されているのではなくて、メインコンテンツがビューポートより高くなったときには、フッターは下にずれていってほしいんですよね。良いね gridを...",
+    "link": "https://zenn.dev/catnose99/articles/a873bbbe25b15b",
+    "isoDate": "2022-08-03T01:04:04.000Z",
+    "dateMilliSeconds": 1659488644000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "Reactでスクロール位置によって要素のスタイルを変える",
+    "contentSnippet": "以前、Webページでスクロール位置に応じて要素のスタイルを変えたいようなケースがありました。上の例では、最初は60pxですが、現在の位置より上にスクロールされると少しずつサイズが小さくなり、ビューポート上部に達したときに20pxになるように実装されています。これをReactで雑に実装したので備忘録として残しておきます。 1. 要素の位置を取得するカスタムフックを作るまずビューポート内の要素の位置を取得する必要があります。複数の要素に対して同じことをやりたくなったときのために、要素の位置を取得する処理はカスタムフックに切り出しておきます。useOffsetTop.tsim...",
+    "link": "https://zenn.dev/catnose99/articles/0f0bb01ee6a940",
+    "isoDate": "2022-06-08T07:00:01.000Z",
+    "dateMilliSeconds": 1654671601000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "URLで絵文字を指定したらTwemoji画像を返す仕組みを作った by Cloud Functions",
+    "contentSnippet": "Twemoji（Twitter社が提供するオープンソースの絵文字）の読み込みを改善するのが好きです。https://zenn.dev/catnose99/articles/1e3925a010c3e5最近もう一つ改善を行ったので簡単に記事にまとめておきます。 twemojiの一般的な使い方npmを利用したプロジェクトでTwemojiを導入する場合、twemojiという公式ライブラリを使うのが一般的だと思います。このライブラリを読み込んでtwemoji.parse()を呼び出すとDOMから絵文字を見つけて、それをtwemojiの画像（<img />）に変換してくれます...",
+    "link": "https://zenn.dev/team_zenn/articles/5b331a95a6f6f5",
+    "isoDate": "2022-03-23T12:28:27.000Z",
+    "dateMilliSeconds": 1648038507000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "CypressでRSSなどのXMLをテストする",
+    "contentSnippet": "CypressでRSSやsitemapなどのXML形式の出力をテストする機会があったのでその方法を簡単に残しておきます。 XMLの文字列からXMLDocumentを取得するリクエスト先のXMLページが意図した内容になっているかどうかを文字列のままでテストするのは大変です。はじめに文字列からXMLDocumentオブジェクトを生成しておけば、document.querySelector()などのメソッドを使って楽にテストを書くことができます。文字列からXMLDocumentを取得するにはDOMParserのparseFromString()を使います。モダンブラウザで標準でサポート...",
+    "link": "https://zenn.dev/catnose99/articles/f99481f2105c9b",
+    "isoDate": "2022-03-05T23:03:10.000Z",
+    "dateMilliSeconds": 1646521390000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "特定のOSでのみ絵文字をTwemojiで表示するときのコツ",
+    "contentSnippet": "Apple以外のOSではTwemojiを使いたい自分はAppleの絵文字が好きです。しかし、Appleの絵文字はオープンソースではなく、絵文字を画像として保存して他のプラットフォームで表示することは好ましくありません。次に自分が好きなのは、オープンソースのTwemojiです。Twemojiであればどのプラットフォームでも自由に表示できますし、絵文字をTwemojiの画像に変換するためのパーサも用意されています。そこで、自分はAppleのOS（macOS/iOS/iPadOS）でのみネイティブの絵文字を表示して、それ以外の環境ではTwemoji（画像）を表示するという方法を取...",
+    "link": "https://zenn.dev/catnose99/articles/1e3925a010c3e5",
+    "isoDate": "2022-01-28T04:12:33.000Z",
+    "dateMilliSeconds": 1643343153000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "Google AnalyticsのCookieについての覚書",
+    "contentSnippet": "Google Analytics（のgtag.js）のCookieの設定をいじる機会があったのですが、色々と学んだことがあったためメモしておきます。 なぜGoogle AnalyticsはCookieを使うのか以下「Google Analytics」は「GA」と省略します。公式ドキュメントに明確に書かれています。Google アナリティクス4 では、gtag.jsは、以下の目的でファーストパーティCookieを使用します。ユニーク ユーザーを区別するユーザーのセッションを区別するCookieに保存しておいた値をトラッキング時にGoogleのサーバーに送ることで...",
+    "link": "https://zenn.dev/catnose99/articles/bef8d2b9593e53",
+    "isoDate": "2022-01-20T01:50:40.000Z",
+    "dateMilliSeconds": 1642643440000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "RemixをCloudflare Workersで動かす & KVでデータをキャッシュする",
+    "contentSnippet": "!2022/12/04 追記RemixをCloudflare Pagesで動かせるようになりました。詳しくは Deploy a Remix siteをチェックするのがおすすめです。前回の記事https://zenn.dev/catnose99/articles/dfc9c1197daec3この記事ではRemixをCloudflare Workersにデプロイしつつ、Workers KVで外部APIから取得したデータをキャッシュしてみたいと思います。 Remixをローカルで開発!Remix v1.0.5 を使っています。今後のアップデートで手順やコマンドが変わる可能性...",
+    "link": "https://zenn.dev/catnose99/articles/a4ff1953921e33",
+    "isoDate": "2021-11-26T04:45:22.000Z",
+    "dateMilliSeconds": 1637901922000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "Cloudflare WorkersでSSRができると何が嬉しいか",
+    "contentSnippet": "Next.jsの対抗馬となりそうなReactのフレームワークでRemixのv1.0がリリースされました。https://remix.run/個人的にRemixでいちばん魅力を感じているのはCloudflare WorkersでSSRができるという点です（現状ではNext.jsをCloudflare Workers上でSSRするのは難しい）。これがなぜ嬉しいのかと言うと、パフォーマンスを出しつつ、低コストで運用でき、大量のアクセスに対しても低コストでスケールできそうだからです。 そもそもSSRをする必要ある？ほとんどのWebサービスはSSRなしでSPAとしてビルドし、Cloudf...",
+    "link": "https://zenn.dev/catnose99/articles/dfc9c1197daec3",
+    "isoDate": "2021-11-24T09:17:53.000Z",
+    "dateMilliSeconds": 1637745473000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "Tailwind CSSでお手軽ローディングアニメーション",
+    "contentSnippet": "Talewind CSSでローディング・アニメーションを表示したくなったのですが、ググってもちょうど良いサンプルが見つかりませんでした。というわけでコピペで簡単に使えるサンプルコードをいくつか考えてみました。あまりクオリティが高いものではないですが「Tailwind CSSでとりあえず何かローディング中っぽい表示にしたい」という場合にご自由にコピペしてお使いください。 波紋が広がるアニメーション<div className=\"flex justify-center\" aria-label=\"読み込み中\">  <div className=\"animate-p...",
+    "link": "https://zenn.dev/catnose99/articles/19a05103ab9ec7",
+    "isoDate": "2021-11-13T05:13:30.000Z",
+    "dateMilliSeconds": 1636780410000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "IAPのリクエストヘッダから取得したemailを使って細かな権限管理をする",
+    "contentSnippet": "Google Cloudで管理画面（管理サイト）を動かすときには、Cloud IAP（Identity-Aware Proxy）がとても便利です。例えば、Cloud Runにデプロイされた管理サイトをIAP越しに動かすことで「特定のGoogleアカウントに対してのみアクセスを許可する」といったことが簡単に実現できます。この記事は、IAPを導入したうえでより細かな権限管理をする方法についてメモしたものです。IAPの詳細はドキュメントを確認してください。https://cloud.google.com/iap/docs/concepts-overview IAP越しに動くアプリケー...",
+    "link": "https://zenn.dev/catnose99/articles/5831a2294818a1",
+    "isoDate": "2021-11-05T02:41:30.000Z",
+    "dateMilliSeconds": 1636080090000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "Next.jsのmiddlewareはVercel以外でも問題なく使えるか",
+    "contentSnippet": "Next.jsでv12〜middlewareという機能が使えるようになりました。https://nextjs.org/docs/middlewaremiddlewareに書いた処理はリクエストが完了する前に実行されます。Cookieの値に応じてルーティングを振り分けたり、Basic認証を導入したり等など、幅広い用途で使えそうです。VercelとNext.jsの組み合わせが強いのは、VercelにNext.jsをデプロイするとこのmiddleware部分をEdge Functionsで捌いてくれるという点です。つまり、静的なページに対するリクエストに対して、オリジンサーバーに触れこと...",
+    "link": "https://zenn.dev/catnose99/articles/0df722f3f025bb",
+    "isoDate": "2021-10-27T04:31:37.000Z",
+    "dateMilliSeconds": 1635309097000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "Cloud Storageにアップロードされた画像のExifをCloud Functionsで削除する",
+    "contentSnippet": "意外とあまり参考になる記事が見つからなかった & ハマりポイントが多かったので記事にしておきます。 前提Cloud Functions for Firebaseではなく、ただのCloud Functionsを使います。画像処理のところはfor Firebaseの方でも同じように書けるはずです。Cloud Functionsの実行環境にはImageMagickがインストールされています。今回はgmというNode.jsのラッパーを使って画像のExifの検出と削除を行います。 packageのインストールまず必要なpackageをインストールしていきます。 dep...",
+    "link": "https://zenn.dev/catnose99/articles/f35a7261c0fe48",
+    "isoDate": "2021-10-20T08:35:43.000Z",
+    "dateMilliSeconds": 1634718943000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "Codemirrorデフォルトのショートカット（KeyMap）を無効化する",
+    "contentSnippet": "ドキュメントやGitHubリポジトリのissuesを漁ってもどうしても見当たらなかったので記事に残しておく。CodemirrorのkeyMap周りのソースコードを探ってみたところ、以下のようにCodemirrorのインスタンスに対してaddKeyMapで値にfalseを渡すことで無効にできることが分かった。cm.addKeyMap({  'Alt-D': false,});ソースコードの該当部分: https://github.com/codemirror/CodeMirror/blob/bd1b7d2976d768ae4e3b8cf209ec59ad73c0305a/src...",
+    "link": "https://zenn.dev/catnose99/articles/6a5acfa798c9fa",
+    "isoDate": "2021-10-15T08:01:34.000Z",
+    "dateMilliSeconds": 1634284894000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "ビデオ会議でカメラの映像の代わりに絵文字を配信するためのツールを作った",
+    "contentSnippet": "ビデオ会議で顔出しNGな人でも感情を表現できるように、絵文字やテキストをカメラ映像代わりに表示するためのサービスを作りました。自分のカメラ映像の代わりにこういうやつを表示👆 こんな感じでZoomやGoogle Meetでのビデオ会議で、自分の顔の代わりに絵文字を表示できるサービスです。絵文字に動きをつけたり、自由に文字入力することもできます。👆 画面共有ではなく、本来自分の映像が表示されるスペースに、絵文字を表示させるような形で使います。https://live.catnose.me/ユーザー登録なしで使えますが、ZoomやGoogle Meetにブラウザの画面を表示するた...",
+    "link": "https://zenn.dev/catnose99/articles/eb0e7a51876920",
+    "isoDate": "2021-10-06T08:05:05.000Z",
+    "dateMilliSeconds": 1633507505000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "CodeMirrorをベースとしたエディターでCtrl + Zを実行すると内容が全て消える問題を解消する",
+    "contentSnippet": "まだ日本語の情報がないようなので残しておきます。CodeMirrorをベースにしたエディターライブラリで、マウント直後にCtrl + Z（⌘ + Z）のショートカットを実行すると内容がすべて消えてしまう（空になる）問題が起きることがあります。例えばEasyMDE（v2.15.1-477.0）でこの問題が発生します。デモページを開きエディターにフォーカスをあてた状態でCtrl + Z（⌘ + Z）を実行すると内容が消えることが分かります。 原因原因は、マウント時点で（本文の初期データが渡される前に）CodeMirrorインスタンスのvalueに空の値が入ってしまい、その空の値が編...",
+    "link": "https://zenn.dev/catnose99/articles/83f5755918500a",
+    "isoDate": "2021-09-12T07:11:13.000Z",
+    "dateMilliSeconds": 1631430673000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "Next.js + TypeScriptでimportしたSVGの型がanyになってしまう",
+    "contentSnippet": "前提: TypeScript + Next.js + svgrでSVGをインポートする自分の関わっているNext.js製アプリケーションでは、svgrを導入することによりSVGを他のReactコンポーネントと同じ形でimportできるようにしています。この記事の本筋からそれますが、svgrは以下のようにNext.jsへの導入できます。↓ インストール$ npm install --save-dev @svgr/webpack↓ @svgr/webpackをWebpackのloaderとして設定します。細かな設定はsvgrのドキュメントを確認してください。module.ex...",
+    "link": "https://zenn.dev/catnose99/articles/49c12f84182bdf",
+    "isoDate": "2021-08-27T06:12:13.000Z",
+    "dateMilliSeconds": 1630044733000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "CSSのtext-decorationで一部のテキストだけ下線を非表示にする",
+    "contentSnippet": "ちょっとしたCSSのTipsを紹介します。 テキストの一部をtext-decorationの適用対象外にしたいtext-decoration: underlineにより下線が表示されるリンクがあるとします。html<a href=\"#\">詳細をみる →</a>👆 テキストの矢印（→）にまで下線がかかっています。もし、矢印には下線を表示したくない場合にはどうしたら良いのでしょうか。 text-decoration: noneが効かない…？「下線を消したい部分にtext-decoration: noneを指定すればいいのでは？」と思うかもしれま...",
+    "link": "https://zenn.dev/catnose99/articles/c3afffa918c86a",
+    "isoDate": "2021-07-30T07:58:17.000Z",
+    "dateMilliSeconds": 1627631897000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "デザイナーはコードが書けると楽しい",
+    "link": "https://catnose.medium.com/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%8A%E3%83%BC%E3%81%AF%E3%82%B3%E3%83%BC%E3%83%89%E3%81%8C%E6%9B%B8%E3%81%91%E3%82%8B%E3%81%A8%E6%A5%BD%E3%81%97%E3%81%84-541bb33eca1b?source=rss-d477716edf57------2",
+    "isoDate": "2020-10-21T14:37:30.000Z",
+    "dateMilliSeconds": 1603291050000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  },
+  {
+    "title": "Mediumのロゴが変わった件",
+    "link": "https://catnose.medium.com/medium%E3%81%AE%E3%83%AD%E3%82%B4%E3%81%8C%E5%A4%89%E3%82%8F%E3%81%A3%E3%81%9F%E4%BB%B6-a61f1c475a2f?source=rss-d477716edf57------2",
+    "isoDate": "2020-10-21T14:32:36.000Z",
+    "dateMilliSeconds": 1603290756000,
+    "authorName": "CatNose",
+    "authorId": "catnose"
+  }
+]

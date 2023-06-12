@@ -1,7 +1,4 @@
-import { ZennPostItem } from '@type-def/members';
-
-// import { members } from '@components/zenn_posts/zennBuilder';
-
+import { ZennPostItem } from '@components/features/zennRss/types';
 import { MemberType } from '@components/zenn_posts/zennBuilder';
 import posts from '@rss/zenn-posts.json';
 
