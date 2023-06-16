@@ -16,15 +16,9 @@ type FeedItem = {
 export type MemberType = {
   id: string;
   name: string;
-  // avatarSrc: string;
-  // role?: string;
-  // bio?: string;
   sources?: string[];
   includeUrlRegex?: string;
   excludeUrlRegex?: string;
-  githubUsername?: string;
-  twitterUsername?: string;
-  websiteUrl?: string;
 };
 
 //TODO 重複
@@ -32,20 +26,16 @@ export const members: MemberType[] = [
   {
     id: 'catnose',
     name: 'CatNose',
-    // role: 'CTO',
-    // bio: 'デザインが好きなプログラマー。開発者向けの情報共有プラットフォームzenn.devを開発しています。',
-    // avatarSrc: '/avatars/catnose.jpg',
     sources: ['https://zenn.dev/tsue/feed'],
     includeUrlRegex: 'zenn.dev',
-    // twitterUsername: 'catnose99',
-    // githubUsername: 'catnose99',
-    // websiteUrl: 'https://catnose99.com',
+    excludeUrlRegex: '',
   },
 ];
 
 function isValidUrl(str: string): boolean {
   try {
     const { protocol } = new URL(str);
+
     return protocol === 'http:' || protocol === 'https:';
   } catch {
     return false;
@@ -57,6 +47,7 @@ let allPostItems: ZennPostItem[] = [];
 
 async function fetchFeedItems(url: string) {
   const feed = await parser.parseURL(url);
+
   if (!feed?.items?.length) return [];
 
   // return item which has title and link
@@ -76,16 +67,20 @@ async function fetchFeedItems(url: string) {
 async function getFeedItemsFromSources(sources: undefined | string[]) {
   if (!sources?.length) return [];
   let feedItems: FeedItem[] = [];
+
   for (const url of sources) {
     const items = await fetchFeedItems(url);
+
     if (items) feedItems = [...feedItems, ...items];
   }
+
   return feedItems;
 }
 
 async function getMemberFeedItems(member: MemberType): Promise<ZennPostItem[]> {
   const { id, sources, name, includeUrlRegex, excludeUrlRegex } = member;
   const feedItems = await getFeedItemsFromSources(sources);
+
   if (!feedItems) return [];
 
   let postItems = feedItems.map((item) => {
@@ -95,6 +90,7 @@ async function getMemberFeedItems(member: MemberType): Promise<ZennPostItem[]> {
       authorId: id,
     };
   });
+
   // remove items which not matches includeUrlRegex
   if (includeUrlRegex) {
     postItems = postItems.filter((item) => {
@@ -115,9 +111,9 @@ async function getMemberFeedItems(member: MemberType): Promise<ZennPostItem[]> {
 (async function () {
   for (const member of members) {
     const items = await getMemberFeedItems(member);
+
     if (items) allPostItems = [...allPostItems, ...items];
   }
   allPostItems.sort((a, b) => b.dateMilliSeconds - a.dateMilliSeconds);
-  // fs.ensureDirSync('src/rss');
   fs.writeJsonSync('src/rss/zenn-posts.json', allPostItems);
 })();

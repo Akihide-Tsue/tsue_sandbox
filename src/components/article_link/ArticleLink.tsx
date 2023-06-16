@@ -46,12 +46,10 @@ const ArticleLink: FC<Props> = ({ post, layout }) => {
       ) : (
         <Link href={`/posts/${post.slug}`}>
           <a className={styles.lists}>
-            <div className={styles.text_wrapper}>
-              <h2 className={styles.lists_title}>{post.frontMatter.title}</h2>
-              <div className={styles.lists_flex}>
-                <span className={styles.lists_date}>{post.frontMatter.date}</span>
-                <span className={styles.tags_wrapper}>{tags}</span>
-              </div>
+            <h2 className={styles.lists_title}>{post.frontMatter.title}</h2>
+            <div className={styles.lists_flex}>
+              <span className={styles.lists_date}>{post.frontMatter.date}</span>
+              <span className={styles.tags_wrapper}>{tags}</span>
             </div>
           </a>
         </Link>

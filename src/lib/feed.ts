@@ -41,6 +41,7 @@ const generatedRssFeed = (): void => {
     const slug = fileName.replace(/\.md$/, '');
     const fileContent = fs.readFileSync(`src/posts/${fileName}`, 'utf-8');
     const { data, content } = matter(fileContent);
+
     return {
       frontMatter: data as FrontMatterType,
       slug,

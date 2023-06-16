@@ -21,6 +21,7 @@ const Chart: FC<Props> = ({ data }) => {
   const isDarkMode = useRecoilValue(colorTheme);
   const displayChartData = () => {
     const lineList = [];
+
     for (let i = 0; i < Object.keys(data[0]).length - 1; i++) {
       //https://recharts.org/en-US/api/Line
       data[i]?.year &&
@@ -35,6 +36,7 @@ const Chart: FC<Props> = ({ data }) => {
           />,
         );
     }
+
     return lineList;
   };
 

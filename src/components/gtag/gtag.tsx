@@ -9,18 +9,20 @@ export const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || '';
 export const UA_ID = process.env.NEXT_PUBLIC_UNIVERSAL_ANALYTICS_ID || '';
 
 // IDが取得できない場合を想定する
-export const existsGaId = GA_ID !== '';
-export const existsUaId = UA_ID !== '';
+export const hasGaId = GA_ID !== '';
+export const hasUaId = UA_ID !== '';
 
 // PVを測定する
 export const gaPageview = (path: string) => {
   window.gtag('config', GA_ID, {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     page_path: path,
   });
 };
 
 export const uaPageview = (path: string) => {
   window.gtag('config', UA_ID, {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     page_path: path,
   });
 };
@@ -33,13 +35,15 @@ declare global {
 
 // GAイベントを発火させる
 export const gtagEvent = ({ event, component, page_label, event_label = '' }: Event) => {
-  if (!existsGaId) {
+  if (!hasGaId) {
     return;
   }
 
   window.gtag('event', event, {
     component: component,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     page_label: page_label,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     event_label: event_label,
   });
 };
@@ -49,20 +53,21 @@ export const usePageView = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (!existsGaId) {
+    if (!hasGaId) {
       return;
     }
 
     const handleRouteChange = (path: string) => {
-      if (existsGaId) {
+      if (hasGaId) {
         gaPageview(path);
       }
-      if (existsUaId) {
+      if (hasUaId) {
         uaPageview(path);
       }
     };
 
     router.events.on('routeChangeComplete', handleRouteChange);
+
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
@@ -78,13 +83,14 @@ export const usePageView = () => {
 // _app.tsx で読み込む
 export const GoogleAnalytics = () => (
   <>
-    {existsGaId && (
+    {hasGaId && (
       <>
         <Script defer id="gtag-script1" src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
         <Script
           defer
           id="gtag-script2"
           dangerouslySetInnerHTML={{
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -103,6 +109,8 @@ export const GoogleAnalytics = () => (
 export type Event = {
   event: string;
   component: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   page_label: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   event_label?: string;
 };

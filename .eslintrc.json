@@ -37,6 +37,43 @@
         ]
       }
     ],
+    // 変数宣言と return 周辺を改行必須に
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+      { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] },
+      { "blankLine": "always", "prev": "*", "next": "return" }
+    ],
+    // コールバック関数は必ずarrow-functionにする
+    "prefer-arrow-callback": "error",
+    // functin宣言はエラー
+    // "func-style": "error",//TODO あとで
+    // prop types を使っていないので off
+    "react/prop-types": "off",
+    // 命名に関するルール
+    "@typescript-eslint/naming-convention": [
+      "error",
+      { "selector": ["typeAlias", "typeParameter"], "format": ["PascalCase"] },
+      { "selector": ["property", "parameterProperty", "method"], "format": ["camelCase"] },
+      {
+        "selector": ["variable"],
+        "types": ["boolean"],
+        "format": ["PascalCase"],
+        "prefix": ["is", "has", "should", "can"]
+      },
+      {
+        "selector": ["variable"],
+        "types": ["string", "number", "array"],
+        "modifiers": ["const"],
+        "format": ["camelCase", "UPPER_CASE"]
+      },
+      {
+        "selector": ["typeProperty"],
+        "types": ["boolean"],
+        "format": ["PascalCase"],
+        "prefix": ["is", "has", "should", "can"]
+      }
+    ],
     "import/order": [
       "error",
       {

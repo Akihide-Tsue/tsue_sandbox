@@ -17,7 +17,7 @@ interface Props {
 }
 
 const BlogCard: CodeComponent = ({ href, children }: Props) => {
-  const [disabled, setDisabled] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   const currentArticleLink = useRecoilValue(currentArticleLinks);
   const state = currentArticleLink;
 
@@ -44,13 +44,13 @@ const BlogCard: CodeComponent = ({ href, children }: Props) => {
               <div className={styles.href}>{href}</div>
             </div>
           </div>
-          {target.image || disabled ? (
+          {target.image || isDisabled ? (
             <img
               src={target.image}
-              className={`${styles.image} ${disabled && styles.no_image}`}
+              className={`${styles.image} ${isDisabled && styles.no_image}`}
               onError={({ currentTarget }) => {
                 currentTarget.onerror = null;
-                setDisabled(true);
+                setIsDisabled(true);
                 currentTarget.src = convertNoImage();
               }}
               alt=""

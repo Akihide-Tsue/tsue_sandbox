@@ -25,9 +25,9 @@ const CompoundInterest: NextPage = ({}) => {
   const [interestRate, setInterestRate] = useState<string | number>(5);
   const [accumulationPrice, setAccumulationPrice] = useState<string | number>(0);
   const [annualAccumulationPrice, setAnnualAccumulationPrice] = useState<number>(0);
-  const [zenkakuError, setZenkakuError] = useState(false);
+  const [isZenkakuError, setIsZenkakuError] = useState(false);
   const [accumulation, setAccumulation] = useState('');
-  const [disabled, setDisabled] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(true);
   const [assetData, setAssetData] = useState<AssetDataType>({
     [uuid()]: {
       capital: 100,
@@ -39,12 +39,14 @@ const CompoundInterest: NextPage = ({}) => {
       capital: 300,
     },
   });
+
   useEffect(() => {
-    const allDataFilled = Object.keys(assetData).every((id) => assetData[id].capital !== (0 || null));
-    if (allDataFilled) {
-      setDisabled(false);
+    const isAllDataFilled = Object.keys(assetData).every((id) => assetData[id].capital !== (0 || null));
+
+    if (isAllDataFilled) {
+      setIsDisabled(false);
     } else {
-      setDisabled(true);
+      setIsDisabled(true);
     }
   }, [assetData]);
 
@@ -71,6 +73,7 @@ const CompoundInterest: NextPage = ({}) => {
 
   const deleteAssetInputsRowHandler = (id: string) => {
     const { [id]: deleteData, ...newData } = assetData;
+
     setAssetData(newData);
   };
 
@@ -145,9 +148,9 @@ const CompoundInterest: NextPage = ({}) => {
                 e.code === 'KeyE' && e.preventDefault();
               }}
               onChange={(e) => {
-                isNaN(Number(convertZenkakuToHankakuNumber(e.target.value))) && setZenkakuError(true);
+                isNaN(Number(convertZenkakuToHankakuNumber(e.target.value))) && setIsZenkakuError(true);
                 !isNaN(Number(convertZenkakuToHankakuNumber(e.target.value))) &&
-                  (setYear(Number(convertZenkakuToHankakuNumber(e.target.value))), setZenkakuError(false));
+                  (setYear(Number(convertZenkakuToHankakuNumber(e.target.value))), setIsZenkakuError(false));
               }}
             />
             <span className={styles.unit_label}>年</span>
@@ -167,7 +170,7 @@ const CompoundInterest: NextPage = ({}) => {
                 e.code === 'KeyE' && e.preventDefault();
               }}
               onChange={(e) => {
-                setInterestRate(convertZenkakuToHankakuNumber(e.target.value)), setZenkakuError(false);
+                setInterestRate(convertZenkakuToHankakuNumber(e.target.value)), setIsZenkakuError(false);
               }}
             />
             <span className={styles.unit_label}>％</span>
@@ -235,7 +238,7 @@ const CompoundInterest: NextPage = ({}) => {
                   e.code === 'KeyE' && e.preventDefault();
                 }}
                 onChange={(e) => {
-                  setAccumulationPrice(convertZenkakuToHankakuNumber(e.target.value)), setZenkakuError(false);
+                  setAccumulationPrice(convertZenkakuToHankakuNumber(e.target.value)), setIsZenkakuError(false);
                 }}
               />
               <span className={styles.unit_label}>万円</span>
@@ -259,10 +262,10 @@ const CompoundInterest: NextPage = ({}) => {
                   e.code === 'KeyE' && e.preventDefault();
                 }}
                 onChange={(e) => {
-                  isNaN(Number(convertZenkakuToHankakuNumber(e.target.value))) && setZenkakuError(true);
+                  isNaN(Number(convertZenkakuToHankakuNumber(e.target.value))) && setIsZenkakuError(true);
                   !isNaN(Number(convertZenkakuToHankakuNumber(e.target.value))) &&
                     (assetFormInputHandler('capital', id, Number(convertZenkakuToHankakuNumber(e.target.value)), setAssetData, assetData),
-                    setZenkakuError(false));
+                    setIsZenkakuError(false));
                 }}
               />
               <span className={styles.unit_label}>万円</span>
@@ -281,13 +284,13 @@ const CompoundInterest: NextPage = ({}) => {
         })}
 
         {Object.keys(assetData).length < 8 && (
-          <button onClick={addAssetInputsRowHandler} disabled={disabled} className={styles.plus_section}>
-            <PlusButton className={`${!disabled ? styles.is_active : styles.is_disabled} ${styles.add_button_icon}`} />
+          <button onClick={addAssetInputsRowHandler} disabled={isDisabled} className={styles.plus_section}>
+            <PlusButton className={`${!isDisabled ? styles.is_active : styles.is_disabled} ${styles.add_button_icon}`} />
           </button>
         )}
       </div>
 
-      {zenkakuError && <span className={styles.error_text}>半角数値を入力して下さい</span>}
+      {isZenkakuError && <span className={styles.error_text}>半角数値を入力して下さい</span>}
 
       <LineChart data={list} />
 

@@ -18,21 +18,23 @@ import { colorTheme } from 'src/recoil/atoms/colorTheme';
 import styles from './PageHeader.module.scss';
 
 const PageHeader: FC = ({}) => {
-  const showHeader = useShowComponent(160);
+  const shouldShowHeader = useShowComponent(160);
   const hasMounted = useHasMounted();
   const [isDarkMode, setIsDarkMode] = useRecoilState(colorTheme);
 
   useLayoutEffect(() => {
     //初回起動時に、端末の設定がdarkだった場合に暗くする
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const darkModeOn = darkModeMediaQuery.matches;
-    if (typeof window !== 'undefined' && isDarkMode === '' && darkModeOn) {
+    const shouldDarkModeOn = darkModeMediaQuery.matches;
+
+    if (typeof window !== 'undefined' && isDarkMode === '' && shouldDarkModeOn) {
       setIsDarkMode('dark');
     }
   }, []);
 
   useLayoutEffect(() => {
     const body = document.body;
+
     if (isDarkMode === 'dark') {
       body.classList.remove('light_theme');
       body.classList.add('dark_theme');
@@ -43,7 +45,7 @@ const PageHeader: FC = ({}) => {
   }, [isDarkMode]);
 
   return (
-    <div className={`${styles.header} ${!showHeader && styles.hidden}`}>
+    <div className={`${styles.header} ${!shouldShowHeader && styles.hidden}`}>
       <div className={styles.header_inner}>
         <Link href={`/`} passHref>
           <a>

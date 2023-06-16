@@ -4,3 +4,4 @@ sentry.client.config.js
 src/pages/_error.js
 next.config.js
 babel.config.js
+sitemap.xml.tsx

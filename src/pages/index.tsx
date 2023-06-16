@@ -18,6 +18,7 @@ export const getStaticProps = () => {
     const slug = fileName.replace(/\.md$/, '');
     const fileContent = fs.readFileSync(`src/posts/${fileName}`, 'utf-8');
     const { data } = matter(fileContent);
+
     return {
       frontMatter: data,
       slug,
@@ -53,7 +54,8 @@ const Home: NextPage<Props> = ({ posts }) => {
 
   return (
     <>
-      <ArticleLayoutSelect layout={layout} setLayout={setLayout} displayLayoutSelector />
+      <ArticleLayoutSelect layout={layout} setLayout={setLayout} shouldDisplayLayoutSelector />
+
       <div className={`${layout === 'card' ? styles.grid_container : styles.list_container}`}>
         {posts.map((post: PostType) => {
           return !post.frontMatter.draft && <ArticleLink key={post.slug} post={post} layout={layout} />;

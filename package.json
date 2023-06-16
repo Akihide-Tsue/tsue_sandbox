@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:posts": "ts-node --project tsconfig.builder.json ./src/components/zenn_posts/zennBuilder.ts",
+    "build:posts": "ts-node --project tsconfig.builder.json ./src/components/features/zennRss/zennBuilder.ts",
     "now-build": "yum install libuuid-devel libmount-devel --skip-broken && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build",
     "vercel-build": "yum install gcc-c++ cairo-devel pango-devel libjpeg-turbo-devel giflib-devel",
     "lint": "next lint --dir src",
@@ -83,5 +83,8 @@
   },
   "volta": {
     "node": "18.16.0"
+  },
+  "engines": {
+    "npm": "please use yarn instead"
   }
 }

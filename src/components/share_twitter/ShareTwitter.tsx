@@ -10,6 +10,7 @@ type TwitterIntentTweetProps = {
   hashtags?: string[];
   via?: string;
   related?: string[];
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   in_reply_to?: string;
 } & Omit<ComponentProps<'a'>, 'href' | 'target' | 'rel'>;
 
