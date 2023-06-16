@@ -4,7 +4,7 @@ date: '2022-08-15'
 description: 'ブログカードの生成って意外と大変。ブログカードの作成手順を解説します。'
 image: images/articles/blog_card.webp
 categories: Tech
-draft: false
+isDraft: false
 tags: [UI]
 ---
 
@@ -32,7 +32,7 @@ getStaticProps で処理を行います。
 
 ```js:[slug].tsx
 import ReactMarkdown from 'react-markdown';
-import BlogCard from '@components/blog_card/BlogCard';
+import BlogCard from '@components/features/blog_card/BlogCard';
 import CodeBlock from '@components/codeblock/CodeBlock';
 import matter from 'gray-matter';
 const jsdom = require('jsdom');

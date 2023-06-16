@@ -55,7 +55,7 @@ const generatedRssFeed = (): void => {
     const content = markdownToHtml(post.content);
 
     //ドラフトと記事以外は除く
-    if (post.frontMatter.draft === false && post.frontMatter.categories === 'Tech') {
+    if (post.frontMatter.isDraft === false && post.frontMatter.categories === 'Tech') {
       feed.addItem({
         title: post.frontMatter.title,
         description: post.frontMatter.description,

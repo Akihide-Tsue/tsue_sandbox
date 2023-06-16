@@ -14,10 +14,10 @@ import remarkGfm from 'remark-gfm';
 
 import { config, productTitle } from '@constants';
 
-import BackListsButton from '@components/back_lists_button/BackListsButton';
-import BlogCard from '@components/blog_card/BlogCard';
-import CodeBlock from '@components/codeblock/CodeBlock';
-import { TwitterIntentTweet } from '@components/share_twitter/ShareTwitter';
+import BackListsButton from '@components/features/back_lists_button/BackListsButton';
+import BlogCard from '@components/features/blog_card/BlogCard';
+import CodeBlock from '@components/features/codeblock/CodeBlock';
+import { TwitterIntentTweet } from '@components/features/share_twitter/ShareTwitter';
 import { usePostData } from '@hooks/usePostData';
 import stylesMarkdown from '@styles/pages/markdown.module.scss';
 import styles from '@styles/pages/slug.module.scss';

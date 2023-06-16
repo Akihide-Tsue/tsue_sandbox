@@ -5,8 +5,8 @@ import type { NextPage } from 'next';
 import matter from 'gray-matter';
 import { useRecoilState } from 'recoil';
 
-import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
-import ArticleLink from '@components/article_link/ArticleLink';
+import ArticleLayoutSelect from '@components/features/article_layout_select/ArticleLayoutSelect';
+import ArticleLink from '@components/features/article_link/ArticleLink';
 import generatedRssFeed from '@libs/feed';
 import styles from '@styles/pages/index.module.scss';
 import { articleLayout } from 'src/recoil/atoms/articleLayout';
@@ -58,7 +58,7 @@ const Home: NextPage<Props> = ({ posts }) => {
 
       <div className={`${layout === 'card' ? styles.grid_container : styles.list_container}`}>
         {posts.map((post: PostType) => {
-          return !post.frontMatter.draft && <ArticleLink key={post.slug} post={post} layout={layout} />;
+          return !post.frontMatter.isDraft && <ArticleLink key={post.slug} post={post} layout={layout} />;
         })}
       </div>
     </>

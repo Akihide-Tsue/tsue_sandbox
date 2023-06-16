@@ -4,7 +4,7 @@ date: '2023-06-10'
 description: 'sentry/nextjsでエラー検知を効率化するための方法をまとめています'
 image: images/articles/sentry.webp
 categories: Tech
-draft: false
+isDraft: false
 tags: [Tool]
 ---
 

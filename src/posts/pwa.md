@@ -4,7 +4,7 @@ date: '2022-08-17'
 description: 'Next.jsでPWAに対応するための手順と注意点'
 image: images/articles/pwa.webp
 categories: Tech
-draft: false
+isDraft: false
 tags: [Blog]
 ---
 

@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 
 import { RecoilRoot } from 'recoil';
 
-import CommonHead from '@components/common_head/CommonHead';
+import CommonHead from '@components/common/common_head/CommonHead';
 import Layout from '@components/layouts/Layout';
 import { usePageView, GoogleAnalytics } from '@libs/gtag';
 

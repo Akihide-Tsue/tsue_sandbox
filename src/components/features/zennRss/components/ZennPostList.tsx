@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { format } from 'date-fns';
 
-import styles from '@components/article_link/ArticleLink.module.scss';
+import styles from '@components/features/article_link/ArticleLink.module.scss';
 import { getMemberById } from '@components/features/zennRss/helper';
 import { ZennPostItem } from '@components/features/zennRss/types';
 

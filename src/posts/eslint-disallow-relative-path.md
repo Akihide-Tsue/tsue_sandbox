@@ -4,7 +4,7 @@ date: '2023-02-08'
 description: 'ESLintの"no-restricted-imports"を設定することで、相対パスのimportを禁止する方法を解説。また、commit時にhuskyがチェックを行います。'
 image: images/articles/ESLint.webp
 categories: Tech
-draft: false
+isDraft: false
 tags: [ESLint]
 ---
 

@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 
 import { useRecoilState } from 'recoil';
 
-import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
+import ArticleLayoutSelect from '@components/features/article_layout_select/ArticleLayoutSelect';
 import { ZennPostList } from '@components/features/zennRss/components/ZennPostList';
 import { ZennPostItem } from '@components/features/zennRss/types';
 import posts from '@rss/zenn-posts.json';

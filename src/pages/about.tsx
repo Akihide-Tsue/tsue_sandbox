@@ -7,9 +7,9 @@ import ReactMarkdown from 'react-markdown';
 import { useRecoilState } from 'recoil';
 import remarkGfm from 'remark-gfm';
 
-import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
-import BlogCard from '@components/blog_card/BlogCard';
-import CodeBlock from '@components/codeblock/CodeBlock';
+import ArticleLayoutSelect from '@components/features/article_layout_select/ArticleLayoutSelect';
+import BlogCard from '@components/features/blog_card/BlogCard';
+import CodeBlock from '@components/features/codeblock/CodeBlock';
 import stylesMarkdown from '@styles/pages/markdown.module.scss';
 import { articleLayout } from 'src/recoil/atoms/articleLayout';
 import { FrontMatterType } from 'src/type-def/postsType';

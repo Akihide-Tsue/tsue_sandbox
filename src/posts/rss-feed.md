@@ -4,7 +4,7 @@ date: '2022-08-16'
 description: 'Next.jsで簡単RSS導入'
 image: images/articles/rss_feed.webp
 categories: Tech
-draft: false
+isDraft: false
 tags: [Blog]
 ---
 
@@ -81,7 +81,7 @@ const generatedRssFeed = (): void => {
     const content = markdownToHtml(post.content);
 
     //ドラフトは除く
-    if (post.frontMatter.draft === false) {
+    if (post.frontMatter.isDraft === false) {
       feed.addItem({
         title: post.frontMatter.title,
         description: post.frontMatter.description,

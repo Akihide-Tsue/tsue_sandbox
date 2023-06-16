@@ -4,7 +4,7 @@ date: '2022-08-31'
 description: 'Next.jsでrecoilを使用し、ダークモードを実装しました。端末のダークモード設定の対応。recoil-persistでの永続化も行いました。'
 image: images/articles/dark_mode.webp
 categories: Tech
-draft: false
+isDraft: false
 tags: [Design,Recoil]
 ---
 
