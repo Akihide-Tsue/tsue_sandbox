@@ -15,12 +15,14 @@ export const hasUaId = UA_ID !== '';
 // PVを測定する
 export const gaPageview = (path: string) => {
   window.gtag('config', GA_ID, {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     page_path: path,
   });
 };
 
 export const uaPageview = (path: string) => {
   window.gtag('config', UA_ID, {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     page_path: path,
   });
 };
@@ -39,7 +41,9 @@ export const gtagEvent = ({ event, component, page_label, event_label = '' }: Ev
 
   window.gtag('event', event, {
     component: component,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     page_label: page_label,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     event_label: event_label,
   });
 };
@@ -86,6 +90,7 @@ export const GoogleAnalytics = () => (
           defer
           id="gtag-script2"
           dangerouslySetInnerHTML={{
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -104,6 +109,8 @@ export const GoogleAnalytics = () => (
 export type Event = {
   event: string;
   component: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   page_label: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   event_label?: string;
 };

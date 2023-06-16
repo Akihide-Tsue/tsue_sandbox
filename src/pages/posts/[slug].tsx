@@ -46,6 +46,7 @@ export const getStaticProps: ({
   //ブログカード生成
   const lines = content.split('\n');
   const links: string[] | never = [];
+
   // URLの取得
   lines.map((line) => {
     if (line.indexOf('http://') === 0) links.push(line);
@@ -70,6 +71,7 @@ export const getStaticProps: ({
           // title, description, imageにあたる情報を取り出し配列として格納
           for (let i = 0; i < metas.length; i++) {
             let pro = metas[i].getAttribute('property');
+
             if (typeof pro == 'string') {
               if (pro.match('title')) metaData.title = metas[i].getAttribute('content');
               if (pro.match('description')) metaData.description = metas[i].getAttribute('content');
@@ -82,14 +84,17 @@ export const getStaticProps: ({
               if (pro.match('image')) metaData.image = metas[i].getAttribute('content');
             }
           }
+
           return metaData;
         })
         .catch((e) => {
           console.error('error', e);
         });
+
       return metas;
     }),
   );
+
   cardData = temps.filter((temp) => temp !== undefined);
 
   return { props: { frontMatter: data, content, cardData } };
@@ -103,6 +108,7 @@ export const getStaticPaths = async () => {
       slug: fileName.replace(/\.md$/, ''),
     },
   }));
+
   return {
     paths,
     fallback: false,
@@ -133,8 +139,9 @@ const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
 
   useEffect(() => {
     const getPostAction = (async () => {
-      const post_id = 1;
-      const post = await getPost(post_id);
+      const POST_ID = 1;
+      const post = await getPost(POST_ID);
+
       console.log('post', post);
     })();
   }, []);
