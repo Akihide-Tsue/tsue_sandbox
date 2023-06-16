@@ -32,7 +32,7 @@ export const members: MemberType[] = [
   },
 ];
 
-function isValidUrl(str: string): boolean {
+const isValidUrl = (str: string): boolean => {
   try {
     const { protocol } = new URL(str);
 
@@ -40,12 +40,12 @@ function isValidUrl(str: string): boolean {
   } catch {
     return false;
   }
-}
+};
 
 const parser = new Parser();
 let allPostItems: ZennPostItem[] = [];
 
-async function fetchFeedItems(url: string) {
+const fetchFeedItems = async (url: string) => {
   const feed = await parser.parseURL(url);
 
   if (!feed?.items?.length) return [];
@@ -62,9 +62,9 @@ async function fetchFeedItems(url: string) {
       };
     })
     .filter(({ title, link }) => title && link && isValidUrl(link)) as FeedItem[];
-}
+};
 
-async function getFeedItemsFromSources(sources: undefined | string[]) {
+const getFeedItemsFromSources = async (sources: undefined | string[]) => {
   if (!sources?.length) return [];
   let feedItems: FeedItem[] = [];
 
@@ -75,9 +75,9 @@ async function getFeedItemsFromSources(sources: undefined | string[]) {
   }
 
   return feedItems;
-}
+};
 
-async function getMemberFeedItems(member: MemberType): Promise<ZennPostItem[]> {
+const getMemberFeedItems = async (member: MemberType): Promise<ZennPostItem[]> => {
   const { id, sources, name, includeUrlRegex, excludeUrlRegex } = member;
   const feedItems = await getFeedItemsFromSources(sources);
 
@@ -105,7 +105,7 @@ async function getMemberFeedItems(member: MemberType): Promise<ZennPostItem[]> {
   }
 
   return postItems;
-}
+};
 
 // eslint-disable-next-line @typescript-eslint/no-floating-promises
 (async function () {

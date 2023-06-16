@@ -7,8 +7,8 @@ import { useRecoilState } from 'recoil';
 
 import ArticleLayoutSelect from '@components/article_layout_select/ArticleLayoutSelect';
 import ArticleLink from '@components/article_link/ArticleLink';
+import generatedRssFeed from '@libs/feed';
 import styles from '@styles/pages/index.module.scss';
-import generatedRssFeed from 'src/lib/feed';
 import { articleLayout } from 'src/recoil/atoms/articleLayout';
 import { PostType } from 'src/type-def/postsType';
 

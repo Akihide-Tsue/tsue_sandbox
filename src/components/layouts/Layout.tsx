@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import PageFooter from '@components/page_footer/PageFooter';
-import PageHeader from '@components/page_header/PageHeader';
+import PageFooter from '@components/layouts/page_footer/PageFooter';
+import PageHeader from '@components/layouts/page_header/PageHeader';
 
 import styles from './Layout.module.scss';
 

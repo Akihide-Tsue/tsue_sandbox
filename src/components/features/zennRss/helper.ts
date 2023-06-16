@@ -2,21 +2,21 @@ import { members } from '@components/features/zennRss/constants';
 import { ZennPostItem } from '@components/features/zennRss/types';
 import posts from '@rss/zenn-posts.json';
 
-export function getMemberByName(name: string) {
+export const getMemberByName = (name: string) => {
   return members.find((member) => member.name === name);
-}
+};
 
-export function getMemberById(id: string) {
+export const getMemberById = (id: string) => {
   return members.find((member) => member.id === id);
-}
+};
 
-export function getMemberPostsById(id: string) {
+export const getMemberPostsById = (id: string) => {
   return (posts as ZennPostItem[]).filter((item) => item.authorId === id);
-}
+};
 
-export function getFaviconSrcFromOrigin(hostname: string) {
+export const getFaviconSrcFromOrigin = (hostname: string) => {
   return `https://www.google.com/s2/favicons?sz=32&domain_url=${hostname}`;
-}
-export function getMemberPath(id: string) {
+};
+export const getMemberPath = (id: string) => {
   return `/members/${encodeURIComponent(id)}`;
-}
+};

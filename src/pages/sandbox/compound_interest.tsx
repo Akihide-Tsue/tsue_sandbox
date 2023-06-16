@@ -2,7 +2,7 @@ import { SetStateAction, useEffect, useState } from 'react';
 
 import dynamic from 'next/dynamic';
 
-const LineChart = dynamic(() => import('@components/line_chart/LineChart'), { ssr: false });
+const LineChart = dynamic(() => import('@components/features/line_chart/LineChart'), { ssr: false });
 
 import type { NextPage } from 'next';
 

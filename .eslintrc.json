@@ -30,7 +30,6 @@
       {
         "patterns": [
           {
-            "group": ["./*", "!./*.scss"],
             "group": ["./*", "../*", "!./*.scss"],
             "message": "scssファイル以外の相対パスを使用したimportは禁止です！"
           }
@@ -47,7 +46,7 @@
     // コールバック関数は必ずarrow-functionにする
     "prefer-arrow-callback": "error",
     // functin宣言はエラー
-    // "func-style": "error",//TODO あとで
+    "func-style": "error",
     // prop types を使っていないので off
     "react/prop-types": "off",
     // 命名に関するルール
