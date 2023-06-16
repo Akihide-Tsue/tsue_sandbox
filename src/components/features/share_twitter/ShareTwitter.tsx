@@ -1,4 +1,5 @@
-import { ComponentProps, forwardRef } from 'react';
+import type { ComponentProps } from 'react';
+import { forwardRef } from 'react';
 
 import styles from './ShareTwitter.module.scss';
 
@@ -25,6 +26,7 @@ export const TwitterIntentTweet = forwardRef<HTMLAnchorElement, TwitterIntentTwe
     if (related !== undefined) _url.searchParams.set('related', related.join(','));
     if (in_reply_to !== undefined) _url.searchParams.set('in_reply_to', in_reply_to);
 
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
     return <a ref={forwardedRef} href={_url.toString()} target="_blank" rel="noopener noreferrer" className={styles.button} {...intrinsicProps} />;
   },
 );

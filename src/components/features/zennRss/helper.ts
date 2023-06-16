@@ -1,6 +1,7 @@
 import { members } from '@components/features/zennRss/constants';
-import { ZennPostItem } from '@components/features/zennRss/types';
 import posts from '@rss/zenn-posts.json';
+
+import type { ZennPostItem } from '@components/features/zennRss/types';
 
 export const getMemberByName = (name: string) => {
   return members.find((member) => member.name === name);

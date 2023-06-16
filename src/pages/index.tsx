@@ -10,7 +10,8 @@ import ArticleLink from '@components/features/article_link/ArticleLink';
 import generatedRssFeed from '@libs/feed';
 import styles from '@styles/pages/index.module.scss';
 import { articleLayout } from 'src/recoil/atoms/articleLayout';
-import { PostType } from 'src/type-def/postsType';
+
+import type { PostType } from 'src/type-def/postsType';
 
 export const getStaticProps = () => {
   const files = fs.readdirSync('src/posts');

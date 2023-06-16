@@ -1,4 +1,5 @@
-import { FC, useLayoutEffect } from 'react';
+import type { FC } from 'react';
+import { useLayoutEffect } from 'react';
 
 import Link from 'next/link';
 
@@ -17,7 +18,7 @@ import { colorTheme } from 'src/recoil/atoms/colorTheme';
 
 import styles from './PageHeader.module.scss';
 
-const PageHeader: FC = ({}) => {
+const PageHeader: FC = () => {
   const shouldShowHeader = useShowComponent(160);
   const hasMounted = useHasMounted();
   const [isDarkMode, setIsDarkMode] = useRecoilState(colorTheme);

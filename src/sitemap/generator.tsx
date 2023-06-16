@@ -7,7 +7,7 @@ export type URL = {
   priority?: 0.0 | 0.1 | 0.2 | 0.3 | 0.4 | 0.5 | 0.6 | 0.7 | 0.8 | 0.9 | 1.0;
 };
 
-function generateURLSet(list: URL[]): JSX.Element {
+const generateURLSet = (list: URL[]): JSX.Element => {
   return (
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       {list.map(({ loc, lastMod, freq, priority }: URL, i) => (
@@ -20,8 +20,8 @@ function generateURLSet(list: URL[]): JSX.Element {
       ))}
     </urlset>
   );
-}
+};
 
-export function generateSiteMap(list: URL[]): string {
+export const generateSiteMap = (list: URL[]): string => {
   return '<?xml version="1.0" encoding="UTF-8"?>' + renderToString(generateURLSet(list));
-}
+};

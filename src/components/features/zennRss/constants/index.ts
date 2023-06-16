@@ -1,4 +1,4 @@
-import { MemberType } from '@components/features/zennRss/zennBuilder';
+import type { MemberType } from '@components/features/zennRss/zennBuilder';
 
 export const members: MemberType[] = [
   {

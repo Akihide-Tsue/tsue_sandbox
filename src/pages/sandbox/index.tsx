@@ -15,7 +15,7 @@ type Props = {
   any: any;
 };
 
-const Sandbox: NextPage<Props> = ({}) => {
+const Sandbox: NextPage<Props> = () => {
   return (
     <>
       <ArticleLayoutSelect />

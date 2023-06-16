@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import Parser from 'rss-parser';
 
-import { ZennPostItem } from '@components/features/zennRss/types';
+import type { ZennPostItem } from '@components/features/zennRss/types';
 
 //参考：https://zenn.dev/catnose99/articles/cb72a73368a547756862
 
@@ -13,6 +13,9 @@ type FeedItem = {
   dateMilliSeconds: number;
 };
 
+/**
+ * @deprecated
+ */
 export type MemberType = {
   id: string;
   name: string;

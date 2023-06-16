@@ -4,10 +4,11 @@ import { useRecoilState } from 'recoil';
 
 import ArticleLayoutSelect from '@components/features/article_layout_select/ArticleLayoutSelect';
 import { ZennPostList } from '@components/features/zennRss/components/ZennPostList';
-import { ZennPostItem } from '@components/features/zennRss/types';
 import posts from '@rss/zenn-posts.json';
 import styles from '@styles/pages/index.module.scss';
 import { articleLayout } from 'src/recoil/atoms/articleLayout';
+
+import type { ZennPostItem } from '@components/features/zennRss/types';
 
 const Zenn: NextPage = () => {
   const [layout, setLayout] = useRecoilState(articleLayout);

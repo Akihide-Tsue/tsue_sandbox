@@ -1,6 +1,6 @@
 import * as Sentry from '@sentry/browser';
 
-export function usePostData() {
+export const usePostData = () => {
   const getPost = async (post_id: number) => {
     const url = `/api/posts?id=${post_id}`;
 
@@ -22,4 +22,4 @@ export function usePostData() {
   return {
     getPost,
   };
-}
+};

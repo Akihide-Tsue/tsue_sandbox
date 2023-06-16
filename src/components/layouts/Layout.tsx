@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import PageFooter from '@components/layouts/page_footer/PageFooter';
 import PageHeader from '@components/layouts/page_header/PageHeader';

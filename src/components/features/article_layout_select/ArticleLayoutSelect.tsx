@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction } from 'react';
+import type { Dispatch, FC, SetStateAction } from 'react';
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';

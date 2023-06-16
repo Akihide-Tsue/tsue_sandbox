@@ -1,11 +1,13 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 // @ts-ignore
-import { CodeComponent } from 'react-markdown/src/ast-to-react';
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import vscDarkPlus from 'react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus';
 
 import styles from './CodeBlock.module.scss';
+
+// @ts-ignore
+import type { CodeComponent } from 'react-markdown/src/ast-to-react';
 
 type Props = {
   inline: string;

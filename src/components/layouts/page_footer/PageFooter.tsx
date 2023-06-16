@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import styles from './PageFooter.module.scss';
 
-const PageFooter: FC = ({}) => {
+const PageFooter: FC = () => {
   return (
     <div className={styles.footer}>
       <p>{"© Tsue's sandbox"}</p>

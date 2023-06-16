@@ -1,4 +1,5 @@
-import { FC, useEffect } from 'react';
+import type { FC } from 'react';
+import { useEffect } from 'react';
 
 import fs from 'fs';
 
@@ -24,8 +25,9 @@ import styles from '@styles/pages/slug.module.scss';
 import GithubIcon from 'public/images/icons/github_icon.svg';
 import TwitterIcon from 'public/images/icons/twitter_icon.svg';
 import { currentArticleLinks } from 'src/recoil/atoms/currentArticleLinks';
-import { FrontMatterType } from 'src/type-def/postsType';
 import createOgp from 'src/utils/server/ogpUtils';
+
+import type { FrontMatterType } from 'src/type-def/postsType';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const jsdom = require('jsdom');
@@ -122,6 +124,7 @@ const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
   const { getPost } = usePostData();
   const router = useRouter();
   const { slug } = router.query;
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const [links, setLinks] = useRecoilState(currentArticleLinks);
 
   const tags = frontMatter.tags.map((tag, i) => {
@@ -138,6 +141,7 @@ const Article: FC<Props> = ({ frontMatter, content, cardData }) => {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line unused-imports/no-unused-vars
     const getPostAction = (async () => {
       const POST_ID = 1;
       const post = await getPost(POST_ID);

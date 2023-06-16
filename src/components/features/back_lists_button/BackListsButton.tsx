@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import Link from 'next/link';
 
@@ -6,7 +6,7 @@ import ArrowIcon from 'public/images/icons/right_arrow_circle.svg';
 
 import styles from './BackListsButton.module.scss';
 
-const BackListsButton: FC = ({}) => {
+const BackListsButton: FC = () => {
   return (
     <div className={styles.container}>
       <Link href={`/`}>

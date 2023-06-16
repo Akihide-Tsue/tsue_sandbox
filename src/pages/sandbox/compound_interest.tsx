@@ -1,4 +1,5 @@
-import { SetStateAction, useEffect, useState } from 'react';
+import type { SetStateAction } from 'react';
+import { useEffect, useState } from 'react';
 
 import dynamic from 'next/dynamic';
 
@@ -20,7 +21,7 @@ type AssetDataType = {
   };
 };
 
-const CompoundInterest: NextPage = ({}) => {
+const CompoundInterest: NextPage = () => {
   const [year, setYear] = useState(30);
   const [interestRate, setInterestRate] = useState<string | number>(5);
   const [accumulationPrice, setAccumulationPrice] = useState<string | number>(0);
@@ -72,6 +73,7 @@ const CompoundInterest: NextPage = ({}) => {
   };
 
   const deleteAssetInputsRowHandler = (id: string) => {
+    // eslint-disable-next-line unused-imports/no-unused-vars
     const { [id]: deleteData, ...newData } = assetData;
 
     setAssetData(newData);

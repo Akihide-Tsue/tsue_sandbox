@@ -12,7 +12,8 @@ import BlogCard from '@components/features/blog_card/BlogCard';
 import CodeBlock from '@components/features/codeblock/CodeBlock';
 import stylesMarkdown from '@styles/pages/markdown.module.scss';
 import { articleLayout } from 'src/recoil/atoms/articleLayout';
-import { FrontMatterType } from 'src/type-def/postsType';
+
+import type { FrontMatterType } from 'src/type-def/postsType';
 
 export const getStaticProps = () => {
   const fileContent = fs.readFileSync(`src/posts/about.md`, 'utf-8');

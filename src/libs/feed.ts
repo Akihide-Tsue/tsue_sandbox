@@ -6,7 +6,7 @@ import markdownToHtml from 'zenn-markdown-html';
 
 import { metaDescription, productTitle } from '@constants';
 
-import { FrontMatterType } from 'src/type-def/postsType';
+import type { FrontMatterType } from 'src/type-def/postsType';
 
 const generatedRssFeed = (): void => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '';

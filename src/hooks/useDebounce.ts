@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export function useDebounce(value: any, delay: number) {
+export const useDebounce = (value: any, delay: number) => {
   // debounce の対象 state と setter
   const [debouncedValue, setDebouncedValue] = useState(value);
 
@@ -20,4 +20,4 @@ export function useDebounce(value: any, delay: number) {
 
   // 最終的にアップデートされた state をリターン
   return debouncedValue;
-}
+};
