@@ -15,10 +15,10 @@ import styles from './ArticleLayoutSelect.module.scss';
 type Props = {
   layout?: 'card' | 'list';
   setLayout?: Dispatch<SetStateAction<'card' | 'list'>>;
-  displayLayoutSelector?: boolean;
+  shouldDisplayLayoutSelector?: boolean;
 };
 
-const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout, displayLayoutSelector = false }) => {
+const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout, shouldDisplayLayoutSelector = false }) => {
   const { pathname } = useRouter();
   const isDarkMode = useRecoilValue(colorTheme);
   const hasMounted = useHasMounted();
@@ -66,7 +66,7 @@ const ArticleLayoutSelect: FC<Props> = ({ layout, setLayout, displayLayoutSelect
         </li> */}
       </div>
 
-      {hasMounted && displayLayoutSelector && setLayout && (
+      {hasMounted && shouldDisplayLayoutSelector && setLayout && (
         <div className={`${styles.layout_section} ${pathname !== `/` && styles.invisible}`}>
           <span className={styles.layout_selector_text}>表示</span>
           <button className={`${styles.layout_selector_button} ${layout === 'card' && styles.disabled}`} onClick={() => setLayout('card')}>

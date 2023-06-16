@@ -14,7 +14,7 @@ const Zenn: NextPage = () => {
 
   return (
     <>
-      <ArticleLayoutSelect layout={layout} setLayout={setLayout} displayLayoutSelector />
+      <ArticleLayoutSelect layout={layout} setLayout={setLayout} shouldDisplayLayoutSelector />
       <div className={styles.list_container}>
         <ZennPostList items={posts as ZennPostItem[]} />
       </div>

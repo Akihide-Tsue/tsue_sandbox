@@ -9,8 +9,8 @@ export const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || '';
 export const UA_ID = process.env.NEXT_PUBLIC_UNIVERSAL_ANALYTICS_ID || '';
 
 // IDが取得できない場合を想定する
-export const existsGaId = GA_ID !== '';
-export const existsUaId = UA_ID !== '';
+export const hasGaId = GA_ID !== '';
+export const hasUaId = UA_ID !== '';
 
 // PVを測定する
 export const gaPageview = (path: string) => {
@@ -33,7 +33,7 @@ declare global {
 
 // GAイベントを発火させる
 export const gtagEvent = ({ event, component, page_label, event_label = '' }: Event) => {
-  if (!existsGaId) {
+  if (!hasGaId) {
     return;
   }
 
@@ -49,20 +49,21 @@ export const usePageView = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (!existsGaId) {
+    if (!hasGaId) {
       return;
     }
 
     const handleRouteChange = (path: string) => {
-      if (existsGaId) {
+      if (hasGaId) {
         gaPageview(path);
       }
-      if (existsUaId) {
+      if (hasUaId) {
         uaPageview(path);
       }
     };
 
     router.events.on('routeChangeComplete', handleRouteChange);
+
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
@@ -78,7 +79,7 @@ export const usePageView = () => {
 // _app.tsx で読み込む
 export const GoogleAnalytics = () => (
   <>
-    {existsGaId && (
+    {hasGaId && (
       <>
         <Script defer id="gtag-script1" src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
         <Script

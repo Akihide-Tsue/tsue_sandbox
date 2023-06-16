@@ -54,7 +54,7 @@ const Home: NextPage<Props> = ({ posts }) => {
 
   return (
     <>
-      <ArticleLayoutSelect layout={layout} setLayout={setLayout} displayLayoutSelector />
+      <ArticleLayoutSelect layout={layout} setLayout={setLayout} shouldDisplayLayoutSelector />
 
       <div className={`${layout === 'card' ? styles.grid_container : styles.list_container}`}>
         {posts.map((post: PostType) => {

@@ -33,11 +33,12 @@ type Props = {
 
 const Home: NextPage<Props> = ({ content, frontMatter }) => {
   const [layout, setLayout] = useRecoilState(articleLayout);
+
   console.log('frontMatter', content, frontMatter);
 
   return (
     <>
-      <ArticleLayoutSelect layout={layout} setLayout={setLayout} displayLayoutSelector={false} />
+      <ArticleLayoutSelect layout={layout} setLayout={setLayout} shouldDisplayLayoutSelector={false} />
       <ReactMarkdown components={{ code: CodeBlock, a: BlogCard }} remarkPlugins={[remarkGfm]} className={stylesMarkdown.content}>
         {content}
       </ReactMarkdown>

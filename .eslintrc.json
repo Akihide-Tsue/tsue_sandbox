@@ -54,7 +54,7 @@
     "@typescript-eslint/naming-convention": [
       "error",
       { "selector": ["typeAlias", "typeParameter"], "format": ["PascalCase"] },
-      { "selector": ["property", "parameterProperty", "method"], "format": ["camelCase"] },
+      // { "selector": ["property", "parameterProperty", "method"], "format": ["camelCase"] },
       {
         "selector": ["variable"],
         "types": ["boolean"],
