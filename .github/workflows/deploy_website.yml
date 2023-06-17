@@ -22,7 +22,7 @@ jobs:
           ref: ${{ github.event.inputs.ref }}
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'
       # 投稿内容を更新するために yarn run build:posts を走らせる
       - name: Recreate all posts
         shell: bash
@@ -38,3 +38,6 @@ jobs:
           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
           working-directory: ./
+
+# デプロイ時に最新の状態で反映するためにVercelのSetting > Build & Development SettingsでBuild Commandを下記の通りOverrideする
+# yarn run build && yarn run build:posts
