@@ -1,11 +1,19 @@
 import fs from 'fs-extra';
 import Parser from 'rss-parser';
 
-import { members } from '@components/features/zennRss/constants';
-
 import type { FeedItem, MemberType, ZennPostItem } from '@components/features/zennRss/types';
 
 //参考：https://zenn.dev/catnose99/articles/cb72a73368a547756862
+
+//NOTE:重複しているがここに必要
+const members: MemberType[] = [
+  {
+    id: 'catnose',
+    name: 'CatNose',
+    sources: ['https://zenn.dev/tsue/feed'],
+    includeUrlRegex: 'zenn.dev',
+  },
+];
 
 const isValidUrl = (str: string): boolean => {
   try {
