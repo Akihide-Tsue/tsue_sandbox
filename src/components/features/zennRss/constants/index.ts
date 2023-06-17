@@ -1,4 +1,4 @@
-import type { MemberType } from '@components/features/zennRss/zennBuilder';
+import type { MemberType } from '@components/features/zennRss/types';
 
 export const members: MemberType[] = [
   {
@@ -6,8 +6,5 @@ export const members: MemberType[] = [
     name: 'CatNose',
     sources: ['https://zenn.dev/tsue/feed'],
     includeUrlRegex: 'zenn.dev',
-    // twitterUsername: 'catnose99',
-    // githubUsername: 'catnose99',
-    // websiteUrl: 'https://catnose99.com',
   },
 ];

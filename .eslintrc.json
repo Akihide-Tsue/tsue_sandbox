@@ -35,7 +35,7 @@
       {
         "patterns": [
           {
-            "group": ["./*", "!./*.scss"],
+            "group": ["./*", "!./*.scss"], //groupは2つ必要
             "group": ["./*", "../*", "!./*.scss"],
             "message": "scssファイル以外の相対パスを使用したimportは禁止です！"
           }
