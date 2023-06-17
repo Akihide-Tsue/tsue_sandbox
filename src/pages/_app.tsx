@@ -2,6 +2,7 @@ import 'src/styles/destyle.scss';
 import 'src/styles/globals.scss';
 import type { AppProps } from 'next/app';
 
+import { Analytics } from '@vercel/analytics/react';
 import { RecoilRoot } from 'recoil';
 
 import CommonHead from '@components/common/common_head/CommonHead';
@@ -19,6 +20,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <Layout>
           <Component {...pageProps} />
         </Layout>
+        <Analytics />
       </RecoilRoot>
     </>
   );

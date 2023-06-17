@@ -29,6 +29,7 @@
     "@sentry/nextjs": "^7.10.0",
     "@types/gtag.js": "^0.0.10",
     "@types/react-syntax-highlighter": "^15.5.4",
+    "@vercel/analytics": "^1.0.1",
     "autoprefixer": "^10.4.7",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-plugin-module-resolver": "^4.1.0",
