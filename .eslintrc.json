@@ -4,7 +4,7 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint", "unused-imports"],
+  "plugins": ["@typescript-eslint", "import", "unused-imports"],
   "extends": [
     "eslint:recommended",
     "next",
@@ -16,19 +16,20 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier"
+    "prettier" //最後に記載
   ],
   "ignorePatterns": ["*.config.js"],
   "rules": {
-    "@next/next/no-img-element": "off",
     "@next/next/no-html-link-for-pages": "off",
-    "unused-imports/no-unused-imports-ts": "warn",
-    "@typescript-eslint/no-unsafe-call": "off",
+    "@next/next/no-img-element": "off",
     "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    // next/linkのchildのaタグの空hrefを許容する
+    "jsx-a11y/anchor-is-valid": "off",
     // importの制限
     "no-restricted-imports": [
       "error",
@@ -69,13 +70,11 @@
     "@typescript-eslint/no-explicit-any": "off",
     // 型は明示的にtype-importする
     "@typescript-eslint/consistent-type-imports": ["warn", { "prefer": "type-imports" }],
-    // unused-imports/no-unused-varsと競合するためoff
-    "@typescript-eslint/no-unused-vars": "off",
-    "unused-imports/no-unused-imports": "error",
     // 未使用の変数がある場合エラーにする（デフォルトは warning）
     "unused-imports/no-unused-vars": ["error", { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }],
-    // next/linkのchildのaタグの空hrefを許容する
-    "jsx-a11y/anchor-is-valid": "off",
+    // unused-imports/no-unused-varsと競合するためoff
+    "unused-imports/no-unused-imports": "error",
+    "@typescript-eslint/no-unused-vars": "off",
     // 命名に関するルール
     "@typescript-eslint/naming-convention": [
       "error",

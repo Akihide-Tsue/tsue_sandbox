@@ -1,7 +1,7 @@
 ---
 title: 'ESLintの設定まとめ'
 date: '2023-06-18'
-description: 'sentry/nextjsでエラー検知を効率化するための方法をまとめています'
+description: 'チーム開発に必須なESLintについての説明です。eslintrcのサンプルについて内容を解説しています。'
 image: images/articles/ESLint.webp
 categories: Tech
 isDraft: false
