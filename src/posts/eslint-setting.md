@@ -1,3 +1,18 @@
+---
+title: 'ESLintの設定まとめ'
+date: '2023-06-18'
+description: 'sentry/nextjsでエラー検知を効率化するための方法をまとめています'
+image: images/articles/ESLint.webp
+categories: Tech
+isDraft: false
+tags: [ESLint]
+---
+
+## 設定内容
+業務委託先で見た`.eslintrc`が良かったので一部このブログにも取り入れました。  
+初期に入れないとリファクタリングが辛い。
+
+```json:.eslintrc.json
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
@@ -29,13 +44,13 @@
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-unsafe-return": "off",
-    // importの制限
+    //importの制限
     "no-restricted-imports": [
       "error",
       {
         "patterns": [
           {
-            "group": ["./*", "!./*.scss"], // groupは2つ必要
+            "group": ["./*", "!./*.scss"], //groupは2つ必要
             "group": ["./*", "../*", "!./*.scss"],
             "message": "scssファイル以外の相対パスを使用したimportは禁止です！"
           }
@@ -124,3 +139,26 @@
     ]
   }
 }
+```
+
+### 備考
+importとexportの順番に関するルールを細かく設定していますが、  
+`simple-import-sort`を使えばよしなに設定してくれるため下記でも可です。
+
+```json:.eslintrc.json
+{
+  "plugins": [
+    // 追加
+    "simple-import-sort",
+  ],
+  "rules": {
+  // importとexportの順番に関するルール
+  "simple-import-sort/imports": "error",
+  "simple-import-sort/exports": "error",
+  }
+}
+```
+
+---
+参考記事
+- [Configure ESLint](https://eslint.org/docs/latest/use/configure/)

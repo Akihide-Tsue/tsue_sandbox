@@ -8,9 +8,8 @@ isDraft: false
 tags: [Next.js, FrontEnd]
 ---
 
-## DONE
-
-- Next.js(SSG)
+## 実装済
+- Next.js(SSR)
 - TypeScript
 - recoil
 - husky・ESLint・stylelint・prettier
@@ -18,12 +17,13 @@ tags: [Next.js, FrontEnd]
 - マークダウン、コードブロック表示
 - Google Analytics
 - Hotjar
-- Sentry
-- [ブログカード生成(Recoil)](https://tsue-sandbox.vercel.app/posts/blog-card)
-- [RSSリーダー対応](https://tsue-sandbox.vercel.app/posts/rss-feed)
-- [ヘッダーをスクロールで非表示](https://tsue-sandbox.vercel.app/posts/hidden-header)
-- [PWA対応](https://tsue-sandbox.vercel.app/posts/pwa)
-- [ダークモード(recoil-persist)](https://tsue-sandbox.vercel.app/posts/dark-mode)
+- Sentry [[記事]](https://tsue-sandbox.vercel.app/posts/sentry-setting)
+- ブログカード生成(Recoil) [[記事]](https://tsue-sandbox.vercel.app/posts/blog-card)
+- RSSリーダー対応 [[記事]](https://tsue-sandbox.vercel.app/posts/rss-feed)
+- ヘッダーをスクロールで非表示 [[記事]](https://tsue-sandbox.vercel.app/posts/hidden-header)
+- PWA対応 [[記事]](https://tsue-sandbox.vercel.app/posts/pwa)
+- ダークモード(recoil-persist) [[記事]](https://tsue-sandbox.vercel.app/posts/dark-mode)
+- Zennの記事をcronで自動取得する
 
 
 ```json:package.json（一部抜粋）
