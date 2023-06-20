@@ -1,15 +1,14 @@
+import type { FeedItem, MemberType, ZennPostItem } from '@components/features/zennRss/types';
 import fs from 'fs-extra';
 import Parser from 'rss-parser';
-
-import type { FeedItem, MemberType, ZennPostItem } from '@components/features/zennRss/types';
 
 //参考：https://zenn.dev/catnose99/articles/cb72a73368a547756862
 
 //NOTE:重複しているがここに必要
 const members: MemberType[] = [
   {
-    id: 'catnose',
-    name: 'CatNose',
+    id: 'tsue',
+    name: 'Tsue',
     sources: ['https://zenn.dev/tsue/feed'],
     includeUrlRegex: 'zenn.dev',
   },
@@ -26,7 +25,6 @@ const isValidUrl = (str: string): boolean => {
 };
 
 const parser = new Parser();
-let allPostItems: ZennPostItem[] = [];
 
 const fetchFeedItems = async (url: string) => {
   const feed = await parser.parseURL(url);
@@ -89,6 +87,8 @@ const getMemberFeedItems = async (member: MemberType): Promise<ZennPostItem[]> =
 
   return postItems;
 };
+
+let allPostItems: ZennPostItem[] = [];
 
 // eslint-disable-next-line @typescript-eslint/no-floating-promises
 (async function () {

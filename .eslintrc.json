@@ -4,7 +4,7 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint", "import", "unused-imports"],
+  "plugins": ["@typescript-eslint", "import", "simple-import-sort", "unused-imports"],
   "extends": [
     "eslint:recommended",
     "next",
@@ -75,6 +75,9 @@
     // unused-imports/no-unused-varsと競合するためoff
     "unused-imports/no-unused-imports": "error",
     "@typescript-eslint/no-unused-vars": "off",
+    // importとexportの順番に関するルール
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
     // 命名に関するルール
     "@typescript-eslint/naming-convention": [
       "error",
@@ -97,28 +100,6 @@
         "types": ["boolean"],
         "format": ["PascalCase"],
         "prefix": ["is", "has", "should", "can"]
-      }
-    ],
-    // importとexportの順番に関するルール
-    "import/order": [
-      "error",
-      {
-        "groups": ["builtin", "external", "internal", ["parent", "sibling"], "object", "type", "index"],
-        "newlines-between": "always",
-        "pathGroupsExcludedImportTypes": ["builtin"],
-        "alphabetize": { "order": "asc", "caseInsensitive": true },
-        "pathGroups": [
-          { "pattern": "react", "group": "builtin", "position": "before" },
-          { "pattern": "next/**", "group": "builtin", "position": "after" },
-          { "pattern": "next", "group": "builtin", "position": "after" },
-          { "pattern": "@mui/**", "group": "external", "position": "before" },
-          { "pattern": "react-hook-form", "group": "external", "position": "before" },
-          { "pattern": "@react-icons/**", "group": "external", "position": "before" },
-          { "pattern": "@constants", "group": "internal", "position": "before" },
-          { "pattern": "@type-def/**", "group": "internal", "position": "before" },
-          { "pattern": "@styles/***", "group": "internal", "position": "after" },
-          { "pattern": "**.scss", "group": "internal", "position": "after" }
-        ]
       }
     ]
   }
