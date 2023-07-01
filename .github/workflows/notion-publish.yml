@@ -22,8 +22,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        cache-dependency-path: 'functions/package-lock.json'
+        cache: 'yarn'
+        cache-dependency-path: 'tsue_sandbox/yarn.lock'
     - run: yarn install --frozen-lockfile
     - name: Dump release note
       id: release_note
