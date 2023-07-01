@@ -47,7 +47,6 @@ jobs:
           echo "::set-output name=pr_detail_title::${{ github.event.pull_request.title || 'On Main' }} ${{ github.event.pull_request }}",
           echo "::set-output name=pr_detail_body::${{ github.event.pull_request.body }}",
           echo "::set-output name=pr_detail_obj::${{ github.event.pull_request }}",
-        #  echo "PR title is: ${{ github.event.pull_request.title || 'On Main' }} ${{ github.event.pull_request }}"
 
       # タグを切り、リリースノートを作成する
       - name: Create Release
