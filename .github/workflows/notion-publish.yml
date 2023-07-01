@@ -18,6 +18,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      # Workaround to avoid Post Use step failures. See: https://github.com/actions/setup-node/issues/317
+    - run: mkdir -p /home/runner/.cache/yarn/v6
+      continue-on-error: true
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
