@@ -4,7 +4,7 @@ import { markdownToBlocks } from '@tryfabric/martian';
 async function main() {
   const TOKEN = process.env.NEXT_PUBLIC_NOTION_TOKEN;
   const DATABASE_ID = process.env.NEXT_PUBLIC_NOTION_DATABASE_ID;
-  const RELEASE_NOTE = process.env.RELEASE_NOTE || '{"body": "中身"}';
+  const RELEASE_NOTE = process.env.NEXT_PUBLIC_RELEASE_NOTE || '{"body": "中身"}';
 
   try {
     const notion = new Client({ auth: TOKEN });
