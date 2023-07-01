@@ -12,6 +12,8 @@ async function main() {
     const date = new Date();
     date.setTime(date.getTime() + 1000 * 60 * 60 * 9); // JSTに変換
 
+    console.log('TOKEN', TOKEN);
+    console.log('DATABASE_ID', DATABASE_ID);
     console.log('RELEASE_NOTE', RELEASE_NOTE);
 
     const params = {
@@ -40,6 +42,8 @@ async function main() {
       },
       children: markdownToBlocks(release_status.body),
     };
+
+    console.log('params', params);
     // @ts-ignore
     await notion.pages.create(params);
   } catch (e) {
