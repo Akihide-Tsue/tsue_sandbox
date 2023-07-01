@@ -22,15 +22,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    # キャッシュ
-    - name: Cache dependencies
-      uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: npm-${{ hashFiles('package-lock.json') }}
-        restore-keys: npm-
     # インストール
     - name: yarn install command
+      shell: bash
       run: yarn install
     - name: Dump release note
       id: release_note
