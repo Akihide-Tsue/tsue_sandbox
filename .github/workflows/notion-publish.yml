@@ -17,14 +17,14 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - run: ls -la
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
-        cache-dependency-path: functions/yarn.lock
-    - run: ls -la
+        # cache-dependency-path: functions/yarn.lock
     - name: yarn install!
       shell: bash    
       run: yarn install --frozen-lockfile
