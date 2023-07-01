@@ -43,5 +43,5 @@ jobs:
     - name: Generate release note
       run: yarn run release-note
       env:
-        NOTION_TOKEN: ${{ secrets.NEXT_PUBLIC_RELEASE_NOTE_GITHUB_TOKEN }}
-        NOTION_DATABASE_ID: ${{ secrets.NEXT_PUBLIC_NOTION_DATABASE_ID }}
+        NEXT_PUBLIC_NOTION_TOKEN: ${{ secrets.NEXT_PUBLIC_NOTION_TOKEN }}
+        NEXT_PUBLIC_NOTION_DATABASE_ID: ${{ secrets.NEXT_PUBLIC_NOTION_DATABASE_ID }}
