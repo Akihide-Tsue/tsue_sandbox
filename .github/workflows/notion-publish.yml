@@ -22,8 +22,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        cache-dependency-path: notion-publish/yarn-lock
+        cache: 'yarn'
+        cache-dependency-path: yarn-lock
     - run: yarn install --frozen-lockfile
     - name: Dump release note
       id: release_note
