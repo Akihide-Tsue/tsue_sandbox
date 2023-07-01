@@ -22,10 +22,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    # インストール
-    - name: yarn install command
-      shell: bash
-      run: yarn install
+        cache: 'npm'
+        cache-dependency-path: notion-publish/package-lock.json
+    - run: yarn install --frozen-lockfile
     - name: Dump release note
       id: release_note
       run: |
