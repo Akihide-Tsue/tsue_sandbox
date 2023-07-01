@@ -24,8 +24,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: yarn install!
-    shell: bash    
-    run: yarn install --frozen-lockfile
+      shell: bash    
+      run: yarn install --frozen-lockfile
     - name: Dump release note
       id: release_note
       run: |
