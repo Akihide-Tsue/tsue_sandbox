@@ -25,7 +25,7 @@ jobs:
         cache: 'yarn'
     # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#caching-packages-data
     - name: Install dependencies
-    run: yarn install --immutable
+      run: yarn install --immutable
     - name: Dump release note
       id: release_note
       run: |
