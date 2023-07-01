@@ -56,7 +56,7 @@ Sentry.addBreadcrumb({
   level: "info", //"fatal", "error", "warning", "log", "info", "debug".
 });
 ```
-詳細は[公式ドキュメント](https://docs.sentry.io/product/issues/issue-details/breadcrumbs/)参照
+詳細は[公式ドキュメント](https://develop.sentry.dev/sdk/event-payloads/breadcrumbs/)参照
 
 
 ## Tagsの情報に追加する

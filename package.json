@@ -8,6 +8,7 @@
     "build:posts": "ts-node --project tsconfig.builder.json ./src/components/features/zennRss/zennBuilder.ts",
     "now-build": "yum install libuuid-devel libmount-devel --skip-broken && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build",
     "vercel-build": "yum install gcc-c++ cairo-devel pango-devel libjpeg-turbo-devel giflib-devel",
+    "release-note": "ts-node --esm ./src/libs/releaseNote.ts",
     "lint": "next lint --dir src",
     "lint:fix": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
     "lint:style": "stylelint './**/*.{css,scss,sass}'",
@@ -25,8 +26,10 @@
   },
   "dependencies": {
     "@babel/core": "^7.18.6",
+    "@notionhq/client": "^2.2.6",
     "@prisma/client": "^4.3.1",
     "@sentry/nextjs": "^7.10.0",
+    "@tryfabric/martian": "^1.2.4",
     "@types/gtag.js": "^0.0.10",
     "@types/react-syntax-highlighter": "^15.5.4",
     "@vercel/analytics": "^1.0.1",
@@ -83,6 +86,7 @@
     "typescript": "4.7.4",
     "yarn-run-all": "^3.1.1"
   },
+  "type": "module",
   "engines": {
     "npm": "please use yarn instead"
   }

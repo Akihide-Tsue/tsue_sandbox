@@ -5,3 +5,4 @@ src/pages/_error.js
 next.config.js
 babel.config.js
 sitemap.xml.tsx
+releaseNote.ts
