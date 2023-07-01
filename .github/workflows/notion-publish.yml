@@ -1,6 +1,8 @@
 name: Create Release note
 
 on:
+  push:
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 jobs:
