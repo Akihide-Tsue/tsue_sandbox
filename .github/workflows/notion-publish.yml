@@ -23,8 +23,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
-        cache-dependency-path: ''
-    - run: yarn install --frozen-lockfile
+    - run: yarn install --frozen-lockfile # optional, --immutable
     - name: Dump release note
       id: release_note
       run: |

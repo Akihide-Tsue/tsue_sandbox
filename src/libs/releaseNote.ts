@@ -34,7 +34,7 @@ async function main() {
             time_zone: 'Asia/Tokyo',
           },
         },
-        URL: {
+        'Pull requests': {
           url: 'PRのURLをいれたい',
         },
       },
