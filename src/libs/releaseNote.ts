@@ -15,6 +15,7 @@ async function main() {
     console.log('TOKEN', TOKEN);
     console.log('DATABASE_ID', DATABASE_ID);
     console.log('RELEASE_NOTE', RELEASE_NOTE);
+    console.log('release_status===', release_status.body);
 
     const params = {
       parent: {
