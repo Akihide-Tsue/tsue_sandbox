@@ -48,7 +48,14 @@ jobs:
         # https://docs.github.com/ja/github-ae@latest/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
         run: |
           echo "::set-output name=pr_detail_body::${{ github.event.pull_request.body }}"
+          echo "::set-output name=url::${{ github.event.pull_request.url }}"
+          echo "::set-output name=statuses_url::${{ github.event.pull_request.statuses_url }}"
+          echo "::set-output name=repository::${{ github.event.pull_request.repository }}"
+          echo "NEXT_PUBLIC_TITLE_URL{{ github.event.pull_request.url }}" >> $GITHUB_ENV
+          
+      # シークレットに！
 
+      # github.event.pull_request https://docs.github.com/ja/github-ae@latest/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
       # html_urlでurl sercretへいれとく
 
       # タグを切り、リリースノートを作成する
@@ -66,7 +73,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.release_tag.outputs.release_tag }}
-          release_name: ${{ steps.release_tag.outputs.release_tag }} ${{ github.event.pull_request.title }}
+          release_name: ${{ github.event.pull_request.title }}
           body: ${{ github.event.pull_request.body }}
           draft: false
           prerelease: false
