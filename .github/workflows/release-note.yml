@@ -1,4 +1,4 @@
-name: Create release tag and release note.
+name: Release note & slack
 
 on:
   pull_request:
@@ -74,7 +74,7 @@ jobs:
       #     gh pr edit $number --add-label ${{ steps.get_label_name.outputs.label_name }}
 
       # リリースノート作成
-      - name: create-release@v1
+      - name: Create release note
         id: release
         uses: actions/create-release@v1
         env:
@@ -101,7 +101,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
-      - name: yarn install!
+      - name: yarn install
         shell: bash
         run: yarn install --frozen-lockfile
 
@@ -113,7 +113,7 @@ jobs:
           NEXT_PUBLIC_NOTION_DATABASE_ID: ${{ secrets.NEXT_PUBLIC_NOTION_DATABASE_ID }}
 
       # slack通知
-      - name: Slack Notification
+      - name: Slack notification
         uses: slackapi/slack-github-action@v1.24.0
         with:
           channel-id: ${{ secrets.RELEASE_SLACK_CHANNEL }} #チャンネルID
