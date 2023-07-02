@@ -40,7 +40,7 @@ async function main() {
           },
         },
         担当者: {
-          title: [
+          rich_text: [
             {
               text: {
                 content: ASSIGNEE,
