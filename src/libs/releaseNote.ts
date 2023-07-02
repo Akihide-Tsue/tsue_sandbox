@@ -26,7 +26,7 @@ async function main() {
           title: [
             {
               text: {
-                content: 'PRのタイトルをいれたい',
+                content: release_status.name,
               },
             },
           ],
