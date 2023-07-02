@@ -49,7 +49,7 @@ jobs:
           echo "::set-output name=repository::${{ github.event.repository }}"
           echo "::set-output name=number::${{ github.event.number }}"
           echo "::set-output name=page_build::${{ github.event.page_build.status }}"
-          echo "::set-output name=assignee::${{ github.event.pull_request.assignee.name }}"
+          echo "NEXT_PUBLIC_ASSIGNEE=${{ github.event.pull_request.assignee.name  }}" >> $GITHUB_ENV
           echo "NEXT_PUBLIC_PR_NUMBER=${{ github.event.number }}" >> $GITHUB_ENV
 
       # リリースノート作成
