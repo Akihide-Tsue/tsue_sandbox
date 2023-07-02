@@ -47,7 +47,7 @@ jobs:
         run: |
           echo "NEXT_PUBLIC_REPOSITORY_NAME=${{  github.event.repository.name  }}" >> $GITHUB_ENV
           echo "NEXT_PUBLIC_ASSIGNEE=${{ github.event.pull_request.assignee.name }}" >> $GITHUB_ENV
-          echo "NEXT_PUBLIC_ASSIGNEE2=${{ github.event.assignee.name }}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_ASSIGNEE2=${{ github.event.pull_request.assignees[0].name }}" >> $GITHUB_ENV
           echo "NEXT_PUBLIC_title=${{ github.event.pull_request.title }}" >> $GITHUB_ENV
           echo "NEXT_PUBLIC_PR_NUMBER=${{ github.event.number }}" >> $GITHUB_ENV
 
