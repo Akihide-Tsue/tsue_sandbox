@@ -5,7 +5,7 @@ async function main() {
   const TOKEN = process.env.NEXT_PUBLIC_NOTION_TOKEN;
   const DATABASE_ID = process.env.NEXT_PUBLIC_NOTION_DATABASE_ID;
   const RELEASE_NOTE = process.env.NEXT_PUBLIC_RELEASE_NOTE || '{"body": "中身"}';
-  const TITLE_URL = process.env.NEXT_PUBLIC_TITLE_URL;
+  const PR_NUMBER = process.env.NEXT_PUBLIC_PR_NUMBER;
 
   try {
     const notion = new Client({ auth: TOKEN });
@@ -17,7 +17,7 @@ async function main() {
     console.log('DATABASE_ID', DATABASE_ID);
     console.log('RELEASE_NOTE', RELEASE_NOTE);
     console.log('release_status====', release_status.body);
-    console.log('TITLE_URL===', TITLE_URL);
+    console.log('PR_NUMBER===', PR_NUMBER);
 
     const params = {
       parent: {
@@ -40,13 +40,13 @@ async function main() {
           },
         },
         'Pull requests': {
-          url: release_status.url,
+          url: `https://github.com/Akihide-Tsue/tsue_sandbox/pull/${PR_NUMBER}`,
         },
       },
       children: markdownToBlocks(release_status.body),
     };
 
-    console.log('params', params);
+    // console.log('params', params);
     // @ts-ignore
     await notion.pages.create(params);
   } catch (e) {
