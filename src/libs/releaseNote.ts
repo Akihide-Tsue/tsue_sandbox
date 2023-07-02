@@ -14,10 +14,9 @@ async function main() {
     const date = new Date();
     date.setTime(date.getTime() + 1000 * 60 * 60 * 9); // JSTに変換
 
-    console.log('TOKEN', TOKEN);
-    console.log('DATABASE_ID', DATABASE_ID);
-    console.log('release_status====', release_status.body);
-    console.log('PR_NUMBER===', PR_NUMBER);
+    // console.log('TOKEN', TOKEN);
+    // console.log('DATABASE_ID', DATABASE_ID);
+    console.log('release_status====', release_status);
 
     const params = {
       parent: {
@@ -39,7 +38,7 @@ async function main() {
             time_zone: 'Asia/Tokyo',
           },
         },
-        担当者: {
+        Assignee: {
           rich_text: [
             {
               text: {
