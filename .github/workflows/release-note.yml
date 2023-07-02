@@ -34,7 +34,7 @@ jobs:
             echo "init count"
             pre_release_count=0
           fi
-          echo "::set-output name=release_tag::$today-$(($pre_release_count + 1))"
+          echo "::set-output name=release_tag::$today-$(($pre_release_count + 1)) ${{ github.event.pull_request.title || 'On Main' }}"
 
       # 前回リリースからの差分をもとに、リリースノートの本文を生成する
       - name: Generate release note
@@ -45,11 +45,10 @@ jobs:
       - name: Generate pr detail
         id: pr_detail
         # https://docs.github.com/ja/github-ae@latest/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
+        #  echo "::set-output name=pr_detail_body::${{ github.event.pull_request.body }}"
         run: |
-          echo "::set-output name=pr_detail_title::${{ github.event.pull_request.title || 'On Main' }}",
-          echo "::set-output name=pr_detail_body::${{ github.event.pull_request.body }}",
-          echo "::set-output name=pr_detail_user::${{ github.event.pull_request.user }}",
-
+          echo "::set-output name=pr_detail_body:: ${{ github.event.pull_request.body }}"| jq .body | sed 's/"//g')"
+    
       # タグを切り、リリースノートを作成する
       - name: Create Release
         run: |
