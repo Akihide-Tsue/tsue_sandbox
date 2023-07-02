@@ -1,26 +1,24 @@
 import { Client } from '@notionhq/client';
 import { markdownToBlocks } from '@tryfabric/martian';
 
+const MemberList: { [key in string]: string } = {
+  'Akihide-Tsue': '津江',
+  octcat: '適宜追加する',
+};
+
 async function main() {
-  const TOKEN = process.env.NEXT_PUBLIC_NOTION_TOKEN;
-  const DATABASE_ID = process.env.NEXT_PUBLIC_NOTION_DATABASE_ID;
   const RELEASE_NOTE = process.env.NEXT_PUBLIC_RELEASE_NOTE || '{"body": "中身"}';
-  const PR_NUMBER = process.env.NEXT_PUBLIC_PR_NUMBER;
   const ASSIGNEE = process.env.NEXT_PUBLIC_ASSIGNEE;
-  console.log('process.env.NEXT_PUBLIC_REPOSITORY_NAME', process.env.NEXT_PUBLIC_REPOSITORY_NAME);
 
   try {
-    const notion = new Client({ auth: TOKEN });
+    const notion = new Client({ auth: process.env.NEXT_PUBLIC_NOTION_TOKEN });
     const release_status = JSON.parse(RELEASE_NOTE);
     const date = new Date();
     date.setTime(date.getTime() + 1000 * 60 * 60 * 9); // JSTに変換
 
-    console.log('tag_name', release_status.tag_name);
-    console.log('release_status====', release_status);
-
     const params = {
       parent: {
-        database_id: DATABASE_ID,
+        database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID,
       },
       properties: {
         Title: {
@@ -42,13 +40,22 @@ async function main() {
           rich_text: [
             {
               text: {
-                content: ASSIGNEE,
+                content: MemberList[ASSIGNEE as string] || ASSIGNEE,
               },
             },
           ],
         },
+        // Product: {
+        //   rich_text: [
+        //     {
+        //       text: {
+        //         content: process.env.NEXT_PUBLIC_REPOSITORY_NAME,
+        //       },
+        //     },
+        //   ],
+        // },
         URL: {
-          url: `https://github.com/Akihide-Tsue/tsue_sandbox/pull/${PR_NUMBER}`,
+          url: `https://github.com/Akihide-Tsue/tsue_sandbox/pull/${process.env.NEXT_PUBLIC_PR_NUMBER}`,
         },
       },
       children: markdownToBlocks(release_status.body),
@@ -57,7 +64,7 @@ async function main() {
     // @ts-ignore
     await notion.pages.create(params);
   } catch (e) {
-    console.error('error内容', e);
+    console.error('error:', e);
   }
 }
 
