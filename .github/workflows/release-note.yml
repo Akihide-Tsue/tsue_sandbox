@@ -49,7 +49,6 @@ jobs:
         run: |
           echo "NEXT_PUBLIC_REPOSITORY_NAME=${{ github.event.repository.name }}" >> $GITHUB_ENV
           echo "NEXT_PUBLIC_ASSIGNEE=${{ github.actor }}" >> $GITHUB_ENV
-          echo "NEXT_PUBLIC_title=${{ github.event.pull_request.title }}" >> $GITHUB_ENV
           echo "NEXT_PUBLIC_PR_NUMBER=${{ github.event.number }}" >> $GITHUB_ENV
 
       # ブランチ名のprefixからラベル名を取得する
@@ -112,3 +111,18 @@ jobs:
         env:
           NEXT_PUBLIC_NOTION_TOKEN: ${{ secrets.NEXT_PUBLIC_NOTION_TOKEN }}
           NEXT_PUBLIC_NOTION_DATABASE_ID: ${{ secrets.NEXT_PUBLIC_NOTION_DATABASE_ID }}
+
+      # slack通知
+      - uses: actions/checkout@v2.2.0
+      - name: Slack Notification
+        if: ${{ secrets.SLACK_WEBHOOK_FOR_RELEASE_NOTE }} # secrets登録が必要
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_FOR_RELEASE_NOTE }} 
+          SLACK_LINK_NAMES: true # メッセージ内でのメンションを有効にする
+          SLACK_MESSAGE: |
+            @channel
+            steps.release_tag.outputs.release_tag
+            <https://www.notion.so/6ed1c1d5b11d4b91ba51bf4bf39d3563?v=95dd0094711f44f3aff36f973b7faac9|${{ github.event.pull_request.title }}>
+          SLACK_USERNAME: 'リリースノート🎉'
+          MSG_MINIMAL: true # メッセージだけを通知文にする
