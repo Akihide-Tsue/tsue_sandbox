@@ -9,7 +9,7 @@ const MemberList: { [key in string]: string } = {
 async function main() {
   const RELEASE_NOTE = process.env.NEXT_PUBLIC_RELEASE_NOTE || '{"body": "中身"}';
   const ASSIGNEE = process.env.NEXT_PUBLIC_ASSIGNEE;
-  const PREFIX_LABEL = process.env.NEXT_PUBLIC_PREFIX_LABEL;
+    const PREFIX_LABEL = process.env.NEXT_PUBLIC_PREFIX_LABEL;
   const emoji = () => {
     switch (PREFIX_LABEL) {
       case 'enhancement':
