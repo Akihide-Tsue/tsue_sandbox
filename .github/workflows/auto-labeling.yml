@@ -2,11 +2,12 @@ name: Automatically labeling pull request.
 
 on:
   pull_request:
-    types: [opened]
+    types: [closed]
 
 jobs:
   auto-labeling-pr:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
 
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
