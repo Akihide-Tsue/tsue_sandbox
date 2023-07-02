@@ -116,7 +116,7 @@ jobs:
       - name: Slack Notification
         uses: slackapi/slack-github-action@v1.24.0
         with:
-          channel-id: ${{secrets.RELEASE_SLACK_CHANNEL}} #チャンネルID
+          channel-id: ${{ secrets.RELEASE_SLACK_CHANNEL }} #チャンネルID
           payload: |
             {
               "text": "リリースノート🎉\n${{ steps.release_tag.outputs.release_tag }}",
@@ -131,5 +131,5 @@ jobs:
               ]              
             }
         env:
-          SLACK_BOT_TOKEN: ${{secrets.SLACK_WEBHOOK_FOR_RELEASE_NOTE}} # secrets登録が必要
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_FOR_RELEASE_NOTE }} # secrets登録が必要
 
