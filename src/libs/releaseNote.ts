@@ -14,8 +14,7 @@ async function main() {
     const date = new Date();
     date.setTime(date.getTime() + 1000 * 60 * 60 * 9); // JSTに変換
 
-    // console.log('TOKEN', TOKEN);
-    // console.log('DATABASE_ID', DATABASE_ID);
+    console.log('tag_name', release_status.tag_name);
     console.log('release_status====', release_status);
 
     const params = {
