@@ -49,9 +49,9 @@ jobs:
         run: |
           echo "::set-output name=pr_detail_body::${{ github.event.pull_request.body }}"
           echo "::set-output name=url::${{ github.event.pull_request.url }}"
-          echo "::set-output name=statuses_url::${{ github.event.pull_request.statuses_url }}"
           echo "::set-output name=repository::${{ github.event.pull_request.repository }}"
-          echo "NEXT_PUBLIC_PR_NUMBER={{ github.event.pull_request.number }}" >> $GITHUB_ENV
+          echo "::set-output name=number::${{ github.event.number }}"
+          echo "NEXT_PUBLIC_PR_NUMBER={{ github.event.number }}" >> $GITHUB_ENV
           
       # シークレットに！
 
