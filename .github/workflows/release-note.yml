@@ -42,7 +42,6 @@ jobs:
           fi
           echo "::set-output name=release_tag::$today-$(($pre_release_count + 1))"
 
-
       - name: Generate pr detail
         id: pr_detail
         # https://docs.github.com/ja/github-ae@latest/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
