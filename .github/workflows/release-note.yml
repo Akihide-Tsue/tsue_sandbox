@@ -133,5 +133,3 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_FOR_RELEASE_NOTE }} # secrets登録が必要
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
-
-
