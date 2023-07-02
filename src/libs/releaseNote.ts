@@ -9,6 +9,17 @@ const MemberList: { [key in string]: string } = {
 async function main() {
   const RELEASE_NOTE = process.env.NEXT_PUBLIC_RELEASE_NOTE || '{"body": "中身"}';
   const ASSIGNEE = process.env.NEXT_PUBLIC_ASSIGNEE;
+  const PREFIX_LABEL = process.env.NEXT_PUBLIC_PREFIX_LABEL;
+  const emoji = () => {
+    switch (PREFIX_LABEL) {
+      case 'enhancement':
+        return '🚀';
+      case 'bug':
+        return '💊';
+      default:
+        return '🔧';
+    }
+  };
 
   try {
     const notion = new Client({ auth: process.env.NEXT_PUBLIC_NOTION_TOKEN });
@@ -19,6 +30,10 @@ async function main() {
     const params = {
       parent: {
         database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID,
+      },
+      icon: {
+        type: 'emoji',
+        emoji: emoji(),
       },
       properties: {
         Title: {
