@@ -15,7 +15,6 @@ async function main() {
 
     console.log('TOKEN', TOKEN);
     console.log('DATABASE_ID', DATABASE_ID);
-    console.log('RELEASE_NOTE', RELEASE_NOTE);
     console.log('release_status====', release_status.body);
     console.log('PR_NUMBER===', PR_NUMBER);
 
@@ -33,13 +32,18 @@ async function main() {
             },
           ],
         },
-        Date: {
+        'Release date': {
           date: {
             start: date,
             time_zone: 'Asia/Tokyo',
           },
         },
-        'Pull requests': {
+        担当者: {
+          text: {
+            content: 'akihide',
+          },
+        },
+        URL: {
           url: `https://github.com/Akihide-Tsue/tsue_sandbox/pull/${PR_NUMBER}`,
         },
       },
