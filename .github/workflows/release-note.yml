@@ -114,34 +114,34 @@ jobs:
 
       # slack通知
       - name: Slack Notification
-      uses: slackapi/slack-github-action@v1.24.0
-      with:
-        channel-id: 'C05FWMS9J56' #チャンネルID
-        payload: |
-          {
-            "attachments": [
-              {
-                "blocks": [
-                  {
-                    "type": "header",
-                    "text": {
-                      "type": "plain_text",
-                      "text": 'リリースノート🎉\n${{ steps.release_tag.outputs.release_tag }}'
-                      "emoji": true
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          channel-id: 'C05FWMS9J56' #チャンネルID
+          payload: |
+            {
+              "attachments": [
+                {
+                  "blocks": [
+                    {
+                      "type": "header",
+                      "text": {
+                        "type": "plain_text",
+                        "text": 'リリースノート🎉\n${{ steps.release_tag.outputs.release_tag }}'
+                        "emoji": true
+                      }
+                    },
+                    {
+                      "type": "section",
+                      "text": {
+                        "type": "mrkdwn",
+                        "text": [${{ github.event.pull_request.title }}](https://www.notion.so/6ed1c1d5b11d4b91ba51bf4bf39d3563?v=95dd0094711f44f3aff36f973b7faac9),
+                        "emoji": true
+                      }
                     }
-                  },
-                  {
-                    "type": "section",
-                    "text": {
-                      "type": "mrkdwn",
-                      "text": [${{ github.event.pull_request.title }}](https://www.notion.so/6ed1c1d5b11d4b91ba51bf4bf39d3563?v=95dd0094711f44f3aff36f973b7faac9),
-                      "emoji": true
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-      env:
-        SLACK_BOT_TOKEN: ${{secrets.SLACK_WEBHOOK_FOR_RELEASE_NOTE}}  # secrets登録が必要
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{secrets.SLACK_WEBHOOK_FOR_RELEASE_NOTE}}  # secrets登録が必要
 
