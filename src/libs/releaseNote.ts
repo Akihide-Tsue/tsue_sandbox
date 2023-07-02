@@ -7,6 +7,7 @@ async function main() {
   const RELEASE_NOTE = process.env.NEXT_PUBLIC_RELEASE_NOTE || '{"body": "中身"}';
   const PR_NUMBER = process.env.NEXT_PUBLIC_PR_NUMBER;
   const ASSIGNEE = process.env.NEXT_PUBLIC_ASSIGNEE;
+  console.log('process.env.NEXT_PUBLIC_REPOSITORY_NAME', process.env.NEXT_PUBLIC_REPOSITORY_NAME);
 
   try {
     const notion = new Client({ auth: TOKEN });
