@@ -126,7 +126,7 @@ jobs:
                       "type": "header",
                       "text": {
                         "type": "plain_text",
-                        "text": 'リリースノート🎉\n${{ steps.release_tag.outputs.release_tag }}'
+                        "text": 'リリースノート🎉\n${{ steps.release_tag.outputs.release_tag }}',
                         "emoji": true
                       }
                     },
