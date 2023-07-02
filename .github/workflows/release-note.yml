@@ -54,7 +54,7 @@ jobs:
 
       # ブランチ名のprefixからラベル名を取得する
       - name: Get label name
-        id: label_name
+        id: get_label_name
         run: |
           branch_type=$(echo ${{github.head_ref}} | cut -d "/" -f1)
           if [ $branch_type == 'feature' ]; then
@@ -68,12 +68,11 @@ jobs:
           echo "NEXT_PUBLIC_PREFIX_LABEL=${{ label_name }}" >> $GITHUB_ENV
 
       # PRにラベルを付与する
-      - name: Auto labeling
-        if: ${{ steps.label_name.outputs.label_name }}
-        run: echo ${{ steps.label_name.outputs.label_name }}
+      # - name: Auto labeling
+      #   if: ${{ steps.get_label_name.outputs.label_name }}
       #   run: |
       #     number=$(echo $GITHUB_REF | sed -e 's/[^0-9]//g')
-      #     gh pr edit $number --add-label ${{ steps.label_name.outputs.label_name }}
+      #     gh pr edit $number --add-label ${{ steps.get_label_name.outputs.label_name }}
 
       # リリースノート作成
       - name: create-release@v1
