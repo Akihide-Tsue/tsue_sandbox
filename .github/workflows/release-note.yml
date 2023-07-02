@@ -66,7 +66,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.release_tag.outputs.release_tag }}
-          release_name: ${{ steps.release_tag.outputs.release_tag } { github.event.pull_request.title }}
-          body: ${{ steps.release_note.outputs.release_note } { github.event.pull_request.body }}
+          release_name: ${{ steps.release_tag.outputs.release_tag }} ${{ github.event.pull_request.title }}
+          body: ${{ steps.release_note.outputs.release_note }} ${{ github.event.pull_request.body }}
           draft: false
           prerelease: false
