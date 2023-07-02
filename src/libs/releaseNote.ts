@@ -40,13 +40,9 @@ async function main() {
           },
         },
         担当者: {
-          title: [
-            {
-              text: {
-                content: ASSIGNEE,
-              },
-            },
-          ],
+          plain_text: {
+            content: ASSIGNEE,
+          },
         },
         URL: {
           url: `https://github.com/Akihide-Tsue/tsue_sandbox/pull/${PR_NUMBER}`,
