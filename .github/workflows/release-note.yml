@@ -47,7 +47,7 @@ jobs:
         # https://docs.github.com/ja/github-ae@latest/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
         #  echo "::set-output name=pr_detail_body::${{ github.event.pull_request.body }}"
         run: |
-          echo "::set-output name=pr_detail_body:: ${{ github.event.pull_request.body }}"| jq .body | sed 's/"//g')"
+          echo "::set-output name=pr_detail_body::$(${{ github.event.pull_request.body }}"| jq .body | sed 's/"//g')"
     
       # タグを切り、リリースノートを作成する
       - name: Create Release
