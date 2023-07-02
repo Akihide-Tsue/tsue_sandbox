@@ -55,7 +55,6 @@ async function main() {
       children: markdownToBlocks(release_status.body),
     };
 
-    // console.log('params', params);
     // @ts-ignore
     await notion.pages.create(params);
   } catch (e) {
