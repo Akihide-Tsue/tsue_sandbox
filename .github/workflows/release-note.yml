@@ -46,11 +46,7 @@ jobs:
         # https://docs.github.com/ja/github-ae@latest/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
         run: |
           echo "NEXT_PUBLIC_REPOSITORY_NAME=${{ github.event.repository.name }}" >> $GITHUB_ENV
-          echo "NEXT_PUBLIC_ASSIGNEE=${{ github.event.assignee.name }}" >> $GITHUB_ENV
-          echo "NEXT_PUBLIC_ASSIGNEE2=${{ github.event.pull_request.assignees[0].name }}" >> $GITHUB_ENV
-          echo "NEXT_PUBLIC_ASSIGNEE3=${{ github.event.assignees[0].name }}" >> $GITHUB_ENV
-          echo "NEXT_PUBLIC_ASSIGNEE4=${{ github.event.actor }}" >> $GITHUB_ENV
-          echo "NEXT_PUBLIC_ASSIGNEE4=${{ github.actor }}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_ASSIGNEE=${{ github.actor }}" >> $GITHUB_ENV
           echo "NEXT_PUBLIC_title=${{ github.event.pull_request.title }}" >> $GITHUB_ENV
           echo "NEXT_PUBLIC_PR_NUMBER=${{ github.event.number }}" >> $GITHUB_ENV
 
