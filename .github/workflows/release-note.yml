@@ -51,7 +51,8 @@ jobs:
           echo "::set-output name=url::${{ github.event.pull_request.url }}"
           echo "::set-output name=statuses_url::${{ github.event.pull_request.statuses_url }}"
           echo "::set-output name=repository::${{ github.event.pull_request.repository }}"
-          echo "NEXT_PUBLIC_TITLE_URL{{ github.event.pull_request.url }}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_TITLE_URL={{ github.event.pull_request.url }}" >> $GITHUB_ENV
+
           
       # シークレットに！
 
