@@ -38,7 +38,7 @@ async function main() {
           },
         },
         'Pull requests': {
-          url: 'PRのURLをいれたい',
+          url: release_status.html_url,
         },
       },
       children: markdownToBlocks(release_status.body),
