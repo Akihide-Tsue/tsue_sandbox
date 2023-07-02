@@ -113,7 +113,6 @@ jobs:
           NEXT_PUBLIC_NOTION_DATABASE_ID: ${{ secrets.NEXT_PUBLIC_NOTION_DATABASE_ID }}
 
       # slack通知
-      - uses: actions/checkout@v2.2.0
       - name: Slack Notification
       uses: slackapi/slack-github-action@v1.24.0
       with:
