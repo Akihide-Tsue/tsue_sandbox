@@ -65,7 +65,7 @@ jobs:
             label_name=""
           fi
           echo "::set-output name=label_name::$label_name"
-          echo "NEXT_PUBLIC_PREFIX_LABEL=${{ label_name }}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_PREFIX_LABEL=$label_name" >> $GITHUB_ENV
 
       # PRにラベルを付与する
       # - name: Auto labeling
