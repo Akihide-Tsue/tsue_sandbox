@@ -115,10 +115,9 @@ jobs:
       # slack通知
       - uses: actions/checkout@v2.2.0
       - name: Slack Notification
-        if: ${{ secrets.NEXT_PUBLIC_SLACK_WEBHOOK_FOR_RELEASE_NOTE }} # secrets登録が必要
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{ secrets.NEXT_PUBLIC_SLACK_WEBHOOK_FOR_RELEASE_NOTE }} 
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_FOR_RELEASE_NOTE }} # secrets登録が必要
           SLACK_LINK_NAMES: true # メッセージ内でのメンションを有効にする
           SLACK_MESSAGE: |
             @channel
