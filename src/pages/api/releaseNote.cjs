@@ -1,7 +1,7 @@
 import { Client } from '@notionhq/client';
 import { markdownToBlocks } from '@tryfabric/martian';
 
-const MemberList: { [key in string]: string } = {
+const MemberList = {
   'Akihide-Tsue': '津江',
   octcat: '適宜追加する',
 };
@@ -55,7 +55,7 @@ async function main() {
           rich_text: [
             {
               text: {
-                content: MemberList[ASSIGNEE as string] || ASSIGNEE,
+                content: MemberList[ASSIGNEE] || ASSIGNEE,
               },
             },
           ],
