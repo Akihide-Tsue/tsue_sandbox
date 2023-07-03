@@ -8,7 +8,7 @@
     "build:posts": "ts-node --project tsconfig.builder.json ./src/components/features/zennRss/zennBuilder.ts",
     "now-build": "yum install libuuid-devel libmount-devel --skip-broken && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build",
     "vercel-build": "yum install gcc-c++ cairo-devel pango-devel libjpeg-turbo-devel giflib-devel",
-    "release-note": "ts-node --esm ./src/libs/releaseNote.ts",
+    "release-note": "ts-node --esm ./src/pages/api/releaseNote.ts",
     "lint": "next lint --dir src",
     "lint:fix": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
     "lint:style": "stylelint './**/*.{css,scss,sass}'",
