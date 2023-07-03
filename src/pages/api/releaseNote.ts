@@ -7,9 +7,9 @@ const MemberList: { [key in string]: string } = {
 };
 
 async function main() {
-  const RELEASE_NOTE = process.env.NEXT_PUBLIC_RELEASE_NOTE || '{"body": "中身"}';
-  const ASSIGNEE = process.env.NEXT_PUBLIC_ASSIGNEE;
-  const PREFIX_LABEL = process.env.NEXT_PUBLIC_PREFIX_LABEL;
+  const RELEASE_NOTE = process.env.RELEASE_NOTE || '{"body": "中身"}';
+  const ASSIGNEE = process.env.ASSIGNEE;
+  const PREFIX_LABEL = process.env.PREFIX_LABEL;
   const emoji = () => {
     switch (PREFIX_LABEL) {
       case 'enhancement':
@@ -22,14 +22,14 @@ async function main() {
   };
 
   try {
-    const notion = new Client({ auth: process.env.NEXT_PUBLIC_NOTION_TOKEN });
+    const notion = new Client({ auth: process.env.NOTION_TOKEN });
     const release_status = JSON.parse(RELEASE_NOTE);
     const date = new Date();
     date.setTime(date.getTime() + 1000 * 60 * 60 * 9); // JSTに変換
 
     const params = {
       parent: {
-        database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID,
+        database_id: process.env.NOTION_DATABASE_ID,
       },
       icon: {
         type: 'emoji',
@@ -64,13 +64,13 @@ async function main() {
         //   rich_text: [
         //     {
         //       text: {
-        //         content: process.env.NEXT_PUBLIC_REPOSITORY_NAME,
+        //         content: process.env.REPOSITORY_NAME,
         //       },
         //     },
         //   ],
         // },
         URL: {
-          url: `https://github.com/Akihide-Tsue/tsue_sandbox/pull/${process.env.NEXT_PUBLIC_PR_NUMBER}`,
+          url: `https://github.com/Akihide-Tsue/tsue_sandbox/pull/${process.env.PR_NUMBER}`,
         },
       },
       children: markdownToBlocks(release_status.body),
