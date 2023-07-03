@@ -47,9 +47,9 @@ jobs:
         id: pr_detail
         # https://docs.github.com/ja/github-ae@latest/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
         run: |
-          echo "NEXT_PUBLIC_REPOSITORY_NAME=${{ github.event.repository.name }}" >> $GITHUB_ENV
-          echo "NEXT_PUBLIC_ASSIGNEE=${{ github.actor }}" >> $GITHUB_ENV
-          echo "NEXT_PUBLIC_PR_NUMBER=${{ github.event.number }}" >> $GITHUB_ENV
+          echo "REPOSITORY_NAME=${{ github.event.repository.name }}" >> $GITHUB_ENV
+          echo "ASSIGNEE=${{ github.actor }}" >> $GITHUB_ENV
+          echo "PR_NUMBER=${{ github.event.number }}" >> $GITHUB_ENV
 
       # ブランチ名のprefixからラベル名を取得する
       - name: Get label name
@@ -64,7 +64,7 @@ jobs:
             label_name=""
           fi
           echo "::set-output name=label_name::$label_name"
-          echo "NEXT_PUBLIC_PREFIX_LABEL=$label_name" >> $GITHUB_ENV
+          echo "PREFIX_LABEL=$label_name" >> $GITHUB_ENV
 
       # PRにラベルを付与する
       # - name: Auto labeling
@@ -91,7 +91,7 @@ jobs:
         id: release_note
         run: |
           EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-          echo "NEXT_PUBLIC_RELEASE_NOTE<<$EOF" >> $GITHUB_ENV
+          echo "RELEASE_NOTE<<$EOF" >> $GITHUB_ENV
           curl -X GET -H 'Accept: application/vnd.github.v3+json' -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' -H 'X-GitHub-Api-Version: 2022-11-28' https://api.github.com/repos/${{ github.repository }}/releases/latest >> $GITHUB_ENV
           echo "$EOF" >> $GITHUB_ENV
 
@@ -109,8 +109,8 @@ jobs:
       - name: Generate release note
         run: yarn run release-note
         env:
-          NEXT_PUBLIC_NOTION_TOKEN: ${{ secrets.NEXT_PUBLIC_NOTION_TOKEN }}
-          NEXT_PUBLIC_NOTION_DATABASE_ID: ${{ secrets.NEXT_PUBLIC_NOTION_DATABASE_ID }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
 
       # slack通知
       - name: Slack notification
@@ -119,7 +119,7 @@ jobs:
           channel-id: ${{ secrets.RELEASE_SLACK_CHANNEL }} #チャンネルID
           payload: |
             {
-              "text": "リリースノート🎉",
+              "text": "リリースしました🎉\n${{ github.event.repository.name }}",
               "attachments": [{
                 "title": "${{ steps.release_tag.outputs.release_tag }}\n${{ github.event.pull_request.title }}",
                 "title_link": "https://www.notion.so/6ed1c1d5b11d4b91ba51bf4bf39d3563?v=95dd0094711f44f3aff36f973b7faac9",
