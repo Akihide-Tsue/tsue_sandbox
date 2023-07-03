@@ -10,6 +10,7 @@ const members: MemberType[] = [
     id: 'tsue',
     name: 'Tsue',
     sources: ['https://zenn.dev/tsue/feed'],
+    //TODO 出来るか確認https://zenn.dev/kisukeyas/scraps/8914a1884f66e5
     includeUrlRegex: 'zenn.dev',
   },
 ];
