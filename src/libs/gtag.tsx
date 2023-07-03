@@ -1,8 +1,6 @@
-import { useEffect } from 'react';
-
 import { useRouter } from 'next/router';
 import Script from 'next/script';
-
+import { useEffect } from 'react';
 import { hotjar } from 'react-hotjar';
 
 export const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || '';

@@ -1,16 +1,12 @@
-import { useState } from 'react';
-
 import Link from 'next/link';
-
+import { useState } from 'react';
+// @ts-ignore
+import type { CodeComponent } from 'react-markdown/src/ast-to-react';
 import { useRecoilValue } from 'recoil';
-
 import { currentArticleLinks } from 'src/recoil/atoms/currentArticleLinks';
 import { getFaviconUrl } from 'src/utils/getFaviconUrl';
 
 import styles from './BlogCard.module.scss';
-
-// @ts-ignore
-import type { CodeComponent } from 'react-markdown/src/ast-to-react';
 
 interface Props {
   href: string;

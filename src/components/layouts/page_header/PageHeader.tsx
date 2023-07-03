@@ -1,19 +1,15 @@
-import type { FC } from 'react';
-import { useLayoutEffect } from 'react';
-
-import Link from 'next/link';
-
-import { useRecoilState } from 'recoil';
-
 import { config, productTitle } from '@constants';
-
 import useHasMounted from '@hooks/useHasMounted';
 import { useShowComponent } from '@hooks/useScrollPosition';
+import Link from 'next/link';
 import DarkIcon from 'public/images/icons/dark_icon.svg';
 import FeedIcon from 'public/images/icons/feed_icon.svg';
 import GithubIcon from 'public/images/icons/github_icon.svg';
 import LightIcon from 'public/images/icons/light_icon.svg';
 import TwitterIcon from 'public/images/icons/twitter_icon.svg';
+import type { FC } from 'react';
+import { useLayoutEffect } from 'react';
+import { useRecoilState } from 'recoil';
 import { colorTheme } from 'src/recoil/atoms/colorTheme';
 
 import styles from './PageHeader.module.scss';

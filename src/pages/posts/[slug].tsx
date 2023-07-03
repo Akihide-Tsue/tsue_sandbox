@@ -1,33 +1,27 @@
-import type { FC } from 'react';
-import { useEffect } from 'react';
-
-import fs from 'fs';
-
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-
-import matter from 'gray-matter';
-import ReactMarkdown from 'react-markdown';
-import { useRecoilState } from 'recoil';
-import remarkGfm from 'remark-gfm';
-
-import { config, productTitle } from '@constants';
-
 import BackListsButton from '@components/features/back_lists_button/BackListsButton';
 import BlogCard from '@components/features/blog_card/BlogCard';
 import CodeBlock from '@components/features/codeblock/CodeBlock';
 import { TwitterIntentTweet } from '@components/features/share_twitter/ShareTwitter';
+import { config, productTitle } from '@constants';
 import { usePostData } from '@hooks/usePostData';
 import stylesMarkdown from '@styles/pages/markdown.module.scss';
 import styles from '@styles/pages/slug.module.scss';
+import fs from 'fs';
+import matter from 'gray-matter';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import GithubIcon from 'public/images/icons/github_icon.svg';
 import TwitterIcon from 'public/images/icons/twitter_icon.svg';
+import type { FC } from 'react';
+import { useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import { useRecoilState } from 'recoil';
+import remarkGfm from 'remark-gfm';
 import { currentArticleLinks } from 'src/recoil/atoms/currentArticleLinks';
-import createOgp from 'src/utils/server/ogpUtils';
-
 import type { FrontMatterType } from 'src/type-def/postsType';
+import createOgp from 'src/utils/server/ogpUtils';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const jsdom = require('jsdom');

@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 const isMobileWindowSize = () => {
   if (typeof window !== 'undefined') {

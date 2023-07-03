@@ -1,13 +1,10 @@
-import type { Dispatch, FC, SetStateAction } from 'react';
-
+import useHasMounted from '@hooks/useHasMounted';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
-import { useRecoilValue } from 'recoil';
-
-import useHasMounted from '@hooks/useHasMounted';
 import CardIcon from 'public/images/icons/card_icon.svg';
 import ListIcon from 'public/images/icons/list_icon.svg';
+import type { Dispatch, FC, SetStateAction } from 'react';
+import { useRecoilValue } from 'recoil';
 import { colorTheme } from 'src/recoil/atoms/colorTheme';
 
 import styles from './ArticleLayoutSelect.module.scss';

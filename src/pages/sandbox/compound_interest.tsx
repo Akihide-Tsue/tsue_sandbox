@@ -1,19 +1,16 @@
+import dynamic from 'next/dynamic';
 import type { SetStateAction } from 'react';
 import { useEffect, useState } from 'react';
 
-import dynamic from 'next/dynamic';
-
 const LineChart = dynamic(() => import('@components/features/line_chart/LineChart'), { ssr: false });
 
-import type { NextPage } from 'next';
-
-import { v4 as uuid } from 'uuid';
-
 import SandboxBreadCrumb from '@components/features/sandbox_bread_crumb/SandboxBreadCrumb';
+import type { NextPage } from 'next';
 import MinusButton from 'public/images/icons/calc_minus_button.svg';
 import PlusButton from 'public/images/icons/calc_plus_button.svg';
 import styles from 'src/styles/sandbox/compound_interest.module.scss';
 import { convertZenkakuToHankakuNumber } from 'src/utils/convertZenkakuToHankaku';
+import { v4 as uuid } from 'uuid';
 
 type AssetDataType = {
   [id: string]: {

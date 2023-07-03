@@ -1,12 +1,9 @@
-import fs from 'fs';
-
-import { Feed } from 'feed';
-import matter from 'gray-matter';
-import markdownToHtml from 'zenn-markdown-html';
-
 import { metaDescription, productTitle } from '@constants';
-
+import { Feed } from 'feed';
+import fs from 'fs';
+import matter from 'gray-matter';
 import type { FrontMatterType } from 'src/type-def/postsType';
+import markdownToHtml from 'zenn-markdown-html';
 
 const generatedRssFeed = (): void => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '';

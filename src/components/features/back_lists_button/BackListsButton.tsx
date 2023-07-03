@@ -1,8 +1,6 @@
-import type { FC } from 'react';
-
 import Link from 'next/link';
-
 import ArrowIcon from 'public/images/icons/right_arrow_circle.svg';
+import type { FC } from 'react';
 
 import styles from './BackListsButton.module.scss';
 

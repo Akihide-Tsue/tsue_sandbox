@@ -1,9 +1,7 @@
-import type { FC } from 'react';
-
+import type { PostType } from '@type-def/postsType';
 import Image from 'next/image';
 import Link from 'next/link';
-
-import type { PostType } from '@type-def/postsType';
+import type { FC } from 'react';
 
 import styles from './ArticleLink.module.scss';
 

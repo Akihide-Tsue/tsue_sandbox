@@ -1,10 +1,7 @@
-import type { FC } from 'react';
-
-import Head from 'next/head';
-
 import { metaDescription, metaTitle } from '@constants';
-
 import { useWindowSize } from '@hooks/useWindowSize';
+import Head from 'next/head';
+import type { FC } from 'react';
 
 const CommonHead: FC = () => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? '';

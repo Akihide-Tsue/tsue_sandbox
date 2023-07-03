@@ -1,6 +1,5 @@
-import type { NextPage } from 'next';
-
 import styles from '@styles/pages/error_page.module.scss';
+import type { NextPage } from 'next';
 
 const error404page: NextPage = () => {
   return (

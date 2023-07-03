@@ -1,16 +1,12 @@
-import fs from 'fs';
-
-import type { NextPage } from 'next';
-
-import matter from 'gray-matter';
-import { useRecoilState } from 'recoil';
-
 import ArticleLayoutSelect from '@components/features/article_layout_select/ArticleLayoutSelect';
 import ArticleLink from '@components/features/article_link/ArticleLink';
 import generatedRssFeed from '@libs/feed';
 import styles from '@styles/pages/index.module.scss';
+import fs from 'fs';
+import matter from 'gray-matter';
+import type { NextPage } from 'next';
+import { useRecoilState } from 'recoil';
 import { articleLayout } from 'src/recoil/atoms/articleLayout';
-
 import type { PostType } from 'src/type-def/postsType';
 
 export const getStaticProps = () => {

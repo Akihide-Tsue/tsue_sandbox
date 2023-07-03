@@ -1,8 +1,6 @@
 import type { FC } from 'react';
-
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { useRecoilValue } from 'recoil';
-
 import { colorTheme } from 'src/recoil/atoms/colorTheme';
 import styles from 'src/styles/sandbox/compound_interest.module.scss';
 

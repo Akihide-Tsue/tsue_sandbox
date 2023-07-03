@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
-
 import { useDebounce } from '@hooks/useDebounce';
+import { useEffect, useState } from 'react';
 
 interface ScrollPosition {
   x: number;
