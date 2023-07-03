@@ -124,7 +124,7 @@ jobs:
                 "fields": [
                   {
                     "title": "${{ github.event.pull_request.title }}",
-                    "value": "${{ github.event.repository.url }}/pull/${{ github.event.number }}"
+                    "value": "${{ github.event.pull_request.url }}/pull/${{ github.event.number }}"
                   },
                   {
                     "title": "${{ steps.release_tag.outputs.release_tag }}",
