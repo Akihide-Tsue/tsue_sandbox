@@ -47,7 +47,9 @@ jobs:
         id: pr_detail
         run: |
           echo "REPOSITORY_NAME=${{ github.event.repository.name }}" >> $GITHUB_ENV
-          echo "ASSIGNEE=${{ github.actor }}" >> $GITHUB_ENV
+          echo "ASSIGNEE=${{ github.event.pull_request.assignees.name }}" >> $GITHUB_ENV
+          echo "ASSIGNEE2=${{ github.event.pull_request.user.name }}" >> $GITHUB_ENV
+          echo "ASSIGNEE3=${{ github.event.pull_request.assignee.name }}" >> $GITHUB_ENV
           echo "PR_NUMBER=${{ github.event.number }}" >> $GITHUB_ENV
 
       # ブランチ名のprefixからラベル名を取得する
