@@ -6,6 +6,7 @@ const MemberList = {
   octcat: '適宜追加する',
 };
 
+
 async function main() {
   const RELEASE_NOTE = process.env.RELEASE_NOTE || '{"body": "中身"}';
   const ASSIGNEE = process.env.ASSIGNEE;
