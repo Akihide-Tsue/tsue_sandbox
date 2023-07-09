@@ -4,7 +4,6 @@ import 'src/styles/globals.scss';
 import CommonHead from '@components/common/common_head/CommonHead';
 import Layout from '@components/layouts/Layout';
 import { GoogleAnalytics, usePageView } from '@libs/gtag';
-import { Analytics } from '@vercel/analytics/react';
 import type { AppProps } from 'next/app';
 import { RecoilRoot } from 'recoil';
 
@@ -19,7 +18,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <Layout>
           <Component {...pageProps} />
         </Layout>
-        <Analytics />
       </RecoilRoot>
     </>
   );
