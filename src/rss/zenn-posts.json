@@ -1,12 +1,21 @@
 [
   {
-    "title": "MF勤怠自動化計画",
+    "title": "そのリリースノート、自動化しませんか？",
+    "contentSnippet": "TL;DRmainブランチマージ時にGitHub ActionsにてNotionに自動でリリースノートを生成し、Slackへ通知を行いましょう。用意するのは2ファイルだけ。コピペで簡単、今日から時短！（韻）作成したリポジトリはこちらhttps://github.com/Akihide-Tsue/auto_release_note 出来上がりのサンプル（お好みで変更可能）Notionに生成されたリリースノートブランチ名のprefix（fix/~~）などに合わせたアイコンを表示します。開くと、Pull Request作成時のコメントが表示されます。Slackの通...",
+    "link": "https://zenn.dev/tsue/articles/e23167a0e34adb",
+    "isoDate": "2023-07-08T07:22:22.000Z",
+    "dateMilliSeconds": 1688800942000,
+    "authorName": "Tsue",
+    "authorId": "tsue"
+  },
+  {
+    "title": "MF勤怠自動化",
     "contentSnippet": "概要MF勤怠の出勤・退勤を自動で打刻します。puppeteerでブラウザ操作します。(動作確認:2021/12/6)実装内容は下記を参照頂きたく。https://github.com/Akihide-Tsue/mf-auto 流れ（自分の場合）Googleカレンダーに「出社」「リモート」の終日予定を入れる。繰り返しで。なぜかCalender APIで正しいデータが取れなかったため予定をGASでスプシに出力。GASに下記を登録、適当な時間をトリガーにし毎日更新するfunction getEvents() {  const calendar = Calenda...",
     "link": "https://zenn.dev/tsue/articles/121b2d22108554",
     "isoDate": "2021-12-06T01:26:11.000Z",
     "dateMilliSeconds": 1638753971000,
-    "authorName": "CatNose",
-    "authorId": "catnose"
+    "authorName": "Tsue",
+    "authorId": "tsue"
   },
   {
     "title": "Slack APIで画像ファイルは送れないのか~Node.js編~",
@@ -14,8 +23,8 @@
     "link": "https://zenn.dev/tsue/articles/4fab6474af7476",
     "isoDate": "2021-11-22T12:02:56.000Z",
     "dateMilliSeconds": 1637582576000,
-    "authorName": "CatNose",
-    "authorId": "catnose"
+    "authorName": "Tsue",
+    "authorId": "tsue"
   },
   {
     "title": "「銀行丸め」を知っているか？~JavaScript編~",
@@ -23,8 +32,8 @@
     "link": "https://zenn.dev/tsue/articles/63921de486c7a7",
     "isoDate": "2021-08-05T01:42:16.000Z",
     "dateMilliSeconds": 1628127736000,
-    "authorName": "CatNose",
-    "authorId": "catnose"
+    "authorName": "Tsue",
+    "authorId": "tsue"
   },
   {
     "title": "【React Native】動的なフォーム作成",
@@ -32,7 +41,7 @@
     "link": "https://zenn.dev/tsue/articles/5dfe3c1f955cb6",
     "isoDate": "2021-05-16T08:17:38.000Z",
     "dateMilliSeconds": 1621153058000,
-    "authorName": "CatNose",
-    "authorId": "catnose"
+    "authorName": "Tsue",
+    "authorId": "tsue"
   }
 ]
