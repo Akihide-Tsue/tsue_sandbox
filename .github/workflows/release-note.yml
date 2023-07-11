@@ -14,7 +14,7 @@ jobs:
 
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      TZ: 'Asia/Tokyo'
+      TZ: "Asia/Tokyo"
 
     strategy:
       matrix:
@@ -45,10 +45,11 @@ jobs:
       # 環境変数に情報を保存
       - name: Register PR detail
         id: pr_detail
+        # https://docs.github.com/ja/github-ae@latest/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
         run: |
           echo "REPOSITORY_NAME=${{ github.event.repository.name }}" >> $GITHUB_ENV
           echo "ASSIGNEE=${{ github.event.pull_request.user.login }}" >> $GITHUB_ENV
-          echo "PR_NUMBER=${{ github.event.number }}" >> $GITHUB_ENV
+          echo "PR_URL=${{ github.event.pull_request.html_url}}" >> $GITHUB_ENV
 
       # ブランチ名のprefixからラベル名を取得する
       - name: Get label name
@@ -104,7 +105,7 @@ jobs:
         shell: bash
         run: yarn install --frozen-lockfile
 
-      # releaseNote.ts
+      # releaseNoteを実行
       - name: Generate release note
         run: yarn run release-note
         env:
@@ -120,19 +121,19 @@ jobs:
             {
               "text": "リリースしました🎉\n${{ github.event.repository.name }}",
               "attachments": [{
-                "color": "good",
+                "color": "#10AA39",
                 "fields": [
                   {
                     "title": "${{ github.event.pull_request.title }}",
-                    "value": "${{ github.event.pull_request.url }}/pull/${{ github.event.number }}"
+                    "value": "${{ github.event.pull_request.html_url }}"
                   },
                   {
                     "title": "${{ steps.release_tag.outputs.release_tag }}",
-                    "value": "https://www.notion.so/6ed1c1d5b11d4b91ba51bf4bf39d3563?v=95dd0094711f44f3aff36f973b7faac9"
+                    "value": "${{ secrets.NOTION_DB_PAGE_URL }}"
                   }
                 ]
               }]
             }
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_FOR_RELEASE_NOTE }} # secrets登録が必要
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_FOR_RELEASE_NOTE }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
