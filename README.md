@@ -34,5 +34,7 @@ https://github.com/Automattic/node-canvas/issues/1779
 https://zenn.dev/marusho/articles/319ceee8bb98ca
 
 
+yarn add -D canvas
+
 ### License
 [MIT](https://raw.githubusercontent.com/aocattleya/Ramen-Timer/master/LICENSE)
